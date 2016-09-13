@@ -12,9 +12,11 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<String> treasureItems = new ArrayList<String>();
+    //TODO : Make some fancy ass list objects!
 
-    ArrayAdapter<String> treasureItemsListAdapter;
+    ArrayList<TreasureListItem> treasureItems = new ArrayList<TreasureListItem>();
+
+    TreasureListItemAdapter treasureItemsListAdapter;
 
     Random r = new Random();
 
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         cr_spinner.setAdapter(adapter);
 
         //Hook up the list
-        treasureItemsListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, treasureItems);
+        treasureItemsListAdapter = new TreasureListItemAdapter(this, R.layout.treasure_list_item, treasureItems);
         ListView listyMcListFace = (ListView) findViewById(R.id.results_list);
         listyMcListFace.setAdapter(treasureItemsListAdapter);
     }
@@ -38,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     public void rollTreasure(View v) {
         //Clear list
         treasureItems.clear();
-        treasureItemsListAdapter.notifyDataSetChanged();
 
         //Grab CR
         Spinner cr_spinner = (Spinner) findViewById(R.id.cr_selection_spinner);
@@ -73,9 +74,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void addToList (String text) {
+    private void addToList (String mainText, String subText) {
+        // Build TreasureListItem
+        TreasureListItem t = new TreasureListItem(mainText, subText);
+
         // Put some shit in the list
-        treasureItems.add(text);
+        treasureItems.add(t);
         treasureItemsListAdapter.notifyDataSetChanged();
     }
 
@@ -89,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         Integer coins = roll * multiplier;
         // Build string and add to the list
         String listText = coins.toString() + " " + coinType;
-        addToList(listText);
+        addToList(listText, null);
     }
 
     private void rollGems(Integer dice, Integer sides, Integer value) {
@@ -126,47 +130,60 @@ public class MainActivity extends AppCompatActivity {
         roll = r.nextInt(12 - 1) + 1;
 
         String gemText = "Gem (10GP) - ";
+        String subText = "";
 
         switch(roll) {
             case 1:
-                gemText += "Azurite (opaque mottled deep blue)";
+                gemText += "Azurite";
+                subText = "Opaque mottled deep blue";
                 break;
             case 2:
-                gemText += "Banded agate (translucent striped brown, blue, white, or red)";
+                gemText += "Banded agate";
+                subText = "Translucent striped brown, blue, white, or red";
                 break;
             case 3:
-                gemText += "Blue quartz (transparent pale blue)";
+                gemText += "Blue quartz";
+                subText = "Transparent pale blue";
                 break;
             case 4:
-                gemText += "Eye agate (translucent circles of gray, white, brown, blue, or green)";
+                gemText += "Eye agate";
+                subText = "Translucent circles of gray, white, brown, blue, or green";
                 break;
             case 5:
-                gemText += "Hematite (opaque gray-black)";
+                gemText += "Hematite";
+                subText = "Opaque gray-black";
                 break;
             case 6:
-                gemText += "Lapis lazuli (opaque light and dark blue with yellow flecks)";
+                gemText += "Lapis lazuli";
+                subText = "Opaque light and dark blue with yellow flecks";
                 break;
             case 7:
-                gemText += "Malachite (opaque striated light and dark green)";
+                gemText += "Malachite";
+                subText = "Opaque striated light and dark green";
                 break;
             case 8:
-                gemText += "Moss agate (translucent pink or yellow-white with mossy gray or green markings)";
+                gemText += "Moss agate";
+                subText = "Translucent pink or yellow-white with mossy gray or green markings";
                 break;
             case 9:
-                gemText += "Obsidian (opaque black)";
+                gemText += "Obsidian";
+                subText = "Opaque black";
                 break;
             case 10:
-                gemText += "Rhodochrosite (opaque light pink)";
+                gemText += "Rhodochrosite";
+                subText = "Opaque light pink";
                 break;
             case 11:
-                gemText += "Tiger eye (translucent brown with golden center)";
+                gemText += "Tiger eye";
+                subText = "Translucent brown with golden center";
                 break;
             case 12:
-                gemText += "Turquoise (opaque light blue-green)";
+                gemText += "Turquoise";
+                subText = "Opaque light blue-green";
                 break;
         }
 
-        addToList(gemText);
+        addToList(gemText, subText);
     }
 
     private void rollGem50GP() {
@@ -175,47 +192,60 @@ public class MainActivity extends AppCompatActivity {
         roll = r.nextInt(12 - 1) + 1;
 
         String gemText = "Gem (50GP) - ";
+        String subText = "";
 
         switch(roll) {
             case 1:
-                gemText += "Bloodstone (opaque dark gray with red flecks)";
+                gemText += "Bloodstone";
+                subText = "Opaque dark gray with red flecks";
                 break;
             case 2:
-                gemText += "Carnelian (opaque orange to red-brown)";
+                gemText += "Carnelian";
+                subText = "Opaque orange to red-brown";
                 break;
             case 3:
-                gemText += "Chalcedony (opaque white)";
+                gemText += "Chalcedony";
+                subText = "Opaque white";
                 break;
             case 4:
-                gemText += "Chrysoprase (translucent green)";
+                gemText += "Chrysoprase";
+                subText = "Translucent green";
                 break;
             case 5:
-                gemText += "Citrine (transparent pale yellow-brown)";
+                gemText += "Citrine";
+                subText = "Transparent pale yellow-brown";
                 break;
             case 6:
-                gemText += "Jasper (opaque blue, black, or brown)";
+                gemText += "Jasper";
+                subText = "Opaque blue, black, or brown";
                 break;
             case 7:
-                gemText += "Moonstone (translucent white with pale blue glow)";
+                gemText += "Moonstone";
+                subText = "Translucent white with pale blue glow";
                 break;
             case 8:
-                gemText += "Onyx (opaque bands of black and white, or pure black or white)";
+                gemText += "Onyx";
+                subText = "Opaque bands of black and white, or pure black or white";
                 break;
             case 9:
-                gemText += "Quartz (transparent white, smoky gray, or yellow)";
+                gemText += "Quartz";
+                subText = "Transparent white, smoky gray, or yellow";
                 break;
             case 10:
-                gemText += "Sardonyx (opaque bands of red and white)";
+                gemText += "Sardonyx";
+                subText = "Opaque bands of red and white";
                 break;
             case 11:
-                gemText += "Star rose quartz (translucent rosy stone with white star-shaped center)";
+                gemText += "Star rose quartz";
+                subText = "Translucent rosy stone with white star-shaped center";
                 break;
             case 12:
-                gemText += "Zircon (transparent pale blue-green)";
+                gemText += "Zircon";
+                subText = "Transparent pale blue-green";
                 break;
         }
 
-        addToList(gemText);
+        addToList(gemText, subText);
     }
 
     private void rollArt(Integer dice, Integer sides, Integer value) {
@@ -248,42 +278,43 @@ public class MainActivity extends AppCompatActivity {
         Integer roll = 0;
         roll = r.nextInt(10 - 1) + 1;
 
-        String artText = "Art (25GP) - ";
+        String artText = "Art (25GP)";
+        String subText = "";
 
         switch(roll) {
             case 1:
-                artText += "Silver ewer";
+                subText += "Silver ewer";
                 break;
             case 2:
-                artText += "Carved bone statuette";
+                subText += "Carved bone statuette";
                 break;
             case 3:
-                artText += "Small gold bracelet";
+                subText += "Small gold bracelet";
                 break;
             case 4:
-                artText += "Cloth-of-gold vestments";
+                subText += "Cloth-of-gold vestments";
                 break;
             case 5:
-                artText += "Black velvet mask stitched with silver thread";
+                subText += "Black velvet mask stitched with silver thread";
                 break;
             case 6:
-                artText += "Copper chalice with silver filigree";
+                subText += "Copper chalice with silver filigree";
                 break;
             case 7:
-                artText += "Pair of engraved bone dice";
+                subText += "Pair of engraved bone dice";
                 break;
             case 8:
-                artText += "Small mirror set in a painted wooden frame";
+                subText += "Small mirror set in a painted wooden frame";
                 break;
             case 9:
-                artText += "Embroidered silk handkerchief";
+                subText += "Embroidered silk handkerchief";
                 break;
             case 10:
-                artText += "Gold locket with a painted portrait inside";
+                subText += "Gold locket with a painted portrait inside";
                 break;
         }
 
-        addToList(artText);
+        addToList(artText, subText);
     }
 
     private void rollTreasureTableA() {
