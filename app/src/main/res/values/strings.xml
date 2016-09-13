@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">dnd-5e-treasure</string>
     <string name="cr_selection_label_text">Challenge Rating:</string>
+    <string name="roll_button_text">Generate</string>
     <string-array name="cr_selection_array">
         <item>0 – 4</item>
         <item>5 – 10</item>
