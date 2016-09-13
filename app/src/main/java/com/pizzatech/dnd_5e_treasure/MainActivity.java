@@ -12,6 +12,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    //TODO : Make some fancy ass list objects!
+
     ArrayList<String> treasureItems = new ArrayList<String>();
 
     ArrayAdapter<String> treasureItemsListAdapter;
