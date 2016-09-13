@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Switch;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         // Roll a d6 the specified number of times and sum the total (coins are always d6 rolls!)
         Integer roll = 0;
         for (int i = 0; i < dice; i++) {
-            roll += r.nextInt(6 - 1) + 1;
+            roll += (r.nextInt(6 - 1) + 1);
         }
         // Sum x multiplier
         Integer coins = roll * multiplier;
@@ -97,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         Integer roll = 0;
         for (int i = 0; i < dice; i++)
         {
-            roll += r.nextInt(sides - 1) + 1;
+            roll += (r.nextInt(sides - 1) + 1);
         }
         for (int j = 0; j < roll; j++)
         {
@@ -106,9 +105,10 @@ public class MainActivity extends AppCompatActivity {
                     rollGem10GP();
                     break;
                 case 50:
-                    // TODO : BUILD THE OTHER GEMROLLERS
+                    rollGem50GP();
                     break;
                 case 100:
+                    // TODO : BUILD THE OTHER GEMROLLERS
                     break;
                 case 500:
                     break;
@@ -169,6 +169,123 @@ public class MainActivity extends AppCompatActivity {
         addToList(gemText);
     }
 
+    private void rollGem50GP() {
+        // Roll d12 to determine which gem
+        Integer roll = 0;
+        roll = r.nextInt(12 - 1) + 1;
+
+        String gemText = "Gem (50GP) - ";
+
+        switch(roll) {
+            case 1:
+                gemText += "Bloodstone (opaque dark gray with red flecks)";
+                break;
+            case 2:
+                gemText += "Carnelian (opaque orange to red-brown)";
+                break;
+            case 3:
+                gemText += "Chalcedony (opaque white)";
+                break;
+            case 4:
+                gemText += "Chrysoprase (translucent green)";
+                break;
+            case 5:
+                gemText += "Citrine (transparent pale yellow-brown)";
+                break;
+            case 6:
+                gemText += "Jasper (opaque blue, black, or brown)";
+                break;
+            case 7:
+                gemText += "Moonstone (translucent white with pale blue glow)";
+                break;
+            case 8:
+                gemText += "Onyx (opaque bands of black and white, or pure black or white)";
+                break;
+            case 9:
+                gemText += "Quartz (transparent white, smoky gray, or yellow)";
+                break;
+            case 10:
+                gemText += "Sardonyx (opaque bands of red and white)";
+                break;
+            case 11:
+                gemText += "Star rose quartz (translucent rosy stone with white star-shaped center)";
+                break;
+            case 12:
+                gemText += "Zircon (transparent pale blue-green)";
+                break;
+        }
+
+        addToList(gemText);
+    }
+
+    private void rollArt(Integer dice, Integer sides, Integer value) {
+        Integer roll = 0;
+        for (int i = 0; i < dice; i++)
+        {
+            roll += (r.nextInt(sides - 1) + 1);
+        }
+        for (int j = 0; j < roll; j++)
+        {
+            switch(value) {
+                case 25:
+                    rollArt25GP();
+                    break;
+                case 250:
+                    // TODO : BUILD THE OTHER ARTROLLERS
+                    break;
+                case 750:
+                    break;
+                case 2500:
+                    break;
+                case 7500:
+                    break;
+            }
+        }
+    }
+
+    private void rollArt25GP() {
+        // Roll d10 to determine which art
+        Integer roll = 0;
+        roll = r.nextInt(10 - 1) + 1;
+
+        String artText = "Art (25GP) - ";
+
+        switch(roll) {
+            case 1:
+                artText += "Silver ewer";
+                break;
+            case 2:
+                artText += "Carved bone statuette";
+                break;
+            case 3:
+                artText += "Small gold bracelet";
+                break;
+            case 4:
+                artText += "Cloth-of-gold vestments";
+                break;
+            case 5:
+                artText += "Black velvet mask stitched with silver thread";
+                break;
+            case 6:
+                artText += "Copper chalice with silver filigree";
+                break;
+            case 7:
+                artText += "Pair of engraved bone dice";
+                break;
+            case 8:
+                artText += "Small mirror set in a painted wooden frame";
+                break;
+            case 9:
+                artText += "Embroidered silk handkerchief";
+                break;
+            case 10:
+                artText += "Gold locket with a painted portrait inside";
+                break;
+        }
+
+        addToList(artText);
+    }
+
     private void rollTreasureTableA() {
         // Roll d100
         Integer roll = 0;
@@ -182,34 +299,49 @@ public class MainActivity extends AppCompatActivity {
                 break;
             // TODO: POPULATE OTHER CASES
             case 17:case 18:case 19:case 20:case 21:case 22:case 23:case 24:case 25:case 26:
+                rollArt(2, 4, 25);
                 break;
             case 27:case 28:case 29:case 30:case 31:case 32:case 33:case 34:case 35:case 36:
+                rollGems(2, 6, 50);
                 break;
             case 37:case 38:case 39:case 40:case 41:case 42:case 43:case 44:
+                rollGems(2, 6, 10);
                 break;
             case 45:case 46:case 47:case 48:case 49:case 50:case 51:case 52:
+                rollArt(2, 4, 25);
                 break;
             case 53:case 54:case 55:case 56:case 57:case 58:case 59:case 60:
+                rollGems(2, 6, 50);
                 break;
             case 61:case 62:case 63:case 64:case 65:
+                rollGems(2, 6, 10);
                 break;
             case 66:case 67:case 68:case 69:case 70:
+                rollArt(2, 4, 25);
                 break;
             case 71:case 72:case 73:case 74:case 75:
+                rollGems(2, 6, 50);
                 break;
             case 76:case 77:case 78:
+                rollGems(2, 6, 10);
                 break;
             case 79:case 80:
+                rollArt(2, 4, 25);
                 break;
             case 81:case 82:case 83:case 84:case 85:
+                rollGems(2, 6, 50);
                 break;
             case 86:case 87:case 88:case 89:case 90:case 91:case 92:
+                rollArt(2, 4, 25);
                 break;
             case 93:case 94:case 95:case 96:case 97:
+                rollGems(2, 6, 50);
                 break;
             case 98:case 99:
+                rollArt(2, 4, 25);
                 break;
             case 100:
+                rollGems(2, 6, 50);
                 break;
         }
 
