@@ -1,5 +1,6 @@
 package com.pizzatech.dnd_5e_treasure;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -74,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void addToList (String mainText, String subText) {
+    private void addToList (String mainText, String subText, int img) {
         // Build TreasureListItem
-        TreasureListItem t = new TreasureListItem(mainText, subText);
+        TreasureListItem t = new TreasureListItem(mainText, subText, img);
 
         // Put some shit in the list
         treasureItems.add(t);
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         Integer coins = roll * multiplier;
         // Build string and add to the list
         String listText = coins.toString() + " " + coinType;
-        addToList(listText, null);
+        addToList(listText, null, R.drawable.coin_gold);
     }
 
     private void rollGems(Integer dice, Integer sides, Integer value) {
@@ -183,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        addToList(gemText, subText);
+        addToList(gemText, subText, R.drawable.coin_gold);
     }
 
     private void rollGem50GP() {
@@ -245,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        addToList(gemText, subText);
+        addToList(gemText, subText, R.drawable.coin_gold);
     }
 
     private void rollArt(Integer dice, Integer sides, Integer value) {
@@ -314,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        addToList(artText, subText);
+        addToList(artText, subText, R.drawable.coin_gold);
     }
 
     private void rollTreasureTableA() {
