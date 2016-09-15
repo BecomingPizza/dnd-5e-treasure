@@ -1,8 +1,6 @@
 package com.pizzatech.dnd_5e_treasure;
 
-import android.content.ClipData;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +35,7 @@ public class TreasureListItemAdapter extends ArrayAdapter<TreasureListItem> {
         if (v == null) {
             LayoutInflater vi;
             vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.treasure_list_item, null);
+            v = vi.inflate(R.layout.treasure_list_item, parent, false);
         }
 
         TreasureListItem t = getItem(position);

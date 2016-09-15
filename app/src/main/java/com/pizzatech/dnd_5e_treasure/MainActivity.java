@@ -1,6 +1,5 @@
 package com.pizzatech.dnd_5e_treasure;
 
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     //TODO : Make some fancy ass list objects!
 
-    ArrayList<TreasureListItem> treasureItems = new ArrayList<TreasureListItem>();
+    ArrayList<TreasureListItem> treasureItems = new ArrayList<>();
 
     TreasureListItemAdapter treasureItemsListAdapter;
 
@@ -127,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void rollGem10GP() {
         // Roll d12 to determine which gem
-        Integer roll = 0;
+        Integer roll;
         roll = r.nextInt(12 - 1) + 1;
 
         String gemText = "Gem (10GP) - ";
@@ -189,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void rollGem50GP() {
         // Roll d12 to determine which gem
-        Integer roll = 0;
+        Integer roll;
         roll = r.nextInt(12 - 1) + 1;
 
         String gemText = "Gem (50GP) - ";
@@ -276,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void rollArt25GP() {
         // Roll d10 to determine which art
-        Integer roll = 0;
+        Integer roll;
         roll = r.nextInt(10 - 1) + 1;
 
         String artText = "Art (25GP)";
@@ -320,7 +319,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void rollTreasureTableA() {
         // Roll d100
-        Integer roll = 0;
+        Integer roll;
         roll = r.nextInt(100 - 1) + 1;
 
         switch(roll) {
