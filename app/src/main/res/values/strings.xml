@@ -14,4 +14,36 @@
     <string name="tr_coin_silver">Silver</string>
     <string name="tr_coin_gold">Gold</string>
     <string name="tr_coin_platinum">Platinum</string>
+    <string name="tr_gem_azurite">Azurite</string>
+    <string name="tr_gem_banded_agate">Banded Agate</string>
+    <string name="tr_gem_blue_quartz">Blue Quartz</string>
+    <string name="tr_gem_eye_agate">Eye Agate</string>
+    <string name="tr_gem_hematite">Hematite</string>
+    <string name="tr_gem_lapis">Lapis Lazuli</string>
+    <string name="tr_gem_malachite">Malachite</string>
+    <string name="tr_gem_moss_agate">Moss Agate</string>
+    <string name="tr_gem_obsidian">Obsidian</string>
+    <string name="tr_gem_rhodochrosite">Rhodochrosite</string>
+    <string name="tr_gem_tiger_eye">Tiger eye</string>
+    <string name="tr_gem_turquoise">Turquoise</string>
+    <string name="tr_gem_bloodstone">Bloodstone</string>
+    <string name="tr_gem_carnelian">Carnelian</string>
+    <string name="tr_gem_chalcedony">Chalcedony</string>
+    <string name="tr_gem_chrysoprase">Chrysoprase</string>
+    <string name="tr_gem_citrine">Citrine</string>
+    <string name="tr_gem_jasper">Jasper</string>
+    <string name="tr_gem_moonstone">Moonstone</string>
+    <string name="tr_gem_onyx">Onyx</string>
+    <string name="tr_gem_quartz">Quartz</string>
+    <string name="tr_gem_sardonyx">Sardonyx</string>
+    <string name="tr_gem_star_rose_quartz">Star rose quartz</string>
+    <string name="tr_gem_zircon">Zircon</string>
+    <string name="tr_art_ewer">Silver ewer</string>
+    <string name="tr_art_statuette">Carved bone statuette</string>
+    <string name="tr_art_bracelet">Small Gold Bracelet</string>
+    <string name="tr_art_vestements">Cloth-of-gold vestments</string>
+    <string name="tr_art_velvet_mask">Black velvet mask stitched with silver thread</string>
+    <string name="tr_art_copper_chalice">Copper chalice with silver filigree</string>
+
+
 </resources>
