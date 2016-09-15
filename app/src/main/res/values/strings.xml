@@ -10,40 +10,82 @@
     </string-array>
 
     //Treasure Results Strings!
+    //Coins
     <string name="tr_coin_copper">Copper</string>
     <string name="tr_coin_silver">Silver</string>
     <string name="tr_coin_gold">Gold</string>
     <string name="tr_coin_platinum">Platinum</string>
-    <string name="tr_gem_azurite">Azurite</string>
-    <string name="tr_gem_banded_agate">Banded Agate</string>
-    <string name="tr_gem_blue_quartz">Blue Quartz</string>
-    <string name="tr_gem_eye_agate">Eye Agate</string>
-    <string name="tr_gem_hematite">Hematite</string>
-    <string name="tr_gem_lapis">Lapis Lazuli</string>
-    <string name="tr_gem_malachite">Malachite</string>
-    <string name="tr_gem_moss_agate">Moss Agate</string>
-    <string name="tr_gem_obsidian">Obsidian</string>
-    <string name="tr_gem_rhodochrosite">Rhodochrosite</string>
-    <string name="tr_gem_tiger_eye">Tiger eye</string>
-    <string name="tr_gem_turquoise">Turquoise</string>
-    <string name="tr_gem_bloodstone">Bloodstone</string>
-    <string name="tr_gem_carnelian">Carnelian</string>
-    <string name="tr_gem_chalcedony">Chalcedony</string>
-    <string name="tr_gem_chrysoprase">Chrysoprase</string>
-    <string name="tr_gem_citrine">Citrine</string>
-    <string name="tr_gem_jasper">Jasper</string>
-    <string name="tr_gem_moonstone">Moonstone</string>
-    <string name="tr_gem_onyx">Onyx</string>
-    <string name="tr_gem_quartz">Quartz</string>
-    <string name="tr_gem_sardonyx">Sardonyx</string>
-    <string name="tr_gem_star_rose_quartz">Star rose quartz</string>
-    <string name="tr_gem_zircon">Zircon</string>
-    <string name="tr_art_ewer">Silver ewer</string>
-    <string name="tr_art_statuette">Carved bone statuette</string>
-    <string name="tr_art_bracelet">Small Gold Bracelet</string>
-    <string name="tr_art_vestements">Cloth-of-gold vestments</string>
-    <string name="tr_art_velvet_mask">Black velvet mask stitched with silver thread</string>
-    <string name="tr_art_copper_chalice">Copper chalice with silver filigree</string>
+
+    //Gem (10GP)
+    <string name="tr_gem_azurite">Gem (10GP) - Azurite</string>
+    <string name="tr_gem_banded_agate">Gem (10GP) - Banded Agate</string>
+    <string name="tr_gem_blue_quartz">Gem (10GP) - Blue Quartz</string>
+    <string name="tr_gem_eye_agate">Gem (10GP) - Eye Agate</string>
+    <string name="tr_gem_hematite">Gem (10GP) - Hematite</string>
+    <string name="tr_gem_lapis">Gem (10GP) - Lapis Lazuli</string>
+    <string name="tr_gem_malachite">Gem (10GP) - Malachite</string>
+    <string name="tr_gem_moss_agate">Gem (10GP) - Moss Agate</string>
+    <string name="tr_gem_obsidian">Gem (10GP) - Obsidian</string>
+    <string name="tr_gem_rhodochrosite">Gem (10GP) - Rhodochrosite</string>
+    <string name="tr_gem_tiger_eye">Gem (10GP) - Tiger eye</string>
+    <string name="tr_gem_turquoise">Gem (10GP) - Turquoise</string>
+
+    //Gem (10GP) sub text
+    <string name="tr_gem_azurite_sub">Opaque mottled deep blue</string>
+    <string name="tr_gem_banded_agate_sub">Translucent striped brown, blue, white, or red</string>
+    <string name="tr_gem_blue_quartz_sub">Transparent pale blue</string>
+    <string name="tr_gem_eye_agate_sub">Translucent circles of gray, white, brown, blue, or green</string>
+    <string name="tr_gem_hematite_sub">Opaque gray-black</string>
+    <string name="tr_gem_lapis_sub">Opaque light and dark blue with yellow flecks</string>
+    <string name="tr_gem_malachite_sub">Opaque striated light and dark green</string>
+    <string name="tr_gem_moss_agate_sub">Translucent pink or yellow-white with mossy gray or green markings</string>
+    <string name="tr_gem_obsidian_sub">Opaque black</string>
+    <string name="tr_gem_rhodochrosite_sub">Opaque light pink</string>
+    <string name="tr_gem_tiger_eye_sub">Translucent brown with golden center</string>
+    <string name="tr_gem_turquoise_sub">Opaque light blue-green</string>
+
+    //Gem (50GP)
+    <string name="tr_gem_bloodstone">Gem (50GP) - Bloodstone</string>
+    <string name="tr_gem_carnelian">Gem (50GP) - Carnelian</string>
+    <string name="tr_gem_chalcedony">Gem (50GP) - Chalcedony</string>
+    <string name="tr_gem_chrysoprase">Gem (50GP) - Chrysoprase</string>
+    <string name="tr_gem_citrine">Gem (50GP) - Citrine</string>
+    <string name="tr_gem_jasper">Gem (50GP) - Jasper</string>
+    <string name="tr_gem_moonstone">Gem (50GP) - Moonstone</string>
+    <string name="tr_gem_onyx">Gem (50GP) - Onyx</string>
+    <string name="tr_gem_quartz">Gem (50GP) - Quartz</string>
+    <string name="tr_gem_sardonyx">Gem (50GP) - Sardonyx</string>
+    <string name="tr_gem_star_rose_quartz">Gem (50GP) - Star rose quartz</string>
+    <string name="tr_gem_zircon">Gem (50GP) - Zircon</string>
+
+    //Gem (50GP) sub text
+    <string name="tr_gem_carnelian_sub">Opaque orange to red-brown</string>
+    <string name="tr_gem_chalcedony_sub">Opaque white</string>
+    <string name="tr_gem_chrysoprase_sub">Translucent green</string>
+    <string name="tr_gem_citrine_sub">Transparent pale yellow-brown</string>
+    <string name="tr_gem_jasper_sub">Opaque blue, black, or brown</string>
+    <string name="tr_gem_moonstone_Sub">Translucent white with pale blue glow</string>
+    <string name="tr_gem_onyx_sub">Opaque bands of black and white, or pure black or white</string>
+    <string name="tr_gem_quartz_sub">Transparent white, smoky gray, or yellow</string>
+    <string name="tr_gem_sardonyx_sub">Opaque bands of red and white</string>
+    <string name="tr_gem_star_rose_quartz_sub">Translucent rosy stone with white star-shaped center</string>
+    <string name="tr_gem_zircon_sub">Transparent pale blue-green</string>
+
+    //Art
+    <string name="tr_art_art_25gp">Art (25GP)</string>
+
+    //Art sub text
+    <string name="tr_art_ewer_sub">Silver ewer</string>
+    <string name="tr_art_statuette_sub">Carved bone statuette</string>
+    <string name="tr_art_bracelet_sub">Small Gold Bracelet</string>
+    <string name="tr_art_vestements_sub">Cloth-of-gold vestments</string>
+    <string name="tr_art_velvet_mask_sub">Black velvet mask stitched with silver thread</string>
+    <string name="tr_art_copper_chalice_sub">Copper chalice with silver filigree</string>
+    <string name="tr_art_bone_dice_sub">Pair of engraved bone dice</string>
+    <string name="tr_art_small_mirror_sub">Small mirror set in a painted wooden frame</string>
+    <string name="tr_art_hanky_sub">Embroidered silk handkerchief</string>
+    <string name="tr_art_locket_sub">Gold locket with a painted portrait inside</string>
+
 
 
 </resources>
