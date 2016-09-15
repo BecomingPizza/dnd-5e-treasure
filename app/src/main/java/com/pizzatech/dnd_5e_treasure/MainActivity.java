@@ -21,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
 
     Random r = new Random();
 
+    String copperStr = getString(R.string.tr_coin_copper);
+    String silverStr = getString(R.string.tr_coin_silver);
+    String goldStr = getString(R.string.tr_coin_gold);
+    String platinumStr = getString(R.string.tr_coin_platinum);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,27 +54,27 @@ public class MainActivity extends AppCompatActivity {
         switch (cr_selected) {
             case 0:
                 //Roll for CR 0-4
-                rollCoins(6, 100, "Copper");
-                rollCoins(3, 100, "Silver");
-                rollCoins(2, 10, "Gold");
+                rollCoins(6, 100, copperStr);
+                rollCoins(3, 100, silverStr);
+                rollCoins(2, 10, goldStr);
                 rollTreasureTableA();
                 break;
             case 1:
                 //Roll for CR 5-10
-                rollCoins(2, 100, "Copper");
-                rollCoins(2, 1000, "Silver");
-                rollCoins(6, 100, "Gold");
-                rollCoins(3, 10, "Platinum");
+                rollCoins(2, 100, copperStr);
+                rollCoins(2, 1000, silverStr);
+                rollCoins(6, 100, goldStr);
+                rollCoins(3, 10, platinumStr);
                 break;
             case 2:
                 //Roll for CR 11-16
-                rollCoins(4, 1000, "Gold");
-                rollCoins(5, 100, "Platinum");
+                rollCoins(4, 1000, goldStr);
+                rollCoins(5, 100, platinumStr);
                 break;
             case 3:
                 //Roll for CR 17+
-                rollCoins(12, 1000, "Gold");
-                rollCoins(8, 1000, "Platinum");
+                rollCoins(12, 1000, goldStr);
+                rollCoins(8, 1000, platinumStr);
                 break;
         }
     }

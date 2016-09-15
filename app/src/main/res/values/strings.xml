@@ -8,4 +8,10 @@
         <item>11 – 16</item>
         <item>17+</item>
     </string-array>
+
+    //Treasure Results Strings!
+    <string name="tr_coin_copper">Copper</string>
+    <string name="tr_coin_silver">Silver</string>
+    <string name="tr_coin_gold">Gold</string>
+    <string name="tr_coin_platinum">Platinum</string>
 </resources>
