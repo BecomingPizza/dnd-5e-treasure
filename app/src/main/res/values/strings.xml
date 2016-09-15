@@ -9,7 +9,7 @@
         <item>17+</item>
     </string-array>
 
-    //Treasure Results Strings!
+    /*Treasure Results Strings!*/
     //Coins
     <string name="tr_coin_copper">Copper</string>
     <string name="tr_coin_silver">Silver</string>
