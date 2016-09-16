@@ -22,20 +22,24 @@ public class MainActivity extends AppCompatActivity {
 
     Random r = new Random();
 
-    String copperStr = getString(R.string.tr_coin_copper);
-    String silverStr = getString(R.string.tr_coin_silver);
-    String goldStr = getString(R.string.tr_coin_gold);
-    String platinumStr = getString(R.string.tr_coin_platinum);
+    String copperStr;
+    String silverStr;
+    String goldStr;
+    String platinumStr;
 
     String[] gemArray;
     String[] gemArraySub;
-    Resources res = getResources();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        copperStr = getResources().getString(R.string.tr_coin_copper);
+        silverStr = getResources().getString(R.string.tr_coin_silver);
+        goldStr = getResources().getString(R.string.tr_coin_gold);
+        platinumStr = getResources().getString(R.string.tr_coin_platinum);
 
         //Populate teh spinnor
         Spinner cr_spinner = (Spinner) findViewById(R.id.cr_selection_spinner);
@@ -142,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
         Integer roll = r.nextInt(12 - 1);
 
 
-        gemArray = res.getStringArray(R.array.tr_selection_array_gem10gp);
-        gemArraySub = res.getStringArray(R.array.tr_selection_array_gem10gp_sub);
+        gemArray = getResources().getStringArray(R.array.tr_selection_array_gem10gp);
+        gemArraySub = getResources().getStringArray(R.array.tr_selection_array_gem10gp_sub);
         String gemText = gemArray[roll];
         String subText = gemArraySub[roll];
 
@@ -154,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
     private void rollGem50GP() {
         // Roll d12 to determine which gem
         Integer roll = 0;
-        roll = r.nextInt(12 - 1);
+        roll = r.nextInt(12 - 1) + 1;
 
         String gemText = "Gem (50GP) - ";
         String subText = "";
