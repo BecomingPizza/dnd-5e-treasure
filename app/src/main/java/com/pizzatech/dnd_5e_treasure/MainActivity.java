@@ -1,5 +1,6 @@
 package com.pizzatech.dnd_5e_treasure;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,10 +21,24 @@ public class MainActivity extends AppCompatActivity {
 
     Random r = new Random();
 
+    String copperStr;
+    String silverStr;
+    String goldStr;
+    String platinumStr;
+
+    String[] treasureArray;
+    String[] treasureArraySub;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        copperStr = getResources().getString(R.string.tr_coin_copper);
+        silverStr = getResources().getString(R.string.tr_coin_silver);
+        goldStr = getResources().getString(R.string.tr_coin_gold);
+        platinumStr = getResources().getString(R.string.tr_coin_platinum);
 
         //Populate teh spinnor
         Spinner cr_spinner = (Spinner) findViewById(R.id.cr_selection_spinner);
@@ -48,27 +63,27 @@ public class MainActivity extends AppCompatActivity {
         switch (cr_selected) {
             case 0:
                 //Roll for CR 0-4
-                rollCoins(6, 100, "Copper");
-                rollCoins(3, 100, "Silver");
-                rollCoins(2, 10, "Gold");
+                rollCoins(6, 100, copperStr);
+                rollCoins(3, 100, silverStr);
+                rollCoins(2, 10, goldStr);
                 rollTreasureTableA();
                 break;
             case 1:
                 //Roll for CR 5-10
-                rollCoins(2, 100, "Copper");
-                rollCoins(2, 1000, "Silver");
-                rollCoins(6, 100, "Gold");
-                rollCoins(3, 10, "Platinum");
+                rollCoins(2, 100, copperStr);
+                rollCoins(2, 1000, silverStr);
+                rollCoins(6, 100, goldStr);
+                rollCoins(3, 10, platinumStr);
                 break;
             case 2:
                 //Roll for CR 11-16
-                rollCoins(4, 1000, "Gold");
-                rollCoins(5, 100, "Platinum");
+                rollCoins(4, 1000, goldStr);
+                rollCoins(5, 100, platinumStr);
                 break;
             case 3:
                 //Roll for CR 17+
-                rollCoins(12, 1000, "Gold");
-                rollCoins(8, 1000, "Platinum");
+                rollCoins(12, 1000, goldStr);
+                rollCoins(8, 1000, platinumStr);
                 break;
         }
     }
@@ -124,131 +139,35 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void rollGem10GP() {
+    private void rollGem10GP()
+    {
         // Roll d12 to determine which gem
-        Integer roll;
-        roll = r.nextInt(12 - 1) + 1;
+        Integer roll = r.nextInt(12 - 1);
 
-        String gemText = "Gem (10GP) - ";
-        String subText = "";
 
-        switch(roll) {
-            case 1:
-                gemText += "Azurite";
-                subText = "Opaque mottled deep blue";
-                break;
-            case 2:
-                gemText += "Banded agate";
-                subText = "Translucent striped brown, blue, white, or red";
-                break;
-            case 3:
-                gemText += "Blue quartz";
-                subText = "Transparent pale blue";
-                break;
-            case 4:
-                gemText += "Eye agate";
-                subText = "Translucent circles of gray, white, brown, blue, or green";
-                break;
-            case 5:
-                gemText += "Hematite";
-                subText = "Opaque gray-black";
-                break;
-            case 6:
-                gemText += "Lapis lazuli";
-                subText = "Opaque light and dark blue with yellow flecks";
-                break;
-            case 7:
-                gemText += "Malachite";
-                subText = "Opaque striated light and dark green";
-                break;
-            case 8:
-                gemText += "Moss agate";
-                subText = "Translucent pink or yellow-white with mossy gray or green markings";
-                break;
-            case 9:
-                gemText += "Obsidian";
-                subText = "Opaque black";
-                break;
-            case 10:
-                gemText += "Rhodochrosite";
-                subText = "Opaque light pink";
-                break;
-            case 11:
-                gemText += "Tiger eye";
-                subText = "Translucent brown with golden center";
-                break;
-            case 12:
-                gemText += "Turquoise";
-                subText = "Opaque light blue-green";
-                break;
-        }
+        treasureArray = getResources().getStringArray(R.array.tr_selection_array_gem10gp);
+        treasureArraySub = getResources().getStringArray(R.array.tr_selection_array_gem10gp_sub);
+        String gemText = treasureArray[roll];
+        String subText = treasureArraySub[roll];
+
 
         addToList(gemText, subText, R.drawable.coin_gold);
     }
 
     private void rollGem50GP() {
         // Roll d12 to determine which gem
-        Integer roll;
-        roll = r.nextInt(12 - 1) + 1;
+        Integer roll = r.nextInt(12 - 1);
 
-        String gemText = "Gem (50GP) - ";
-        String subText = "";
-
-        switch(roll) {
-            case 1:
-                gemText += "Bloodstone";
-                subText = "Opaque dark gray with red flecks";
-                break;
-            case 2:
-                gemText += "Carnelian";
-                subText = "Opaque orange to red-brown";
-                break;
-            case 3:
-                gemText += "Chalcedony";
-                subText = "Opaque white";
-                break;
-            case 4:
-                gemText += "Chrysoprase";
-                subText = "Translucent green";
-                break;
-            case 5:
-                gemText += "Citrine";
-                subText = "Transparent pale yellow-brown";
-                break;
-            case 6:
-                gemText += "Jasper";
-                subText = "Opaque blue, black, or brown";
-                break;
-            case 7:
-                gemText += "Moonstone";
-                subText = "Translucent white with pale blue glow";
-                break;
-            case 8:
-                gemText += "Onyx";
-                subText = "Opaque bands of black and white, or pure black or white";
-                break;
-            case 9:
-                gemText += "Quartz";
-                subText = "Transparent white, smoky gray, or yellow";
-                break;
-            case 10:
-                gemText += "Sardonyx";
-                subText = "Opaque bands of red and white";
-                break;
-            case 11:
-                gemText += "Star rose quartz";
-                subText = "Translucent rosy stone with white star-shaped center";
-                break;
-            case 12:
-                gemText += "Zircon";
-                subText = "Transparent pale blue-green";
-                break;
-        }
+        treasureArray = getResources().getStringArray(R.array.tr_selection_array_gem50gp);
+        treasureArraySub = getResources().getStringArray(R.array.tr_selection_array_gem50gp_sub);
+        String gemText = treasureArray[roll];
+        String subText = treasureArraySub[roll];
 
         addToList(gemText, subText, R.drawable.coin_gold);
     }
 
-    private void rollArt(Integer dice, Integer sides, Integer value) {
+    private void rollArt(Integer dice, Integer sides, Integer value)
+    {
         Integer roll = 0;
         for (int i = 0; i < dice; i++)
         {
@@ -275,56 +194,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void rollArt25GP() {
         // Roll d10 to determine which art
-        Integer roll;
-        roll = r.nextInt(10 - 1) + 1;
+        Integer roll = 0;
+        roll = r.nextInt(10 - 1);
 
-        String artText = "Art (25GP)";
-        String subText = "";
-
-        switch(roll) {
-            case 1:
-                subText += "Silver ewer";
-                break;
-            case 2:
-                subText += "Carved bone statuette";
-                break;
-            case 3:
-                subText += "Small gold bracelet";
-                break;
-            case 4:
-                subText += "Cloth-of-gold vestments";
-                break;
-            case 5:
-                subText += "Black velvet mask stitched with silver thread";
-                break;
-            case 6:
-                subText += "Copper chalice with silver filigree";
-                break;
-            case 7:
-                subText += "Pair of engraved bone dice";
-                break;
-            case 8:
-                subText += "Small mirror set in a painted wooden frame";
-                break;
-            case 9:
-                subText += "Embroidered silk handkerchief";
-                break;
-            case 10:
-                subText += "Gold locket with a painted portrait inside";
-                break;
-        }
+        treasureArraySub = getResources().getStringArray(R.array.tr_selection_array_art25gp_sub);
+        String artText = getString(R.string.tr_art_25gp);
+        String subText = treasureArraySub[roll];
 
         addToList(artText, subText, R.drawable.coin_gold);
     }
 
     private void rollTreasureTableA() {
         // Roll d100
-        Integer roll;
+        Integer roll = 0;
         roll = r.nextInt(100 - 1) + 1;
 
         switch(roll) {
-            case 1:case 2:case 3:case 4:case 5:case 6:
-                break;
             case 7:case 8:case 9:case 10:case 11:case 12:case 13:case 14:case 15:case 16:
                 rollGems(2, 6, 10);
                 break;
