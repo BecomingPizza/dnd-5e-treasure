@@ -17,23 +17,23 @@
     <string name="tr_coin_platinum">Platinum</string>
 
     //Gem (10GP)
-    <string-array name="tr_selection_array_gem10gp">
-    <item>Gem (10GP) - Azurite</item>
-    <item>Gem (10GP) - Banded Agate</item>
-    <item>Gem (10GP) - Blue Quartz</item>
-    <item>Gem (10GP) - Eye Agate</item>
-    <item>Gem (10GP) - Hematite</item>
-    <item>Gem (10GP) - Lapis Lazuli</item>
-    <item>Gem (10GP) - Malachite</item>
-    <item>Gem (10GP) - Moss Agate</item>
-    <item>Gem (10GP) - Obsidian</item>
-    <item>Gem (10GP) - Rhodochrosite</item>
-    <item>Gem (10GP) - Tiger eye</item>
-    <item>Gem (10GP) - Turquoise</item>
+    <string-array name="tr_array_gem10gp">
+        <item>Gem (10GP) - Azurite</item>
+        <item>Gem (10GP) - Banded Agate</item>
+        <item>Gem (10GP) - Blue Quartz</item>
+        <item>Gem (10GP) - Eye Agate</item>
+        <item>Gem (10GP) - Hematite</item>
+        <item>Gem (10GP) - Lapis Lazuli</item>
+        <item>Gem (10GP) - Malachite</item>
+        <item>Gem (10GP) - Moss Agate</item>
+        <item>Gem (10GP) - Obsidian</item>
+        <item>Gem (10GP) - Rhodochrosite</item>
+        <item>Gem (10GP) - Tiger eye</item>
+        <item>Gem (10GP) - Turquoise</item>
     </string-array>
 
     //Gem (10GP) sub text
-    <string-array name="tr_selection_array_gem10gp_sub">
+    <string-array name="tr_array_gem10gp_sub">
         <item>Opaque mottled deep blue</item>
         <item>Translucent striped brown, blue, white, or red</item>
         <item>Transparent pale blue</item>
@@ -49,7 +49,7 @@
     </string-array>
 
     //Gem (50GP)
-    <string-array name="tr_selection_array_gem50gp">
+    <string-array name="tr_array_gem50gp">
         <item>Gem (50GP) - Bloodstone</item>
         <item>Gem (50GP) - Carnelian</item>
         <item>Gem (50GP) - Chalcedony</item>
@@ -65,7 +65,7 @@
     </string-array>
 
     //Gem (50GP) sub text
-    <string-array name="tr_selection_array_gem50gp_sub">
+    <string-array name="tr_array_gem50gp_sub">
         <item>Opaque orange to red-brown</item>
         <item>Opaque white</item>
         <item>Translucent green</item>
@@ -79,15 +79,103 @@
         <item>Transparent pale blue-green</item>
     </string-array>
 
-    //Art
+    //Gem (100GP) text
+    <string-array name="tr_array_gem100gp">
+        <item>Gem (100GP) - Amber</item>
+        <item>Gem (100GP) - Amethyst</item>
+        <item>Gem (100GP) - Chrysoberyl</item>
+        <item>Gem (100GP) - Coral</item>
+        <item>Gem (100GP) - Garnet</item>
+        <item>Gem (100GP) - Jade</item>
+        <item>Gem (100GP) - Jet</item>
+        <item>Gem (100GP) - Pearl</item>
+        <item>Gem (100GP) - Spinel</item>
+        <item>Gem (100GP) - Tourmaline</item>
+    </string-array>
+
+    //Gem (100GP) subtext
+    <string-array name="tr_array_gem100gp_sub">
+        <item>Transparent watery gold to rich gold</item>
+        <item>Transparent deep purple</item>
+        <item>Transparent yellow-green to pale green</item>
+        <item>Opaque crimson</item>
+        <item>Transparent red, brown-green, or violet</item>
+        <item>Translucent light green, deep green, or white</item>
+        <item>Opaque deep black</item>
+        <item>Opaque lustrous white, yellow, or pink</item>
+        <item>Transparent red, red-brown, or deep green</item>
+        <item>Transparent pale green, blue, brown, or red</item>
+    </string-array>
+
+    //Gem (500GP) text
+    <string-array name="tr_array_gem500gp">
+        <item>Gem (500GP) - Alexandrite</item>
+        <item>Gem (500GP) - Aquamarine</item>
+        <item>Gem (500GP) - Black pearl</item>
+        <item>Gem (500GP) - Blue spinel</item>
+        <item>Gem (500GP) - Peridot</item>
+        <item>Gem (500GP) - Topaz</item>
+    </string-array>
+
+    //Gem (500GP) subtext
+    <string-array name="tr_array_gem500gp_sub">
+        <item>Transparent dark green</item>
+        <item>Transparent pale blue-green</item>
+        <item>Opaque pure black</item>
+        <item>Transparent deep blue</item>
+        <item>Transparent rich olive green</item>
+        <item>Transparent golden yellow</item>
+    </string-array>
+
+    //Gem (1000GP) text
+    <string-array name="tr_array_gem1000gp">
+        <item>Gem (1000GP) - Black opal</item>
+        <item>Gem (1000GP) - Blue sapphire</item>
+        <item>Gem (1000GP) - Emerald</item>
+        <item>Gem (1000GP) - Fire opal</item>
+        <item>Gem (1000GP) - Opal</item>
+        <item>Gem (1000GP) - Star ruby</item>
+        <item>Gem (1000GP) - Star sapphire</item>
+        <item>Gem (1000GP) - Yellow sapphire</item>
+    </string-array>
+
+    //Gem (1000GP) subtext
+    <string-array name="tr_array_gem1000gp_sub">
+        <item>Translucent dark green with black mottling and golden flecks</item>
+        <item>Transparent blue-white to medium blue</item>
+        <item>Transparent deep bright green</item>
+        <item>Translucent fiery red</item>
+        <item>Translucent pale blue with green and golden mottling</item>
+        <item>Translucent ruby with white star-shaped center</item>
+        <item>Translucent blue sapphire with white star-shaped center</item>
+        <item>Transparent fiery yellow or yellow· green</item>
+    </string-array>
+
+    //Gem (5000GP) text
+    <string-array name="tr_array_gem5000gp">
+        <item>Gem (5000GP) - Black sapphire</item>
+        <item>Gem (5000GP) - Diamond</item>
+        <item>Gem (5000GP) - Jacinth</item>
+        <item>Gem (5000GP) - Ruby</item>
+    </string-array>
+
+    //Gem (5000GP) subtext
+    <string-array name="tr_array_gem5000gp_sub">
+        <item>Translucent lustrous black with glowing highlights</item>
+        <item>Transparent blue-white, canary, pink, brown, or blue</item>
+        <item>Transparent fiery orange</item>
+        <item>Transparent clear red to deep crimson</item>
+    </string-array>
+
+    //Art 25GP
     <string name="tr_art_25gp">Art (25GP)</string>
 
-    //Art sub text
-    <string-array name="tr_selection_array_art25gp_sub">
+    //Art 25GP sub text
+    <string-array name="tr_array_art25gp_sub">
         <item>Silver ewer</item>
         <item>Carved bone statuette</item>
         <item>Small Gold Bracelet</item>
-        <item>>Cloth-of-gold vestments</item>
+        <item>Cloth-of-gold vestments</item>
         <item>Black velvet mask stitched with silver thread</item>
         <item>Copper chalice with silver filigree</item>
         <item>Pair of engraved bone dice</item>
@@ -96,6 +184,73 @@
         <item>Gold locket with a painted portrait inside</item>
     </string-array>
 
+    //Art 250GP
+    <string name="tr_art_250gp">Art(250GP)</string>
+
+    //Art 250GP subtext
+    <string-array name="tr_array_art250gp_sub">
+        <item>Gold ring set with bloodstones</item>
+        <item>Carved ivory statuette</item>
+        <item>Large gold bracelet</item>
+        <item>Silver necklace with a gemstone pendant</item>
+        <item>Bronze crown</item>
+        <item>Silk robe with gold embroidery</item>
+        <item>Large well-made tapestry</item>
+        <item>Brass mug with jade inlay</item>
+        <item>Box of turquoise animal figurines</item>
+        <item>Gold bird cage with electrum filigree</item>
+    </string-array>
+
+    //Art 750GP
+    <string name="tr_art_750gp">Art(750GP)</string>
+
+    //Art 750GP subtext
+    <string-array name="tr_array_art750gp_sub">
+        <item>Silver chalice set with moonstones</item>
+        <item>Silver-plated steellongsword with jet set in hilt</item>
+        <item>Carved harp of exotic wood with ivory inlay and zircon gems</item>
+        <item>Small gold idol</item>
+        <item>Gold dragon comb set with red garnets as eyes</item>
+        <item>Bottle stopper cork embossed with gold leaf and set with amethysts</item>
+        <item>Ceremonial electrum dagger with a black pearl in the pommel</item>
+        <item>Silver and gold brooch</item>
+        <item>Obsidian statuette with gold fittings and inlay</item>
+        <item>Painted gold war mask</item>
+    </string-array>
+
+
+    //Art 2500GP
+    <string name="tr_art_2500gp">Art(2500GP)</string>
+
+    //Art 2500GP subtext
+    <string-array name="tr_array_art2500gp_sub">
+        <item>Fine gold chain set with a fire opal</item>
+        <item>Old masterpiece painting</item>
+        <item>Embroidered silk and velvet mantle set with numerous moonstones</item>
+        <item>Platinum bracelet set with a sapphire</item>
+        <item>Embroidered glove set with jewel chips</item>
+        <item>Jeweled anklet</item>
+        <item>Gold music box</item>
+        <item>Gold circlet set with four aquamarines</item>
+        <item>Eye patch with a mock eye set in blue sapphire and moonstone</item>
+        <item>A necklace string of small pink pearls</item>
+    </string-array>
+
+
+    //Art 7500GP
+    <string name="tr_art_7500gp">Art(7500GP)</string>
+
+    //Art 7500GP subtext
+    <string-array name="tr_array_art7500gp_sub">
+        <item>Jeweled gold crown</item>
+        <item>Jeweled platinum ring</item>
+        <item>Small gold statuette set with rubies</item>
+        <item>Gold cup set with emeralds</item>
+        <item>Gold jewelry box with platinum filigree</item>
+        <item>Painted gold child\'s sarcophagus</item>
+        <item>Jade game board with solid gold playing pieces</item>
+        <item>Bejeweled ivory drinking horn with gold filigree</item>
+    </string-array>
 
 
 </resources>
