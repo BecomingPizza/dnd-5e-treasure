@@ -1,5 +1,6 @@
 package com.pizzatech.dnd_5e_treasure;
 
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
     String silverStr = getString(R.string.tr_coin_silver);
     String goldStr = getString(R.string.tr_coin_gold);
     String platinumStr = getString(R.string.tr_coin_platinum);
+
+    String[] gemArray;
+    String[] gemArraySub;
+    Resources res = getResources();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,64 +136,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void rollGem10GP() {
+    private void rollGem10GP()
+    {
         // Roll d12 to determine which gem
-        Integer roll = 0;
-        roll = r.nextInt(12 - 1) + 1;
+        Integer roll = r.nextInt(12 - 1);
 
-        String gemText = "Gem (10GP) - ";
-        String subText = "";
 
-        switch(roll) {
-            case 1:
-                gemText += "Azurite";
-                subText = "Opaque mottled deep blue";
-                break;
-            case 2:
-                gemText += "Banded agate";
-                subText = "Translucent striped brown, blue, white, or red";
-                break;
-            case 3:
-                gemText += "Blue quartz";
-                subText = "Transparent pale blue";
-                break;
-            case 4:
-                gemText += "Eye agate";
-                subText = "Translucent circles of gray, white, brown, blue, or green";
-                break;
-            case 5:
-                gemText += "Hematite";
-                subText = "Opaque gray-black";
-                break;
-            case 6:
-                gemText += "Lapis lazuli";
-                subText = "Opaque light and dark blue with yellow flecks";
-                break;
-            case 7:
-                gemText += "Malachite";
-                subText = "Opaque striated light and dark green";
-                break;
-            case 8:
-                gemText += "Moss agate";
-                subText = "Translucent pink or yellow-white with mossy gray or green markings";
-                break;
-            case 9:
-                gemText += "Obsidian";
-                subText = "Opaque black";
-                break;
-            case 10:
-                gemText += "Rhodochrosite";
-                subText = "Opaque light pink";
-                break;
-            case 11:
-                gemText += "Tiger eye";
-                subText = "Translucent brown with golden center";
-                break;
-            case 12:
-                gemText += "Turquoise";
-                subText = "Opaque light blue-green";
-                break;
-        }
+        gemArray = res.getStringArray(R.array.tr_selection_array_gem10gp);
+        gemArraySub = res.getStringArray(R.array.tr_selection_array_gem10gp_sub);
+        String gemText = gemArray[roll];
+        String subText = gemArraySub[roll];
+
 
         addToList(gemText, subText, R.drawable.coin_gold);
     }
@@ -195,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
     private void rollGem50GP() {
         // Roll d12 to determine which gem
         Integer roll = 0;
-        roll = r.nextInt(12 - 1) + 1;
+        roll = r.nextInt(12 - 1);
 
         String gemText = "Gem (50GP) - ";
         String subText = "";
@@ -282,9 +241,9 @@ public class MainActivity extends AppCompatActivity {
     private void rollArt25GP() {
         // Roll d10 to determine which art
         Integer roll = 0;
-        roll = r.nextInt(10 - 1) + 1;
+        roll = r.nextInt(10 - 1);
 
-        String artText = "Art (25GP)";
+        String artText = getString(R.string.tr_art_25gp);
         String subText = "";
 
         switch(roll) {
