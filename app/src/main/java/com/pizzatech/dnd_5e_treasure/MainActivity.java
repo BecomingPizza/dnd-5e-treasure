@@ -1,7 +1,6 @@
 package com.pizzatech.dnd_5e_treasure;
 
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     //TODO : Make some fancy ass list objects!
 
-    ArrayList<TreasureListItem> treasureItems = new ArrayList<TreasureListItem>();
+    ArrayList<TreasureListItem> treasureItems = new ArrayList<>();
 
     TreasureListItemAdapter treasureItemsListAdapter;
 
