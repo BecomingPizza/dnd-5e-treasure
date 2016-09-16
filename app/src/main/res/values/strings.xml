@@ -34,61 +34,67 @@
 
     //Gem (10GP) sub text
     <string-array name="tr_selection_array_gem10gp_sub">
-    <item>Opaque mottled deep blue</item>
-    <item>Translucent striped brown, blue, white, or red</item>
-    <item>Transparent pale blue</item>
-    <item>Translucent circles of gray, white, brown, blue, or green</item>
-    <item>Opaque gray-black</item>
-    <item>Opaque light and dark blue with yellow flecks</item>
-    <item>Opaque striated light and dark green</item>
-    <item>Translucent pink or yellow-white with mossy gray or green markings</item>
-    <item>Opaque black</item>
-    <item>Opaque light pink</item>
-    <item>Translucent brown with golden center</item>
-    <item>Opaque light blue-green</item>
+        <item>Opaque mottled deep blue</item>
+        <item>Translucent striped brown, blue, white, or red</item>
+        <item>Transparent pale blue</item>
+        <item>Translucent circles of gray, white, brown, blue, or green</item>
+        <item>Opaque gray-black</item>
+        <item>Opaque light and dark blue with yellow flecks</item>
+        <item>Opaque striated light and dark green</item>
+        <item>Translucent pink or yellow-white with mossy gray or green markings</item>
+        <item>Opaque black</item>
+        <item>Opaque light pink</item>
+        <item>Translucent brown with golden center</item>
+        <item>Opaque light blue-green</item>
     </string-array>
 
     //Gem (50GP)
-    <string name="tr_gem_bloodstone">Gem (50GP) - Bloodstone</string>
-    <string name="tr_gem_carnelian">Gem (50GP) - Carnelian</string>
-    <string name="tr_gem_chalcedony">Gem (50GP) - Chalcedony</string>
-    <string name="tr_gem_chrysoprase">Gem (50GP) - Chrysoprase</string>
-    <string name="tr_gem_citrine">Gem (50GP) - Citrine</string>
-    <string name="tr_gem_jasper">Gem (50GP) - Jasper</string>
-    <string name="tr_gem_moonstone">Gem (50GP) - Moonstone</string>
-    <string name="tr_gem_onyx">Gem (50GP) - Onyx</string>
-    <string name="tr_gem_quartz">Gem (50GP) - Quartz</string>
-    <string name="tr_gem_sardonyx">Gem (50GP) - Sardonyx</string>
-    <string name="tr_gem_star_rose_quartz">Gem (50GP) - Star rose quartz</string>
-    <string name="tr_gem_zircon">Gem (50GP) - Zircon</string>
+    <string-array name="tr_selection_array_gem50gp">
+        <item>Gem (50GP) - Bloodstone</item>
+        <item>Gem (50GP) - Carnelian</item>
+        <item>Gem (50GP) - Chalcedony</item>
+        <item>Gem (50GP) - Chrysoprase</item>
+        <item>Gem (50GP) - Citrine</item>
+        <item>Gem (50GP) - Jasper</item>
+        <item>Gem (50GP) - Moonstone</item>
+        <item>Gem (50GP) - Onyx</item>
+        <item>Gem (50GP) - Quartz</item>
+        <item>Gem (50GP) - Sardonyx</item>
+        <item>Gem (50GP) - Star rose quartz</item>
+        <item>Gem (50GP) - Zircon</item>
+    </string-array>
 
     //Gem (50GP) sub text
-    <string name="tr_gem_carnelian_sub">Opaque orange to red-brown</string>
-    <string name="tr_gem_chalcedony_sub">Opaque white</string>
-    <string name="tr_gem_chrysoprase_sub">Translucent green</string>
-    <string name="tr_gem_citrine_sub">Transparent pale yellow-brown</string>
-    <string name="tr_gem_jasper_sub">Opaque blue, black, or brown</string>
-    <string name="tr_gem_moonstone_Sub">Translucent white with pale blue glow</string>
-    <string name="tr_gem_onyx_sub">Opaque bands of black and white, or pure black or white</string>
-    <string name="tr_gem_quartz_sub">Transparent white, smoky gray, or yellow</string>
-    <string name="tr_gem_sardonyx_sub">Opaque bands of red and white</string>
-    <string name="tr_gem_star_rose_quartz_sub">Translucent rosy stone with white star-shaped center</string>
-    <string name="tr_gem_zircon_sub">Transparent pale blue-green</string>
+    <string-array name="tr_selection_array_gem50gp_sub">
+        <item>Opaque orange to red-brown</item>
+        <item>Opaque white</item>
+        <item>Translucent green</item>
+        <item>Transparent pale yellow-brown</item>
+        <item>Opaque blue, black, or brown</item>
+        <item>Translucent white with pale blue glow</item>
+        <item>Opaque bands of black and white, or pure black or white</item>
+        <item>Transparent white, smoky gray, or yellow</item>
+        <item>Opaque bands of red and white</item>
+        <item>Translucent rosy stone with white star-shaped center</item>
+        <item>Transparent pale blue-green</item>
+    </string-array>
 
     //Art
     <string name="tr_art_25gp">Art (25GP)</string>
 
     //Art sub text
-    <string name="tr_art_ewer_sub">Silver ewer</string>
-    <string name="tr_art_statuette_sub">Carved bone statuette</string>
-    <string name="tr_art_bracelet_sub">Small Gold Bracelet</string>
-    <string name="tr_art_vestements_sub">Cloth-of-gold vestments</string>
-    <string name="tr_art_velvet_mask_sub">Black velvet mask stitched with silver thread</string>
-    <string name="tr_art_copper_chalice_sub">Copper chalice with silver filigree</string>
-    <string name="tr_art_bone_dice_sub">Pair of engraved bone dice</string>
-    <string name="tr_art_small_mirror_sub">Small mirror set in a painted wooden frame</string>
-    <string name="tr_art_hanky_sub">Embroidered silk handkerchief</string>
-    <string name="tr_art_locket_sub">Gold locket with a painted portrait inside</string>
+    <string-array name="tr_selection_array_art25gp_sub">
+        <item>Silver ewer</item>
+        <item>Carved bone statuette</item>
+        <item>Small Gold Bracelet</item>
+        <item>>Cloth-of-gold vestments</item>
+        <item>Black velvet mask stitched with silver thread</item>
+        <item>Copper chalice with silver filigree</item>
+        <item>Pair of engraved bone dice</item>
+        <item>Small mirror set in a painted wooden frame</item>
+        <item>Embroidered silk handkerchief</item>
+        <item>Gold locket with a painted portrait inside</item>
+    </string-array>
 
 
 
