@@ -1,5 +1,7 @@
 package com.pizzatech.dnd_5e_treasure;
 
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,18 +22,21 @@ public class MainActivity extends AppCompatActivity {
 
     Random r = new Random();
 
+    Resources res;
+
     String copperStr;
     String silverStr;
     String goldStr;
     String platinumStr;
 
-    Integer copperDrw;
-    Integer silverDrw;
-    Integer goldDrw;
-    Integer platinumDrw;
+    int copperDrw;
+    int silverDrw;
+    int goldDrw;
+    int platinumDrw;
 
     String[] treasureArray;
     String[] treasureArraySub;
+    TypedArray treasureArrayDrawable;
 
 
     @Override
@@ -39,11 +44,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        res = getResources();
+
         //set strings & drawables for coins
-        copperStr = getResources().getString(R.string.tr_coin_copper);
-        silverStr = getResources().getString(R.string.tr_coin_silver);
-        goldStr = getResources().getString(R.string.tr_coin_gold);
-        platinumStr = getResources().getString(R.string.tr_coin_platinum);
+        copperStr = res.getString(R.string.tr_coin_copper);
+        silverStr = res.getString(R.string.tr_coin_silver);
+        goldStr = res.getString(R.string.tr_coin_gold);
+        platinumStr = res.getString(R.string.tr_coin_platinum);
 
         copperDrw = R.drawable.coin_bronze;
         silverDrw = R.drawable.coin_silver;
@@ -161,73 +168,74 @@ public class MainActivity extends AppCompatActivity {
         Integer roll = r.nextInt(12 - 1);
 
 
-        treasureArray = getResources().getStringArray(R.array.tr_array_gem10gp);
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_gem10gp_sub);
+        treasureArray = res.getStringArray(R.array.tr_array_gem10gp);
+        treasureArraySub = res.getStringArray(R.array.tr_array_gem10gp_sub);
+        treasureArrayDrawable = res.obtainTypedArray(R.array.tr_array_gem10gp_drw);
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
+        int drawableId = treasureArrayDrawable.getResourceId(roll, 0);
 
-
-        addToList(gemText, subText, R.drawable.coin_gold);
+        addToList(gemText, subText, drawableId);
     }
 
     private void rollGem50GP() {
         // Roll d12 to determine which gem
         Integer roll = r.nextInt(12 - 1);
 
-        treasureArray = getResources().getStringArray(R.array.tr_array_gem50gp);
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_gem50gp_sub);
+        treasureArray = res.getStringArray(R.array.tr_array_gem50gp);
+        treasureArraySub = res.getStringArray(R.array.tr_array_gem50gp_sub);
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, R.drawable.coin_gold);
+        addToList(gemText, subText, goldDrw);
     }
 
     private void rollGem100GP() {
         // Roll d10 to determine which gem
         Integer roll = r.nextInt(10 - 1);
 
-        treasureArray = getResources().getStringArray(R.array.tr_array_gem100gp);
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_gem100gp_sub);
+        treasureArray = res.getStringArray(R.array.tr_array_gem100gp);
+        treasureArraySub = res.getStringArray(R.array.tr_array_gem100gp_sub);
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, R.drawable.coin_gold);
+        addToList(gemText, subText, goldDrw);
     }
 
     private void rollGem500GP() {
         // Roll d6 to determine which gem
         Integer roll = r.nextInt(6 - 1);
 
-        treasureArray = getResources().getStringArray(R.array.tr_array_gem500gp);
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_gem500gp_sub);
+        treasureArray = res.getStringArray(R.array.tr_array_gem500gp);
+        treasureArraySub = res.getStringArray(R.array.tr_array_gem500gp_sub);
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, R.drawable.coin_gold);
+        addToList(gemText, subText, goldDrw);
     }
 
     private void rollGem1000GP() {
         // Roll d8 to determine which gem
         Integer roll = r.nextInt(8 - 1);
 
-        treasureArray = getResources().getStringArray(R.array.tr_array_gem1000gp);
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_gem1000gp_sub);
+        treasureArray = res.getStringArray(R.array.tr_array_gem1000gp);
+        treasureArraySub = res.getStringArray(R.array.tr_array_gem1000gp_sub);
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, R.drawable.coin_gold);
+        addToList(gemText, subText, goldDrw);
     }
 
     private void rollGem5000GP() {
         // Roll d4 to determine which gem
         Integer roll = r.nextInt(4 - 1);
 
-        treasureArray = getResources().getStringArray(R.array.tr_array_gem5000gp);
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_gem5000gp_sub);
+        treasureArray = res.getStringArray(R.array.tr_array_gem5000gp);
+        treasureArraySub = res.getStringArray(R.array.tr_array_gem5000gp_sub);
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, R.drawable.coin_gold);
+        addToList(gemText, subText, goldDrw);
     }
 
     private void rollArt(Integer dice, Integer sides, Integer value) {
@@ -262,55 +270,55 @@ public class MainActivity extends AppCompatActivity {
         // Roll d10 to determine which art
         Integer roll = r.nextInt(10 - 1);
 
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_art25gp_sub);
+        treasureArraySub = res.getStringArray(R.array.tr_array_art25gp_sub);
         String artText = getString(R.string.tr_art_25gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, R.drawable.coin_gold);
+        addToList(artText, subText, goldDrw);
     }
 
     private void rollArt250GP() {
         // Roll d10 to determine which art
         Integer roll = r.nextInt(10 - 1);
 
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_art250gp_sub);
+        treasureArraySub = res.getStringArray(R.array.tr_array_art250gp_sub);
         String artText = getString(R.string.tr_art_250gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, R.drawable.coin_gold);
+        addToList(artText, subText, goldDrw);
     }
 
     private void rollArt750GP() {
         // Roll d10 to determine which art
         Integer roll = r.nextInt(10 - 1);
 
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_art750gp_sub);
+        treasureArraySub = res.getStringArray(R.array.tr_array_art750gp_sub);
         String artText = getString(R.string.tr_art_750gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, R.drawable.coin_gold);
+        addToList(artText, subText, goldDrw);
     }
 
     private void rollArt2500GP() {
         // Roll d10 to determine which art
         Integer roll = r.nextInt(10 - 1);
 
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_art2500gp_sub);
+        treasureArraySub = res.getStringArray(R.array.tr_array_art2500gp_sub);
         String artText = getString(R.string.tr_art_2500gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, R.drawable.coin_gold);
+        addToList(artText, subText, goldDrw);
     }
 
     private void rollArt7500GP() {
         // Roll d8 to determine which art
         Integer roll = r.nextInt(8 - 1);
 
-        treasureArraySub = getResources().getStringArray(R.array.tr_array_art7500gp_sub);
+        treasureArraySub = res.getStringArray(R.array.tr_array_art7500gp_sub);
         String artText = getString(R.string.tr_art_7500gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, R.drawable.coin_gold);
+        addToList(artText, subText, goldDrw);
     }
 
     private void rollTreasureTableA() {
