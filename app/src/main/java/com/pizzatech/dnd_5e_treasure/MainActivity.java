@@ -1,6 +1,5 @@
 package com.pizzatech.dnd_5e_treasure;
 
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
     String goldStr;
     String platinumStr;
 
+    Integer copperDrw;
+    Integer silverDrw;
+    Integer goldDrw;
+    Integer platinumDrw;
+
     String[] treasureArray;
     String[] treasureArraySub;
 
@@ -35,10 +39,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //set strings & drawables for coins
         copperStr = getResources().getString(R.string.tr_coin_copper);
         silverStr = getResources().getString(R.string.tr_coin_silver);
         goldStr = getResources().getString(R.string.tr_coin_gold);
         platinumStr = getResources().getString(R.string.tr_coin_platinum);
+
+        copperDrw = R.drawable.coin_bronze;
+        silverDrw = R.drawable.coin_silver;
+        goldDrw = R.drawable.coin_gold;
+        platinumDrw = R.drawable.coin_platinum;
+
 
         //Populate teh spinnor
         Spinner cr_spinner = (Spinner) findViewById(R.id.cr_selection_spinner);
@@ -63,29 +74,29 @@ public class MainActivity extends AppCompatActivity {
         switch (cr_selected) {
             case 0:
                 //Roll for CR 0-4
-                rollCoins(6, 100, copperStr);
-                rollCoins(3, 100, silverStr);
-                rollCoins(2, 10, goldStr);
+                rollCoins(6, 100, copperStr, copperDrw);
+                rollCoins(3, 100, silverStr, silverDrw);
+                rollCoins(2, 10, goldStr, goldDrw);
                 rollTreasureTableA();
                 break;
             case 1:
                 //Roll for CR 5-10
-                rollCoins(2, 100, copperStr);
-                rollCoins(2, 1000, silverStr);
-                rollCoins(6, 100, goldStr);
-                rollCoins(3, 10, platinumStr);
+                rollCoins(2, 100, copperStr, copperDrw);
+                rollCoins(2, 1000, silverStr, silverDrw);
+                rollCoins(6, 100, goldStr, goldDrw);
+                rollCoins(3, 10, platinumStr, platinumDrw);
                 rollTreasureTableB();
                 break;
             case 2:
                 //Roll for CR 11-16
-                rollCoins(4, 1000, goldStr);
-                rollCoins(5, 100, platinumStr);
+                rollCoins(4, 1000, goldStr, goldDrw);
+                rollCoins(5, 100, platinumStr, platinumDrw);
                 rollTreasureTableC();
                 break;
             case 3:
                 //Roll for CR 17+
-                rollCoins(12, 1000, goldStr);
-                rollCoins(8, 1000, platinumStr);
+                rollCoins(12, 1000, goldStr, goldDrw);
+                rollCoins(8, 1000, platinumStr, platinumDrw);
                 rollTreasureTableD();
                 break;
         }
@@ -101,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         treasureItemsListAdapter.notifyDataSetChanged();
     }
 
-    private void rollCoins(Integer dice, Integer multiplier, String coinType) {
+    private void rollCoins(Integer dice, Integer multiplier, String coinType, int img) {
         // Roll a d6 the specified number of times and sum the total (coins are always d6 rolls!)
         Integer roll = 0;
         for (int i = 0; i < dice; i++) {
@@ -111,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         Integer coins = roll * multiplier;
         // Build string and add to the list
         String listText = coins.toString() + " " + coinType;
-        addToList(listText, null, R.drawable.coin_gold);
+        addToList(listText, null, img);
     }
 
     private void rollGems(Integer dice, Integer sides, Integer value) {
