@@ -9,17 +9,15 @@ public class TreasureListItem {
 
     public String mainText;
     public String subText;
-    public int img;
 
     public TreasureListItem() {
         super();
     }
 
-    public TreasureListItem(String mainText, String subText, int img) {
+    public TreasureListItem(String mainText, String subText) {
         super();
         this.mainText = mainText;
         this.subText = subText;
-        this.img = img;
     }
 
     public String getMainText () {
@@ -29,7 +27,5 @@ public class TreasureListItem {
     public String getSubText () {
         return subText;
     }
-
-    public int getImg () { return img;}
 
 }

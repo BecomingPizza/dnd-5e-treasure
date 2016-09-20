@@ -3,9 +3,7 @@ package com.pizzatech.dnd_5e_treasure;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.os.AsyncTask;
-import android.support.annotation.MainThread;
 import android.widget.ListView;
 import java.util.Random;
 
@@ -30,14 +28,8 @@ class TreasureRoller extends AsyncTask {
     String goldStr;
     String platinumStr;
 
-    int copperDrw;
-    int silverDrw;
-    int goldDrw;
-    int platinumDrw;
-
     String[] treasureArray;
     String[] treasureArraySub;
-    TypedArray treasureArrayDrawable;
 
     public TreasureRoller(Context context, Integer table, ListView list, Activity act) {
         this.table = table;
@@ -52,11 +44,6 @@ class TreasureRoller extends AsyncTask {
         goldStr = res.getString(R.string.tr_coin_gold);
         platinumStr = res.getString(R.string.tr_coin_platinum);
 
-        copperDrw = R.drawable.coin_bronze;
-        silverDrw = R.drawable.coin_silver;
-        goldDrw = R.drawable.coin_gold;
-        platinumDrw = R.drawable.coin_platinum;
-
     }
 
     @Override
@@ -68,29 +55,29 @@ class TreasureRoller extends AsyncTask {
         switch (table) {
             case 0:
                 //Roll for CR 0-4
-                rollCoins(6, 100, copperStr, copperDrw);
-                rollCoins(3, 100, silverStr, silverDrw);
-                rollCoins(2, 10, goldStr, goldDrw);
+                rollCoins(6, 100, copperStr);
+                rollCoins(3, 100, silverStr);
+                rollCoins(2, 10, goldStr);
                 rollTreasureTableA();
                 break;
             case 1:
                 //Roll for CR 5-10
-                rollCoins(2, 100, copperStr, copperDrw);
-                rollCoins(2, 1000, silverStr, silverDrw);
-                rollCoins(6, 100, goldStr, goldDrw);
-                rollCoins(3, 10, platinumStr, platinumDrw);
+                rollCoins(2, 100, copperStr);
+                rollCoins(2, 1000, silverStr);
+                rollCoins(6, 100, goldStr);
+                rollCoins(3, 10, platinumStr);
                 rollTreasureTableB();
                 break;
             case 2:
                 //Roll for CR 11-16
-                rollCoins(4, 1000, goldStr, goldDrw);
-                rollCoins(5, 100, platinumStr, platinumDrw);
+                rollCoins(4, 1000, goldStr);
+                rollCoins(5, 100, platinumStr);
                 rollTreasureTableC();
                 break;
             case 3:
                 //Roll for CR 17+
-                rollCoins(12, 1000, goldStr, goldDrw);
-                rollCoins(8, 1000, platinumStr, platinumDrw);
+                rollCoins(12, 1000, goldStr);
+                rollCoins(8, 1000, platinumStr);
                 rollTreasureTableD();
                 break;
         }
@@ -110,7 +97,7 @@ class TreasureRoller extends AsyncTask {
         return table;
     }
 
-    private void rollCoins(Integer dice, Integer multiplier, String coinType, int img) {
+    private void rollCoins(Integer dice, Integer multiplier, String coinType) {
         // Roll a d6 the specified number of times and sum the total (coins are always d6 rolls!)
         Integer roll = 0;
         for (int i = 0; i < dice; i++) {
@@ -120,12 +107,12 @@ class TreasureRoller extends AsyncTask {
         Integer coins = roll * multiplier;
         // Build string and add to the list
         String listText = coins.toString() + " " + coinType;
-        addToList(listText, null, img);
+        addToList(listText, null);
     }
 
-    private void addToList(String mainText, String subText, int img) {
+    private void addToList(String mainText, String subText) {
         // Build TreasureListItem
-        TreasureListItem t = new TreasureListItem(mainText, subText, img);
+        TreasureListItem t = new TreasureListItem(mainText, subText);
 
         // Put some shit in the list
         MainActivity.treasureItems.add(t);
@@ -167,13 +154,11 @@ class TreasureRoller extends AsyncTask {
 
         treasureArray = res.getStringArray(R.array.tr_array_gem10gp);
         treasureArraySub = res.getStringArray(R.array.tr_array_gem10gp_sub);
-        treasureArrayDrawable = res.obtainTypedArray(R.array.tr_array_gem10gp_drw);
 
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
-        int drawableId = treasureArrayDrawable.getResourceId(roll, 0);
 
-        addToList(gemText, subText, drawableId);
+        addToList(gemText, subText);
     }
 
     private void rollGem50GP() {
@@ -185,7 +170,7 @@ class TreasureRoller extends AsyncTask {
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, goldDrw);
+        addToList(gemText, subText);
     }
 
     private void rollGem100GP() {
@@ -197,7 +182,7 @@ class TreasureRoller extends AsyncTask {
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, goldDrw);
+        addToList(gemText, subText);
     }
 
     private void rollGem500GP() {
@@ -209,7 +194,7 @@ class TreasureRoller extends AsyncTask {
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, goldDrw);
+        addToList(gemText, subText);
     }
 
     private void rollGem1000GP() {
@@ -221,7 +206,7 @@ class TreasureRoller extends AsyncTask {
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, goldDrw);
+        addToList(gemText, subText);
     }
 
     private void rollGem5000GP() {
@@ -233,7 +218,7 @@ class TreasureRoller extends AsyncTask {
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText, goldDrw);
+        addToList(gemText, subText);
     }
 
     private void rollArt(Integer dice, Integer sides, Integer value) {
@@ -270,7 +255,7 @@ class TreasureRoller extends AsyncTask {
         String artText = context.getString(R.string.tr_art_25gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, goldDrw);
+        addToList(artText, subText);
     }
 
     private void rollArt250GP() {
@@ -281,7 +266,7 @@ class TreasureRoller extends AsyncTask {
         String artText = context.getString(R.string.tr_art_250gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, goldDrw);
+        addToList(artText, subText);
     }
 
     private void rollArt750GP() {
@@ -292,7 +277,7 @@ class TreasureRoller extends AsyncTask {
         String artText = context.getString(R.string.tr_art_750gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, goldDrw);
+        addToList(artText, subText);
     }
 
     private void rollArt2500GP() {
@@ -303,7 +288,7 @@ class TreasureRoller extends AsyncTask {
         String artText = context.getString(R.string.tr_art_2500gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, goldDrw);
+        addToList(artText, subText);
     }
 
     private void rollArt7500GP() {
@@ -314,7 +299,7 @@ class TreasureRoller extends AsyncTask {
         String artText = context.getString(R.string.tr_art_7500gp);
         String subText = treasureArraySub[roll];
 
-        addToList(artText, subText, goldDrw);
+        addToList(artText, subText);
     }
 
     private void rollTreasureTableA() {
