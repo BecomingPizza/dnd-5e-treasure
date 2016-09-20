@@ -9,31 +9,43 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.pizzatech.dnd_5e_treasure.MainActivity">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-    <TextView
-        android:id="@+id/cr_selection_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cr_selection_label_text"/>
-    <Spinner
-        android:id="@+id/cr_selection_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:dropDownWidth="wrap_content"/>
-    <Button
-        android:id="@+id/roll_button"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/roll_button_text"
-        android:onClick="rollTreasure"/>
+
+        <TextView
+            android:id="@+id/cr_selection_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cr_selection_label_text" />
+
+        <Spinner
+            android:id="@+id/cr_selection_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:dropDownWidth="wrap_content" />
+
+        <Button
+            android:id="@+id/roll_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="rollTreasure"
+            android:text="@string/roll_button_text" />
+
+        <Button
+            android:id="@+id/copy_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="copyToClipboard"
+            android:text="@string/copy_button_text" />
     </LinearLayout>
+
     <ListView
         android:id="@+id/results_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
+        android:layout_height="wrap_content"/>
 </LinearLayout>
