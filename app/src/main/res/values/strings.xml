@@ -253,6 +253,60 @@
         <item>Bejeweled ivory drinking horn with gold filigree</item>
     </string-array>
 
-    //BLAH
+    //Magic Items - See page 144
+    <string-array name="tr_selection_array_magic_sub">
+        <item>Potion of Healing</item>              //0
+        <item>Spell Scroll (cantrip)</item>         //1
+        <item>Potion of climbing</item>             //3
+        <item>Spell scroll (1st level)</item>       //4
+        <item>Spell scroll (2nd level)</item>       //5
+        <item>Potion of greater healing</item>      //6
+        <item>Bag of holding</item>                 //7
+        <item>Driftglobe</item>                     //8
+        <item>Potion of fire breath</item>          //9
+        <item>Potion of resistance</item>           //10
+        <item>Ammunition, +1</item>                 //11
+        <item>Potion of animal friendship</item>    //12
+        <item>Potion of hill giant strength</item>  //13
+        <item>Potion of growth</item>               //14
+        <item>Potion of water breathing</item>      //15
+        <item>Spell scroll (3rd level)</item>       //16
+        <item>Keoghtom\'s ointment</item>            //17
+        <item>Oil of slipperiness</item>            //18
+        <item>Dust of disappearance</item>          //19
+        <item>Dust of dryness</item>                //20
+        <item>Dust of sneezing and choking</item>   //21
+        <item>Element gem</item>                    //22
+        <item>Philter of love</item>                //23
+        <item>Alchemy jug</item>                    //24
+        <item>Cap of water breathing</item>         //25
+        <item>Cloak of the manta ray</item>         //26
+        <item>Goggles of night</item>               //27
+        <item>Helm of comprehending languages</item>//28
+        <item>Immovable rod</item>                  //29
+        <item>Lantern of revealing</item>           //30
+        <item>Mariner\'s armor</item>               //31
+        <item>Mithral armor</item>                  //32
+        <item>Potion of poison</item>               //33
+        <item>Ring of swimming</item>               //34
+        <item>Robe of useful items</item>           //35
+        <item>Rope of climbing</item>               //36
+        <item>Saddle of the cavalier</item>         //37
+        <item>Wand of magic detection</item>        //38
+        <item>Wand of secrets</item>                //39
+        <item>Potion of superior healing</item>     //40
+        <item>Spell scroll (4th level)</item>       //41
+        <item>Ammunition, +2</item>                 //42
+        <item>Potion of clairvoyance</item>
+
+
+        //ToDo - Tables C to F
+
+    </string-array>
+
+    //Magic Items - Page number of descriptions
+    <string-array name="tr_selection_array_magic_page_number">
+        <item>Page Test</item>
+    </string-array>
 
 </resources>

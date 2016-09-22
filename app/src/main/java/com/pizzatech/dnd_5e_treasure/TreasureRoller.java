@@ -30,6 +30,7 @@ class TreasureRoller extends AsyncTask {
 
     String[] treasureArray;
     String[] treasureArraySub;
+    String[] pageArraySub;
 
     public TreasureRoller(Context context, Integer table, ListView list, Activity act) {
         this.table = table;
@@ -110,7 +111,8 @@ class TreasureRoller extends AsyncTask {
         addToList(listText, null);
     }
 
-    private void addToList(String mainText, String subText) {
+    private void addToList(String mainText, String subText)
+    {
         // Build TreasureListItem
         TreasureListItem t = new TreasureListItem(mainText, subText);
 
@@ -302,6 +304,9 @@ class TreasureRoller extends AsyncTask {
         addToList(artText, subText);
     }
 
+    /**
+     * See Treasure Hoard: Challenge 0-4 page 137
+     */
     private void rollTreasureTableA() {
         // Roll d100
         Integer roll = r.nextInt(100 - 1) + 1;
@@ -352,6 +357,7 @@ class TreasureRoller extends AsyncTask {
             case 43:
             case 44:
                 rollGems(2, 6, 10);
+                rollMagic(1, 6, "A");
                 break;
             case 45:
             case 46:
@@ -362,6 +368,7 @@ class TreasureRoller extends AsyncTask {
             case 51:
             case 52:
                 rollArt(2, 4, 25);
+                rollMagic(1, 6, "A");
                 break;
             case 53:
             case 54:
@@ -372,6 +379,7 @@ class TreasureRoller extends AsyncTask {
             case 59:
             case 60:
                 rollGems(2, 6, 50);
+                rollMagic(1, 6, "A");
                 break;
             case 61:
             case 62:
@@ -379,6 +387,7 @@ class TreasureRoller extends AsyncTask {
             case 64:
             case 65:
                 rollGems(2, 6, 10);
+                rollMagic(1, 4, "B");
                 break;
             case 66:
             case 67:
@@ -386,6 +395,7 @@ class TreasureRoller extends AsyncTask {
             case 69:
             case 70:
                 rollArt(2, 4, 25);
+                rollMagic(1, 4, "B");
                 break;
             case 71:
             case 72:
@@ -393,15 +403,18 @@ class TreasureRoller extends AsyncTask {
             case 74:
             case 75:
                 rollGems(2, 6, 50);
+                rollMagic(1, 4, "B");
                 break;
             case 76:
             case 77:
             case 78:
                 rollGems(2, 6, 10);
+                rollMagic(1, 4, "C");
                 break;
             case 79:
             case 80:
                 rollArt(2, 4, 25);
+                rollMagic(1, 4, "C");
                 break;
             case 81:
             case 82:
@@ -409,6 +422,7 @@ class TreasureRoller extends AsyncTask {
             case 84:
             case 85:
                 rollGems(2, 6, 50);
+                rollMagic(1, 4, "C");
                 break;
             case 86:
             case 87:
@@ -418,6 +432,7 @@ class TreasureRoller extends AsyncTask {
             case 91:
             case 92:
                 rollArt(2, 4, 25);
+                rollMagic(1, 4, "F");
                 break;
             case 93:
             case 94:
@@ -425,18 +440,24 @@ class TreasureRoller extends AsyncTask {
             case 96:
             case 97:
                 rollGems(2, 6, 50);
+                rollMagic(1, 4, "C");
                 break;
             case 98:
             case 99:
                 rollArt(2, 4, 25);
+                //ToDo: Add rollMagic() method - What dice?
                 break;
             case 100:
                 rollGems(2, 6, 50);
+                //ToDo: Add rollMagic() method - What dice?
                 break;
         }
 
     }
 
+    /**
+     * See Treasure Hoard: Challenge 5-10 page 137
+     */
     private void rollTreasureTableB() {
         // Roll d100
         Integer roll = r.nextInt(100 - 1) + 1;
@@ -479,24 +500,28 @@ class TreasureRoller extends AsyncTask {
             case 31:
             case 32:
                 rollArt(2, 4, 25);
+                rollMagic(1, 6, "A");
                 break;
             case 33:
             case 34:
             case 35:
             case 36:
                 rollGems(3, 6, 50);
+                rollMagic(1, 6, "A");
                 break;
             case 37:
             case 38:
             case 39:
             case 40:
                 rollGems(3, 6, 100);
+                rollMagic(1, 6, "A");
                 break;
             case 41:
             case 42:
             case 43:
             case 44:
                 rollGems(2, 4, 250);
+                rollMagic(1, 6, "A");
                 break;
             case 45:
             case 46:
@@ -504,6 +529,7 @@ class TreasureRoller extends AsyncTask {
             case 48:
             case 49:
                 rollArt(2, 4, 25);
+                rollMagic(1, 4, "B");
                 break;
             case 50:
             case 51:
@@ -511,6 +537,7 @@ class TreasureRoller extends AsyncTask {
             case 53:
             case 54:
                 rollGems(3, 6, 50);
+                rollMagic(1, 4, "B");
                 break;
             case 55:
             case 56:
@@ -518,86 +545,107 @@ class TreasureRoller extends AsyncTask {
             case 58:
             case 59:
                 rollGems(3, 6, 100);
+                rollMagic(1, 4, "B");
                 break;
             case 60:
             case 61:
             case 62:
             case 63:
                 rollGems(2, 4, 250);
+                rollMagic(1, 4, "B");
                 break;
             case 64:
             case 65:
             case 66:
                 rollArt(2, 4, 25);
+                rollMagic(1, 4, "C");
                 break;
             case 67:
             case 68:
             case 69:
                 rollGems(3, 6, 50);
+                rollMagic(1, 4, "C");
                 break;
             case 70:
             case 71:
             case 72:
                 rollGems(3, 6, 100);
+                rollMagic(1, 4, "C");
                 break;
             case 73:
             case 74:
                 rollGems(2, 4, 250);
+                rollMagic(1, 4, "C");
                 break;
             case 75:
             case 76:
                 rollArt(2, 4, 25);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 77:
             case 78:
                 rollGems(3, 6, 50);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 79:
                 rollGems(3, 6, 100);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 80:
                 rollGems(2, 4, 250);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 81:
             case 82:
             case 83:
             case 84:
                 rollArt(2, 4, 25);
+                rollMagic(1, 4, "F");
                 break;
             case 85:
             case 86:
             case 87:
             case 88:
                 rollGems(3, 6, 50);
+                rollMagic(1, 4, "F");
                 break;
             case 89:
             case 90:
             case 91:
                 rollGems(3, 6, 100);
+                rollMagic(1, 4, "F");
                 break;
             case 92:
             case 93:
             case 94:
                 rollGems(2, 4, 250);
+                rollMagic(1, 4, "F");
                 break;
             case 95:
             case 96:
                 rollGems(3, 6, 100);
+                rollMagic(1, 4, "G");
                 break;
             case 97:
             case 98:
                 rollGems(2, 4, 250);
+                rollMagic(1, 4, "G");
                 break;
             case 99:
                 rollGems(3, 6, 100);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 100:
                 rollGems(2, 4, 250);
+                //ToDo: add rollMagic() - What dice?
                 break;
         }
 
     }
 
+    /**
+     * See Treasure Hoard: Challenge 11-16 page 138
+     */
     private void rollTreasureTableC() {
         // Roll d100
         Integer roll = r.nextInt(100 - 1) + 1;
@@ -628,22 +676,30 @@ class TreasureRoller extends AsyncTask {
             case 18:
             case 19:
                 rollArt(2, 4, 250);
+                rollMagic(1, 4, "A");
+                rollMagic(1, 6, "B");
                 break;
             case 20:
             case 21:
             case 22:
             case 23:
                 rollArt(2, 4, 750);
+                rollMagic(1, 4, "A");
+                rollMagic(1, 6, "B");
                 break;
             case 24:
             case 25:
             case 26:
                 rollGems(3, 6, 500);
+                rollMagic(1, 4, "A");
+                rollMagic(1, 6, "B");
                 break;
             case 27:
             case 28:
             case 29:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 4, "A");
+                rollMagic(1, 6, "B");
                 break;
             case 30:
             case 31:
@@ -652,6 +708,7 @@ class TreasureRoller extends AsyncTask {
             case 34:
             case 35:
                 rollArt(2, 4, 250);
+                rollMagic(1, 6, "C");
                 break;
             case 36:
             case 37:
@@ -659,6 +716,7 @@ class TreasureRoller extends AsyncTask {
             case 39:
             case 40:
                 rollArt(2, 4, 750);
+                rollMagic(1, 6, "C");
                 break;
             case 41:
             case 42:
@@ -666,6 +724,7 @@ class TreasureRoller extends AsyncTask {
             case 44:
             case 45:
                 rollGems(3, 6, 500);
+                rollMagic(1, 6, "C");
                 break;
             case 46:
             case 47:
@@ -673,100 +732,128 @@ class TreasureRoller extends AsyncTask {
             case 49:
             case 50:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 6, "C");
                 break;
             case 51:
             case 52:
             case 53:
             case 54:
                 rollArt(2, 4, 250);
+                rollMagic(1, 4, "D");
                 break;
             case 55:
             case 56:
             case 57:
             case 58:
                 rollArt(2, 4, 750);
+                rollMagic(1, 4, "D");
                 break;
             case 59:
             case 60:
             case 61:
             case 62:
                 rollGems(3, 6, 500);
+                rollMagic(1, 4, "D");
                 break;
             case 63:
             case 64:
             case 65:
             case 66:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 4, "D");
                 break;
             case 67:
             case 68:
                 rollArt(2, 4, 250);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 69:
             case 70:
                 rollArt(2, 4, 750);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 71:
             case 72:
                 rollGems(3, 6, 500);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 73:
             case 74:
                 rollGems(3, 6, 1000);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 75:
             case 76:
                 rollArt(2, 4, 250);
+                //ToDo: add rollMagic() - What dice?
+                rollMagic(1, 4, "G");
                 break;
             case 77:
             case 78:
                 rollArt(2, 4, 750);
+                //ToDo: add rollMagic() - What dice?
+                rollMagic(1, 4, "G");
                 break;
             case 79:
             case 80:
                 rollGems(3, 6, 500);
+                //ToDo: add rollMagic() - What dice?
+                rollMagic(1, 4, "G");
                 break;
             case 81:
             case 82:
                 rollGems(3, 6, 1000);
+                //ToDo: add rollMagic() - What dice?
+                rollMagic(1, 4, "G");
                 break;
             case 83:
             case 84:
             case 85:
                 rollArt(2, 4, 250);
+                rollMagic(1, 4, "H");
                 break;
             case 86:
             case 87:
             case 88:
                 rollArt(2, 4, 750);
+                rollMagic(1, 4, "H");
                 break;
             case 89:
             case 90:
                 rollGems(3, 6, 500);
+                rollMagic(1, 4, "H");
                 break;
             case 91:
             case 92:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 4, "H");
                 break;
             case 93:
             case 94:
                 rollArt(2, 4, 250);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 95:
             case 96:
                 rollArt(2, 4, 750);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 97:
             case 98:
                 rollGems(3, 6, 500);
+                //ToDo: add rollMagic() - What dice?
                 break;
             case 99:
             case 100:
+                //ToDo: add rollMagic() - What dice?
                 break;
         }
 
     }
 
+    /**
+     * See Treasure Hoard: Challenge 17+ page 139
+     */
     private void rollTreasureTableD() {
         // Roll d100
         Integer roll = r.nextInt(100 - 1) + 1;
@@ -776,21 +863,25 @@ class TreasureRoller extends AsyncTask {
             case 4:
             case 5:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 8, "C");
                 break;
             case 6:
             case 7:
             case 8:
                 rollArt(1, 10, 2500);
+                rollMagic(1, 8, "C");
                 break;
             case 9:
             case 10:
             case 11:
                 rollArt(1, 4, 7500);
+                rollMagic(1, 8, "C");
                 break;
             case 12:
             case 13:
             case 14:
                 rollGems(1, 8, 5000);
+                rollMagic(1, 8, "C");
                 break;
             case 15:
             case 16:
@@ -801,6 +892,7 @@ class TreasureRoller extends AsyncTask {
             case 21:
             case 22:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 6, "D");
                 break;
             case 23:
             case 24:
@@ -811,6 +903,7 @@ class TreasureRoller extends AsyncTask {
             case 29:
             case 30:
                 rollArt(1, 10, 2500);
+                rollMagic(1, 6, "D");
                 break;
             case 31:
             case 32:
@@ -821,6 +914,7 @@ class TreasureRoller extends AsyncTask {
             case 37:
             case 38:
                 rollArt(1, 4, 7500);
+                rollMagic(1, 6, "D");
                 break;
             case 39:
             case 40:
@@ -831,6 +925,7 @@ class TreasureRoller extends AsyncTask {
             case 45:
             case 46:
                 rollGems(1, 8, 5000);
+                rollMagic(1, 6, "D");
                 break;
             case 47:
             case 48:
@@ -839,6 +934,7 @@ class TreasureRoller extends AsyncTask {
             case 51:
             case 52:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 6, "E");
                 break;
             case 53:
             case 54:
@@ -847,6 +943,7 @@ class TreasureRoller extends AsyncTask {
             case 57:
             case 58:
                 rollArt(1, 10, 2500);
+                rollMagic(1, 6, "E");
                 break;
             case 59:
             case 60:
@@ -854,6 +951,7 @@ class TreasureRoller extends AsyncTask {
             case 62:
             case 63:
                 rollArt(1, 4, 7500);
+                rollMagic(1, 6, "E");
                 break;
             case 64:
             case 65:
@@ -861,34 +959,43 @@ class TreasureRoller extends AsyncTask {
             case 67:
             case 68:
                 rollGems(1, 8, 5000);
+                rollMagic(1, 6, "E");
                 break;
             case 69:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 4, "G");
                 break;
             case 70:
                 rollArt(1, 10, 2500);
+                rollMagic(1, 4, "G");
                 break;
             case 71:
                 rollArt(1, 4, 7500);
+                rollMagic(1, 4, "G");
                 break;
             case 72:
                 rollGems(1, 8, 5000);
+                rollMagic(1, 4, "G");
                 break;
             case 73:
             case 74:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 4, "H");
                 break;
             case 75:
             case 76:
                 rollArt(1, 10, 2500);
+                rollMagic(1, 4, "H");
                 break;
             case 77:
             case 78:
                 rollArt(1, 4, 7500);
+                rollMagic(1, 4, "H");
                 break;
             case 79:
             case 80:
                 rollGems(1, 8, 5000);
+                rollMagic(1, 4, "H");
                 break;
             case 81:
             case 82:
@@ -896,6 +1003,7 @@ class TreasureRoller extends AsyncTask {
             case 84:
             case 85:
                 rollGems(3, 6, 1000);
+                rollMagic(1, 4, "I");
                 break;
             case 86:
             case 87:
@@ -903,6 +1011,7 @@ class TreasureRoller extends AsyncTask {
             case 89:
             case 90:
                 rollArt(1, 10, 2500);
+                rollMagic(1, 4, "I");
                 break;
             case 91:
             case 92:
@@ -910,6 +1019,7 @@ class TreasureRoller extends AsyncTask {
             case 94:
             case 95:
                 rollArt(1, 4, 7500);
+                rollMagic(1, 4, "I");
                 break;
             case 96:
             case 97:
@@ -917,8 +1027,158 @@ class TreasureRoller extends AsyncTask {
             case 99:
             case 100:
                 rollGems(1, 8, 5000);
+                rollMagic(1, 4, "I");
                 break;
         }
 
+    }
+
+    /**
+     * Determines which Magic table to roll on based on 'value'
+     * and determines how many times to roll on it.
+     *
+     * @param dice  - The number of times to roll the dice
+     * @param sides - The number of sides on the dice
+     * @param table - The table to roll on
+     */
+    private void rollMagic(Integer dice, Integer sides, String table)
+    {
+        Integer roll = 0;
+        //Roll the dice to value of 'dice' times
+        for (int i = 0; i < dice; i++)
+        {
+            //simulate dice roll to determine what it lands on
+            //sides determines the range of possible values
+            roll += (r.nextInt(sides - 1) + 1);
+        }
+        for (int j = 0; j < roll; j++)
+        {
+            /*determine which magic table to roll on
+            * perform this action 'roll' times resulting in a list of loot
+            * 'roll' in size
+            */
+            switch (table)
+            {
+                case "A":
+                    rollMagicA();
+                    break;
+                case "B":
+                    //rollMagicB();
+                    break;
+                case "C":
+                    //rollMagicC();
+                    break;
+                case "D":
+                    //rollMagicD();
+                    break;
+                case "E":
+                    //rollMagicE();
+                    break;
+                case "F":
+                    //rollMagicF();
+                    break;
+                case "G":
+                    //rollMagicG();
+                    break;
+                case "H":
+                    //rollMagicH();
+                    break;
+                case "I":
+                    //rollMagicI();
+                    break;
+            }
+        }
+
+
+    }
+
+    /**
+     * Roll a D100 on table A to determine
+     * a Magic Item
+     */
+    private void rollMagicA()
+    {
+        // Roll d100 to determine which magic item
+        Integer roll = r.nextInt(100 - 1);
+        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
+        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
+        String magicText = "";
+        String subText = "";
+
+        //TODO: Populate page array in strings.xml and add references to switch statement
+
+        switch(roll)
+        {
+            //If roll is between 1 and 50 inclusive
+            case 1: case 2: case 3: case 4: case 5:
+            case 6: case 7: case 8: case 9: case 10:
+            case 11: case 12: case 13: case 14: case 15:
+            case 16: case 17: case 18: case 19: case 20:
+            case 21: case 22: case 23: case 24: case 25:
+            case 26: case 27: case 28: case 29: case 30:
+            case 31: case 32: case 33: case 34: case 35:
+            case 36: case 37: case 38: case 39: case 40:
+            case 41: case 42: case 43: case 44: case 45:
+            case 46: case 47: case 48: case 49: case 50:
+
+            magicText = treasureArraySub[0];
+            subText = pageArraySub[0];
+            break;
+
+            //If roll is between 51 and 60 inclusive
+            case 51: case 52: case 53: case 54: case 55:
+            case 56: case 57: case 58: case 59: case 60:
+
+            magicText = treasureArraySub[1];
+            subText = pageArraySub[0];
+            break;
+
+            //If roll is between 61 and 70 inclusive
+            case 61: case 62: case 63: case 64: case 65:
+            case 66: case 67: case 68: case 69: case 70:
+
+            magicText = treasureArraySub[2];
+            subText = pageArraySub[0];
+            break;
+
+            //If roll is between 71 and 90 inclusive
+            case 71: case 72: case 73: case 74: case 75:
+            case 76: case 77: case 78: case 79: case 80:
+
+            magicText = treasureArraySub[3];
+            subText = pageArraySub[0];
+            break;
+
+            //If roll is between 91 and 94 inclusive
+            case 91: case 92: case 93: case 94:
+
+            magicText = treasureArraySub[4];
+            subText = pageArraySub[0];
+            break;
+
+            //If roll is between 95 and 98 inclusive
+            case 95: case 96: case 97: case 98:
+
+            magicText = treasureArraySub[5];
+            subText = pageArraySub[0];
+            break;
+
+            //If roll is 99
+            case 99:
+
+                magicText = treasureArraySub[6];
+                subText = pageArraySub[0];
+                break;
+
+            //If roll is 100
+            case 100:
+                magicText = treasureArraySub[7];
+                subText = pageArraySub[0];
+                break;
+
+        }
+
+        addToList(magicText, subText);
     }
 }
