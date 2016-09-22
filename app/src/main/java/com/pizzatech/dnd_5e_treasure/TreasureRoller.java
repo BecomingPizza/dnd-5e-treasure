@@ -445,11 +445,13 @@ class TreasureRoller extends AsyncTask {
             case 98:
             case 99:
                 rollArt(2, 4, 25);
-                //ToDo: Add rollMagic() method - What dice?
+                //TODO: remove comment
+                //rollMagicG();
                 break;
             case 100:
                 rollGems(2, 6, 50);
-                //ToDo: Add rollMagic() method - What dice?
+                //TODO: remove comment
+                //rollMagicG();
                 break;
         }
 
@@ -580,20 +582,24 @@ class TreasureRoller extends AsyncTask {
             case 75:
             case 76:
                 rollArt(2, 4, 25);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicD();
                 break;
             case 77:
             case 78:
                 rollGems(3, 6, 50);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicD();
                 break;
             case 79:
                 rollGems(3, 6, 100);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicD();
                 break;
             case 80:
                 rollGems(2, 4, 250);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicD();
                 break;
             case 81:
             case 82:
@@ -633,11 +639,13 @@ class TreasureRoller extends AsyncTask {
                 break;
             case 99:
                 rollGems(3, 6, 100);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicH();
                 break;
             case 100:
                 rollGems(2, 4, 250);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicH();
                 break;
         }
 
@@ -765,45 +773,53 @@ class TreasureRoller extends AsyncTask {
             case 67:
             case 68:
                 rollArt(2, 4, 250);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicE();
                 break;
             case 69:
             case 70:
                 rollArt(2, 4, 750);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicE();
                 break;
             case 71:
             case 72:
                 rollGems(3, 6, 500);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicE();
                 break;
             case 73:
             case 74:
                 rollGems(3, 6, 1000);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicE();
                 break;
             case 75:
             case 76:
                 rollArt(2, 4, 250);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicF();
                 rollMagic(1, 4, "G");
                 break;
             case 77:
             case 78:
                 rollArt(2, 4, 750);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicF();
                 rollMagic(1, 4, "G");
                 break;
             case 79:
             case 80:
                 rollGems(3, 6, 500);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicF();
                 rollMagic(1, 4, "G");
                 break;
             case 81:
             case 82:
                 rollGems(3, 6, 1000);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicF();
                 rollMagic(1, 4, "G");
                 break;
             case 83:
@@ -831,21 +847,25 @@ class TreasureRoller extends AsyncTask {
             case 93:
             case 94:
                 rollArt(2, 4, 250);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicI();
                 break;
             case 95:
             case 96:
                 rollArt(2, 4, 750);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicI();
                 break;
             case 97:
             case 98:
                 rollGems(3, 6, 500);
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicI();
                 break;
             case 99:
             case 100:
-                //ToDo: add rollMagic() - What dice?
+                //ToDo: remove comment
+                //rollMagicI();
                 break;
         }
 
@@ -1063,27 +1083,35 @@ class TreasureRoller extends AsyncTask {
                     rollMagicA();
                     break;
                 case "B":
+                    //TODO: remove comment
                     //rollMagicB();
                     break;
                 case "C":
+                    //TODO: remove comment
                     //rollMagicC();
                     break;
                 case "D":
+                    //TODO: remove comment
                     //rollMagicD();
                     break;
                 case "E":
+                    //TODO: remove comment
                     //rollMagicE();
                     break;
                 case "F":
+                    //TODO: remove comment
                     //rollMagicF();
                     break;
                 case "G":
+                    //TODO: remove comment
                     //rollMagicG();
                     break;
                 case "H":
+                    //TODO: remove comment
                     //rollMagicH();
                     break;
                 case "I":
+                    //TODO: remove comment
                     //rollMagicI();
                     break;
             }
@@ -1181,4 +1209,207 @@ class TreasureRoller extends AsyncTask {
 
         addToList(magicText, subText);
     }
+
+    /**
+     * Roll a D100 on table B to determine
+     * a Magic Item
+     */
+    private void rollMagicB()
+    {
+        // Roll d100 to determine which magic item
+        Integer roll = r.nextInt(100 - 1);
+        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
+        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
+        String magicText = "";
+        String subText = "";
+
+        //TODO: Populate page array in strings.xml and add references to switch statement
+        //TODO: Populate switch
+
+        switch(roll)
+        {
+
+
+        }
+
+        addToList(magicText, subText);
+    }
+    /**
+     * Roll a D100 on table C to determine
+     * a Magic Item
+     */
+    private void rollMagicC()
+    {
+        // Roll d100 to determine which magic item
+        Integer roll = r.nextInt(100 - 1);
+        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
+        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
+        String magicText = "";
+        String subText = "";
+
+        //TODO: Populate page array in strings.xml and add references to switch statement
+        //TODO: Populate switch
+
+        switch(roll)
+        {
+
+
+        }
+
+        addToList(magicText, subText);
+    }
+    /**
+     * Roll a D100 on table D to determine
+     * a Magic Item
+     */
+    private void rollMagicD()
+    {
+        // Roll d100 to determine which magic item
+        Integer roll = r.nextInt(100 - 1);
+        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
+        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
+        String magicText = "";
+        String subText = "";
+
+        //TODO: Populate page array in strings.xml and add references to switch statement
+        //TODO: Populate switch
+
+        switch(roll)
+        {
+
+
+        }
+
+        addToList(magicText, subText);
+    }
+    /**
+     * Roll a D100 on table E to determine
+     * a Magic Item
+     */
+    private void rollMagicE()
+    {
+        // Roll d100 to determine which magic item
+        Integer roll = r.nextInt(100 - 1);
+        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
+        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
+        String magicText = "";
+        String subText = "";
+
+        //TODO: Populate page array in strings.xml and add references to switch statement
+        //TODO: Populate switch
+
+        switch(roll)
+        {
+
+
+        }
+
+        addToList(magicText, subText);
+    }
+    /**
+     * Roll a D100 on table F to determine
+     * a Magic Item
+     */
+    private void rollMagicF()
+    {
+        // Roll d100 to determine which magic item
+        Integer roll = r.nextInt(100 - 1);
+        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
+        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
+        String magicText = "";
+        String subText = "";
+
+        //TODO: Populate page array in strings.xml and add references to switch statement
+        //TODO: Populate switch
+
+        switch(roll)
+        {
+
+
+        }
+
+        addToList(magicText, subText);
+    }
+    /**
+     * Roll a D100 on table G to determine
+     * a Magic Item
+     */
+    private void rollMagicG()
+    {
+        // Roll d100 to determine which magic item
+        Integer roll = r.nextInt(100 - 1);
+        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
+        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
+        String magicText = "";
+        String subText = "";
+
+        //TODO: Populate page array in strings.xml and add references to switch statement
+        //TODO: Populate switch
+
+        switch(roll)
+        {
+
+
+        }
+
+        addToList(magicText, subText);
+    }
+
+    /**
+     * Roll a D100 on table H to determine
+     * a Magic Item
+     */
+    private void rollMagicH()
+    {
+        // Roll d100 to determine which magic item
+        Integer roll = r.nextInt(100 - 1);
+        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
+        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
+        String magicText = "";
+        String subText = "";
+
+        //TODO: Populate page array in strings.xml and add references to switch statement
+        //TODO: Populate switch
+
+        switch(roll)
+        {
+
+
+        }
+
+        addToList(magicText, subText);
+    }
+    /**
+     * Roll a D100 on table I to determine
+     * a Magic Item
+     */
+    private void rollMagicI()
+    {
+        // Roll d100 to determine which magic item
+        Integer roll = r.nextInt(100 - 1);
+        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
+        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
+        String magicText = "";
+        String subText = "";
+
+        //TODO: Populate page array in strings.xml and add references to switch statement
+        //TODO: Populate switch
+
+        switch(roll)
+        {
+
+
+        }
+
+        addToList(magicText, subText);
+    }
+
 }
