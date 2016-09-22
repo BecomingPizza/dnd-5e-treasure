@@ -1131,12 +1131,9 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
 
         String magicText = "";
         String subText = "";
-
-        //TODO: Populate page array in strings.xml and add references to switch statement
 
         switch(roll)
         {
@@ -1153,8 +1150,7 @@ class TreasureRoller extends AsyncTask {
             case 46: case 47: case 48: case 49: case 50:
 
             magicText = treasureArraySub[217];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg187);
             break;
 
             //If roll is between 51 and 60 inclusive
@@ -1162,8 +1158,7 @@ class TreasureRoller extends AsyncTask {
             case 56: case 57: case 58: case 59: case 60:
 
             magicText = treasureArraySub[296];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg200);
             break;
 
             //If roll is between 61 and 70 inclusive
@@ -1171,48 +1166,44 @@ class TreasureRoller extends AsyncTask {
             case 66: case 67: case 68: case 69: case 70:
 
             magicText = treasureArraySub[207];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg187);
             break;
 
             //If roll is between 71 and 90 inclusive
             case 71: case 72: case 73: case 74: case 75:
             case 76: case 77: case 78: case 79: case 80:
+            case 81: case 82: case 83: case 84: case 85:
+            case 86: case 87: case 88: case 89: case 90:
 
             magicText = treasureArraySub[287];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg200);
             break;
 
             //If roll is between 91 and 94 inclusive
             case 91: case 92: case 93: case 94:
 
             magicText = treasureArraySub[288];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg200);
             break;
 
             //If roll is between 95 and 98 inclusive
             case 95: case 96: case 97: case 98:
 
             magicText = treasureArraySub[215];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg187);
             break;
 
             //If roll is 99
             case 99:
 
                 magicText = treasureArraySub[50];
-                subText = roll.toString();
-                // subText = pageArraySub[roll];
+                subText = res.getString(R.string.dmg152);
                 break;
 
             //If roll is 100
             case 100:
                 magicText = treasureArraySub[103];
-                subText = roll.toString();
-                // subText = pageArraySub[roll];
+                subText = res.getString(R.string.dmg166);
                 break;
 
         }
@@ -1229,13 +1220,10 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
 
         String magicText = "";
         String subText = "";
-
-        //TODO: Populate page array in strings.xml and add references to switch statement
-        //TODO: Populate switch
 
         switch(roll)
         {
@@ -1245,8 +1233,7 @@ class TreasureRoller extends AsyncTask {
             case 11: case 12: case 13: case 14: case 15:
 
             magicText = treasureArraySub[215];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg187);
             break;
 
             //If roll is between 16 and 22 inclusive
@@ -1254,8 +1241,7 @@ class TreasureRoller extends AsyncTask {
             case 21:case 22:
 
             magicText = treasureArraySub[215];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg187);
             break;
 
             //If roll is between 23 and 29 inclusive
@@ -1263,237 +1249,202 @@ class TreasureRoller extends AsyncTask {
             case 28: case 29:
 
             magicText = treasureArraySub[225];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg188);
             break;
 
             //If roll is between 30 and 34 inclusive
             case 30: case 31: case 32: case 33: case 34:
 
             magicText = treasureArraySub[11];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg150);
             break;
 
             //If roll is between  35 and 39 inclusive
             case 35: case 36: case 37: case 38: case 39:
 
             magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg187);
             break;
-
-            //TODO: insert correct index values from here forwards
 
             case 40: case 41: case 42: case 43: case 44:
 
             magicText = treasureArraySub[219];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg187);
             break;
 
 
             case 45: case 46: case 47: case 48: case 49:
 
             magicText = treasureArraySub[216];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg187);
             break;
 
             case 50: case 51: case 52: case 53: case 54:
 
             magicText = treasureArraySub[20];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            subText = res.getString(R.string.dmg188);
             break;
 
             case 55: case 56: case 57: case 58: case 59:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[288];
+            subText = res.getString(R.string.dmg200);
             break;
 
             case 60: case 61: case 62: case 63: case 64:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[289];
+            subText = res.getString(R.string.dmg200);
             break;
 
             case 65: case 66: case 67:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[50];
+            subText = res.getString(R.string.dmg153);
             break;
 
             case 68: case 69: case 70:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[157];
+            subText = res.getString(R.string.dmg179);
             break;
 
             case 71: case 72: case 73:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[194];
+            subText = res.getString(R.string.dmg184);
             break;
 
             case 74: case 75:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[104];
+            subText = res.getString(R.string.dmg166);
             break;
 
             case 76: case 77:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[105];
+            subText = res.getString(R.string.dmg166);
             break;
 
             case 78: case 79:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[106];
+            subText = res.getString(R.string.dmg166);
             break;
 
             case 80: case 81:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[111];
+            subText = res.getString(R.string.dmg167);
             break;
 
             case 82: case 83:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[199];
+            subText = res.getString(R.string.dmg184);
             break;
 
             case 84:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[10];
+            subText = res.getString(R.string.dmg150);
             break;
 
             case 85:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[74];
+            subText = res.getString(R.string.dmg157);
             break;
 
             case 86:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[87];
+            subText = res.getString(R.string.dmg159);
             break;
 
             case 87:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[103];
+            subText = res.getString(R.string.dmg166);
             break;
 
             case 88:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[130];
+            subText = res.getString(R.string.dmg172);
             break;
 
             case 89:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[135];
+            subText = res.getString(R.string.dmg173);
             break;
 
             case 90:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[146];
+            subText = res.getString(R.string.dmg175);
             break;
 
             case 91:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[91];
+            subText = res.getString(R.string.dmg179);
             break;
 
             case 92:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[182];
+            subText = res.getString(R.string.dmg181);
             break;
 
             case 93:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[185];
+            subText = res.getString(R.string.dmg182);
             break;
 
             case 94:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[224];
+            subText = res.getString(R.string.dmg188);
             break;
 
             case 95:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[251];
+            subText = res.getString(R.string.dmg193);
             break;
 
             case 96:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[263];
+            subText = res.getString(R.string.dmg195);
             break;
 
             case 97:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[273];
+            subText = res.getString(R.string.dmg197);
             break;
 
             case 98:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[275];
+            subText = res.getString(R.string.dmg199);
             break;
 
             case 99:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[337];
+            subText = res.getString(R.string.dmg211);
             break;
 
             case 100:
 
-            magicText = treasureArraySub[205];
-            subText = roll.toString();
-            // subText = pageArraySub[roll];
+            magicText = treasureArraySub[341];
+            subText = res.getString(R.string.dmg211);
             break;
         }
 
@@ -1508,7 +1459,7 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
 
         String magicText = "";
         String subText = "";
@@ -1533,7 +1484,7 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
 
         String magicText = "";
         String subText = "";
@@ -1558,7 +1509,7 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
 
         String magicText = "";
         String subText = "";
@@ -1583,7 +1534,6 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
 
         String magicText = "";
         String subText = "";
@@ -1608,7 +1558,6 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
         figurineArray = res.getStringArray(R.array.tr_selection_array_figurine);
 
         String magicText = "";
@@ -1655,7 +1604,7 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+
 
         String magicText = "";
         String subText = "";
@@ -1680,7 +1629,6 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
         armorArray = res.getStringArray(R.array.tr_selection_array_armor);
 
         String magicText = "";
