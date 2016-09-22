@@ -1153,16 +1153,18 @@ class TreasureRoller extends AsyncTask {
             case 41: case 42: case 43: case 44: case 45:
             case 46: case 47: case 48: case 49: case 50:
 
-            magicText = treasureArraySub[0];
-            subText = pageArraySub[0];
+            magicText = treasureArraySub[217];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
             break;
 
             //If roll is between 51 and 60 inclusive
             case 51: case 52: case 53: case 54: case 55:
             case 56: case 57: case 58: case 59: case 60:
 
-            magicText = treasureArraySub[1];
-            subText = pageArraySub[0];
+            magicText = treasureArraySub[296];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
             break;
 
             //If roll is between 61 and 70 inclusive
@@ -1170,7 +1172,8 @@ class TreasureRoller extends AsyncTask {
             case 66: case 67: case 68: case 69: case 70:
 
             magicText = treasureArraySub[2];
-            subText = pageArraySub[0];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
             break;
 
             //If roll is between 71 and 90 inclusive
@@ -1178,34 +1181,39 @@ class TreasureRoller extends AsyncTask {
             case 76: case 77: case 78: case 79: case 80:
 
             magicText = treasureArraySub[3];
-            subText = pageArraySub[0];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
             break;
 
             //If roll is between 91 and 94 inclusive
             case 91: case 92: case 93: case 94:
 
             magicText = treasureArraySub[4];
-            subText = pageArraySub[0];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
             break;
 
             //If roll is between 95 and 98 inclusive
             case 95: case 96: case 97: case 98:
 
             magicText = treasureArraySub[5];
-            subText = pageArraySub[0];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
             break;
 
             //If roll is 99
             case 99:
 
                 magicText = treasureArraySub[6];
-                subText = pageArraySub[0];
+                subText = roll.toString();
+                // subText = pageArraySub[roll];
                 break;
 
             //If roll is 100
             case 100:
                 magicText = treasureArraySub[7];
-                subText = pageArraySub[0];
+                subText = roll.toString();
+                // subText = pageArraySub[roll];
                 break;
 
         }
@@ -1371,13 +1379,14 @@ class TreasureRoller extends AsyncTask {
             if ((figurineRoll >= 6) && (figurineRoll <=7))
             {
                 magicText = figurineArray[6];
-                subText = pageArraySub[0];
+                subText = roll.toString();
+                // subText = pageArraySub[roll];
             }
             else
             {
                 magicText = figurineArray[roll];
-                //TODO: correct this to reference correct page
-                subText = pageArraySub[0];
+                subText = roll.toString();
+                // subText = pageArraySub[roll];
             }
         }
 
@@ -1441,14 +1450,14 @@ class TreasureRoller extends AsyncTask {
             if ((armorRoll >= 9) && (armorRoll <=10))
             {
                 magicText = armorArray[5];
-                //TODO: correct this to reference correct page
-                subText = pageArraySub[0];
+                subText = roll.toString();
+                // subText = pageArraySub[roll];
             }
             else
             {
                 magicText = armorArray[roll];
-                //TODO: correct this to reference correct page
-                subText = pageArraySub[0];
+                subText = roll.toString();
+                // subText = pageArraySub[roll];
             }
 
         }

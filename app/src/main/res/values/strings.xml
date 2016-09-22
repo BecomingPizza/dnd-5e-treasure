@@ -689,7 +689,7 @@
         //215
         <item>Potion of growth</item>
         //216
-        <item>Potion of Healing</item>
+        <item>Potion of healing</item>
         //217
         <item>Potion of heroism</item>
         //218
@@ -988,10 +988,6 @@
         <item>Armor +3,half plate</item>
         <item>Armor +3, plate</item>
     </string-array>
-
-
-    //ToDo - Tables C to I to populate
-
 
     //Magic Items - Page number of descriptions
     <string-array name="tr_selection_array_magic_page_number">
