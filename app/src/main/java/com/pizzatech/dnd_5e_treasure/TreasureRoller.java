@@ -31,6 +31,8 @@ class TreasureRoller extends AsyncTask {
     String[] treasureArray;
     String[] treasureArraySub;
     String[] pageArraySub;
+    String[] figurineArray;
+    String[] armorArray;
 
     public TreasureRoller(Context context, Integer table, ListView list, Activity act) {
         this.table = table;
@@ -1135,6 +1137,7 @@ class TreasureRoller extends AsyncTask {
         String subText = "";
 
         //TODO: Populate page array in strings.xml and add references to switch statement
+        //ToDo: change indexes referenced passed in each case body as have resorted arrays to make more sense
 
         switch(roll)
         {
@@ -1345,6 +1348,7 @@ class TreasureRoller extends AsyncTask {
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
         pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+        figurineArray = res.getStringArray(R.array.tr_selection_array_figurine);
 
         String magicText = "";
         String subText = "";
@@ -1354,8 +1358,27 @@ class TreasureRoller extends AsyncTask {
 
         switch(roll)
         {
+            /**
+             *  For case 12-14 add another roll of a D8
+             *  dice to determine which figurin of
+             *  wonderous power is picked
+             *  this will need another array
+             *  in strings.xml called tr_selection_array_figurine
+             */
+            case 12:case 13: case 14:
 
-
+            Integer figurineRoll = r.nextInt(8-1);
+            if ((figurineRoll >= 6) && (figurineRoll <=7))
+            {
+                magicText = figurineArray[6];
+                subText = pageArraySub[0];
+            }
+            else
+            {
+                magicText = figurineArray[roll];
+                //TODO: correct this to reference correct page
+                subText = pageArraySub[0];
+            }
         }
 
         addToList(magicText, subText);
@@ -1396,6 +1419,7 @@ class TreasureRoller extends AsyncTask {
         Integer roll = r.nextInt(100 - 1);
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
         pageArraySub = res.getStringArray(R.array.tr_selection_array_magic_page_number);
+        armorArray = res.getStringArray(R.array.tr_selection_array_armor);
 
         String magicText = "";
         String subText = "";
@@ -1405,7 +1429,27 @@ class TreasureRoller extends AsyncTask {
 
         switch(roll)
         {
+            /**
+             *  For case 76 add another roll of a D12
+             *  dice to determine which armor item
+             *  is picked this will need another array
+             *  in strings.xml called tr_selection_array_armor
+             */
+            case 12:case 13: case 14:
 
+            Integer armorRoll = r.nextInt(12-1);
+            if ((armorRoll >= 9) && (armorRoll <=10))
+            {
+                magicText = armorArray[5];
+                //TODO: correct this to reference correct page
+                subText = pageArraySub[0];
+            }
+            else
+            {
+                magicText = armorArray[roll];
+                //TODO: correct this to reference correct page
+                subText = pageArraySub[0];
+            }
 
         }
 
