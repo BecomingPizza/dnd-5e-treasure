@@ -1137,7 +1137,6 @@ class TreasureRoller extends AsyncTask {
         String subText = "";
 
         //TODO: Populate page array in strings.xml and add references to switch statement
-        //ToDo: change indexes referenced passed in each case body as have resorted arrays to make more sense
 
         switch(roll)
         {
@@ -1171,7 +1170,7 @@ class TreasureRoller extends AsyncTask {
             case 61: case 62: case 63: case 64: case 65:
             case 66: case 67: case 68: case 69: case 70:
 
-            magicText = treasureArraySub[2];
+            magicText = treasureArraySub[207];
             subText = roll.toString();
             // subText = pageArraySub[roll];
             break;
@@ -1180,7 +1179,7 @@ class TreasureRoller extends AsyncTask {
             case 71: case 72: case 73: case 74: case 75:
             case 76: case 77: case 78: case 79: case 80:
 
-            magicText = treasureArraySub[3];
+            magicText = treasureArraySub[287];
             subText = roll.toString();
             // subText = pageArraySub[roll];
             break;
@@ -1188,7 +1187,7 @@ class TreasureRoller extends AsyncTask {
             //If roll is between 91 and 94 inclusive
             case 91: case 92: case 93: case 94:
 
-            magicText = treasureArraySub[4];
+            magicText = treasureArraySub[288];
             subText = roll.toString();
             // subText = pageArraySub[roll];
             break;
@@ -1196,7 +1195,7 @@ class TreasureRoller extends AsyncTask {
             //If roll is between 95 and 98 inclusive
             case 95: case 96: case 97: case 98:
 
-            magicText = treasureArraySub[5];
+            magicText = treasureArraySub[215];
             subText = roll.toString();
             // subText = pageArraySub[roll];
             break;
@@ -1204,14 +1203,14 @@ class TreasureRoller extends AsyncTask {
             //If roll is 99
             case 99:
 
-                magicText = treasureArraySub[6];
+                magicText = treasureArraySub[50];
                 subText = roll.toString();
                 // subText = pageArraySub[roll];
                 break;
 
             //If roll is 100
             case 100:
-                magicText = treasureArraySub[7];
+                magicText = treasureArraySub[103];
                 subText = roll.toString();
                 // subText = pageArraySub[roll];
                 break;
@@ -1240,8 +1239,262 @@ class TreasureRoller extends AsyncTask {
 
         switch(roll)
         {
+            //If roll is between 1 and 15 inclusive
+            case 1: case 2: case 3: case 4: case 5:
+            case 6: case 7: case 8: case 9: case 10:
+            case 11: case 12: case 13: case 14: case 15:
+
+            magicText = treasureArraySub[215];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            //If roll is between 16 and 22 inclusive
+            case 16: case 17: case 18: case 19: case 20:
+            case 21:case 22:
+
+            magicText = treasureArraySub[215];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            //If roll is between 23 and 29 inclusive
+            case 23: case 24: case 25: case 26: case 27:
+            case 28: case 29:
+
+            magicText = treasureArraySub[225];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            //If roll is between 30 and 34 inclusive
+            case 30: case 31: case 32: case 33: case 34:
+
+            magicText = treasureArraySub[11];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            //If roll is between  35 and 39 inclusive
+            case 35: case 36: case 37: case 38: case 39:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            //TODO: insert correct index values from here forwards
+
+            case 40: case 41: case 42: case 43: case 44:
+
+            magicText = treasureArraySub[219];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
 
 
+            case 45: case 46: case 47: case 48: case 49:
+
+            magicText = treasureArraySub[216];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 50: case 51: case 52: case 53: case 54:
+
+            magicText = treasureArraySub[20];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 55: case 56: case 57: case 58: case 59:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 60: case 61: case 62: case 63: case 64:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 65: case 66: case 67:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 68: case 69: case 70:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 71: case 72: case 73:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 74: case 75:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 76: case 77:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 78: case 79:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 80: case 81:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 82: case 83:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 84:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 85:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 86:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 87:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 88:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 89:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 90:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 91:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 92:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 93:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 94:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 95:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 96:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 97:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 98:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 99:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
+
+            case 100:
+
+            magicText = treasureArraySub[205];
+            subText = roll.toString();
+            // subText = pageArraySub[roll];
+            break;
         }
 
         addToList(magicText, subText);

@@ -990,8 +990,84 @@
     </string-array>
 
     //Magic Items - Page number of descriptions
-    <string-array name="tr_selection_array_magic_page_number">
-        <item>Page Test</item>
-    </string-array>
+    //Such page numbers, wow
+    <string name="dmg150">DMG 150</string>
+    <string name="dmg151">DMG 151</string>
+    <string name="dmg152">DMG 152</string>
+    <string name="dmg153">DMG 153</string>
+    <string name="dmg154">DMG 154</string>
+    <string name="dmg155">DMG 155</string>
+    <string name="dmg156">DMG 156</string>
+    <string name="dmg157">DMG 157</string>
+    <string name="dmg158">DMG 158</string>
+    <string name="dmg159">DMG 159</string>
+    <string name="dmg160">DMG 160</string>
+    <string name="dmg161">DMG 161</string>
+    <string name="dmg162">DMG 162</string>
+    <string name="dmg163">DMG 163</string>
+    <string name="dmg164">DMG 164</string>
+    <string name="dmg165">DMG 165</string>
+    <string name="dmg166">DMG 166</string>
+    <string name="dmg167">DMG 167</string>
+    <string name="dmg168">DMG 168</string>
+    <string name="dmg169">DMG 169</string>
+    <string name="dmg170">DMG 170</string>
+    <string name="dmg171">DMG 171</string>
+    <string name="dmg172">DMG 172</string>
+    <string name="dmg173">DMG 173</string>
+    <string name="dmg174">DMG 174</string>
+    <string name="dmg175">DMG 175</string>
+    <string name="dmg176">DMG 176</string>
+    <string name="dmg177">DMG 177</string>
+    <string name="dmg178">DMG 178</string>
+    <string name="dmg179">DMG 179</string>
+    <string name="dmg180">DMG 180</string>
+    <string name="dmg181">DMG 181</string>
+    <string name="dmg182">DMG 182</string>
+    <string name="dmg183">DMG 183</string>
+    <string name="dmg184">DMG 184</string>
+    <string name="dmg185">DMG 185</string>
+    <string name="dmg186">DMG 186</string>
+    <string name="dmg187">DMG 187</string>
+    <string name="dmg188">DMG 188</string>
+    <string name="dmg189">DMG 189</string>
+    <string name="dmg190">DMG 190</string>
+    <string name="dmg191">DMG 191</string>
+    <string name="dmg192">DMG 192</string>
+    <string name="dmg193">DMG 193</string>
+    <string name="dmg194">DMG 194</string>
+    <string name="dmg195">DMG 195</string>
+    <string name="dmg196">DMG 196</string>
+    <string name="dmg197">DMG 197</string>
+    <string name="dmg198">DMG 198</string>
+    <string name="dmg199">DMG 199</string>
+    <string name="dmg200">DMG 200</string>
+    <string name="dmg201">DMG 201</string>
+    <string name="dmg202">DMG 202</string>
+    <string name="dmg203">DMG 203</string>
+    <string name="dmg204">DMG 204</string>
+    <string name="dmg205">DMG 205</string>
+    <string name="dmg206">DMG 206</string>
+    <string name="dmg207">DMG 207</string>
+    <string name="dmg208">DMG 208</string>
+    <string name="dmg209">DMG 209</string>
+    <string name="dmg210">DMG 210</string>
+    <string name="dmg211">DMG 211</string>
+    <string name="dmg212">DMG 212</string>
+    <string name="dmg213">DMG 213</string>
+    <string name="dmg214">DMG 214</string>
+    <string name="dmg215">DMG 215</string>
+    <string name="dmg216">DMG 216</string>
+    <string name="dmg217">DMG 217</string>
+    <string name="dmg218">DMG 218</string>
+    <string name="dmg219">DMG 219</string>
+    <string name="dmg220">DMG 220</string>
+    <string name="dmg221">DMG 221</string>
+    <string name="dmg222">DMG 222</string>
+    <string name="dmg223">DMG 223</string>
+    <string name="dmg224">DMG 224</string>
+    <string name="dmg225">DMG 225</string>
+    <string name="dmg226">DMG 226</string>
+    <string name="dmg227">DMG 227</string>
 
 </resources>
