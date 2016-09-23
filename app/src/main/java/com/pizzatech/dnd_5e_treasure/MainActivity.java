@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
             ClipData clip = ClipData.newPlainText("loot", stringyMcStringFace);
             clipboard.setPrimaryClip(clip);
+            Toast.makeText(this, "List copied", Toast.LENGTH_SHORT).show();
         } else {
             // Y U DO DIS
             Toast.makeText(this, "Y U DO DIS", Toast.LENGTH_SHORT).show();

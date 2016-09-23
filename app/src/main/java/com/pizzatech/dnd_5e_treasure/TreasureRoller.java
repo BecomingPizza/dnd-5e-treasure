@@ -1662,8 +1662,103 @@ class TreasureRoller extends AsyncTask {
 
         switch(roll)
         {
+            case 1: case 2: case 3: case 4: case 5:
+            case 6: case 7: case 8: case 9: case 10:
+            case 11: case 12: case 13: case 14: case 15:
+            case 16: case 17: case 18: case 19: case 20:
 
+                magicText = treasureArraySub[230];
+                subText = res.getString(R.string.dmg187);
+                break;
 
+            case 21: case 22: case 23: case 24: case 25:
+            case 26: case 27: case 28: case 29: case 30:
+
+            magicText = treasureArraySub[220];
+            subText = res.getString(R.string.dmg188);
+            break;
+
+            case 31: case 32: case 33: case 34: case 35:
+            case 36: case 37: case 38: case 39: case 40:
+
+            magicText = treasureArraySub[226];
+            subText = res.getString(R.string.dmg188);
+            break;
+
+            case 41: case 42: case 43: case 44: case 45:
+            case 46: case 47: case 48: case 49: case 50:
+
+            magicText = treasureArraySub[292];
+            subText = res.getString(R.string.dmg200);
+            break;
+
+            case 51: case 52: case 53: case 54: case 55:
+            case 56: case 57:
+
+            magicText = treasureArraySub[293];
+            subText = res.getString(R.string.dmg200);
+            break;
+
+            case 58: case 59: case 60: case 61: case 62:
+
+            magicText = treasureArraySub[13];
+            subText = res.getString(R.string.dmg150);
+            break;
+
+            case 63: case 64: case 65: case 66: case 67:
+
+            magicText = treasureArraySub[193];
+            subText = res.getString(R.string.dmg184);
+            break;
+
+            case 68: case 69: case 70: case 71: case 72:
+
+            magicText = treasureArraySub[212];
+            subText = res.getString(R.string.dmg187);
+            break;
+
+            case 73: case 74: case 75: case 76: case 77:
+
+            magicText = treasureArraySub[208];
+            subText = res.getString(R.string.dmg187);
+            break;
+
+            case 78: case 79: case 80: case 81: case 82:
+
+            magicText = treasureArraySub[222];
+            subText = res.getString(R.string.dmg188);
+            break;
+
+            case 83: case 84: case 85: case 86: case 87:
+
+            magicText = treasureArraySub[231];
+            subText = res.getString(R.string.dmg188);
+            break;
+
+            case 88: case 89: case 90: case 91: case 92:
+
+            magicText = treasureArraySub[294];
+            subText = res.getString(R.string.dmg200);
+            break;
+
+            case 93: case 94: case 95: case 96: case 97:
+            case 98:
+
+            magicText = treasureArraySub[190];
+            subText = res.getString(R.string.dmg183);
+            break;
+
+            case 99:
+
+            magicText = treasureArraySub[49];
+            subText = res.getString(R.string.dmg153);
+            break;
+
+            case 100:
+
+            magicText = treasureArraySub[204];
+            subText = res.getString(R.string.dmg185);
+            break;
         }
 
         addToList(magicText, subText);
