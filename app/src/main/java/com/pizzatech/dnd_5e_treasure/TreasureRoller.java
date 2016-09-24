@@ -2213,38 +2213,476 @@ class TreasureRoller extends AsyncTask {
      */
     private void rollMagicG() {
         // Roll d100 to determine which magic item
-        Integer roll = r.nextInt(100 - 1);
+        Integer roll = r.nextInt(100 - 1) + 1;
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
         figurineArray = res.getStringArray(R.array.tr_selection_array_figurine);
 
         String magicText = "";
         String subText = "";
 
-        //TODO: Populate page array in strings.xml and add references to switch statement
-        //TODO: Populate switch
-
         switch (roll) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+                magicText = treasureArraySub[349];
+                subText = res.getString(R.string.dmg213);
+                break;
+
             /**
              *  For case 12-14 add another roll of a D8
-             *  dice to determine which figurin of
-             *  wonderous power is picked
+             *  dice to determine which figurine of
+             *  wondrous power is picked
              *  this will need another array
              *  in strings.xml called tr_selection_array_figurine
              */
             case 12:
             case 13:
             case 14:
-
                 Integer figurineRoll = r.nextInt(8 - 1);
-                if ((figurineRoll >= 6) && (figurineRoll <= 7)) {
-                    magicText = figurineArray[6];
-                    subText = roll.toString();
-                    // subText = pageArraySub[roll];
-                } else {
-                    magicText = figurineArray[roll];
-                    subText = roll.toString();
-                    // subText = pageArraySub[roll];
-                }
+                magicText = figurineArray[figurineRoll];
+                subText = res.getString(R.string.dmg169);
+                break;
+
+            case 15:
+                magicText = treasureArraySub[3];
+                subText = res.getString(R.string.dmg150);
+                break;
+
+            case 16:
+                magicText = treasureArraySub[9];
+                subText = res.getString(R.string.dmg150);
+                break;
+
+            case 17:
+                magicText = treasureArraySub[14];
+                subText = res.getString(R.string.dmg150);
+                break;
+
+            case 18:
+                magicText = treasureArraySub[28];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+            case 19:
+                magicText = treasureArraySub[47];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+            case 20:
+                magicText = treasureArraySub[56];
+                subText = res.getString(R.string.dmg155);
+                break;
+
+            case 21:
+                magicText = treasureArraySub[59];
+                subText = res.getString(R.string.dmg155);
+                break;
+
+            case 22:
+                magicText = treasureArraySub[61];
+                subText = res.getString(R.string.dmg155);
+                break;
+
+            case 23:
+                magicText = treasureArraySub[63];
+                subText = res.getString(R.string.dmg155);
+                break;
+
+            case 24:
+                magicText = treasureArraySub[64];
+                subText = res.getString(R.string.dmg155);
+                break;
+
+            case 25:
+                magicText = treasureArraySub[67];
+                subText = res.getString(R.string.dmg156);
+                break;
+
+            case 26:
+                magicText = treasureArraySub[69];
+                subText = res.getString(R.string.dmg156);
+                break;
+
+            case 27:
+                magicText = treasureArraySub[70];
+                subText = res.getString(R.string.dmg156);
+                break;
+
+            case 28:
+                magicText = treasureArraySub[75];
+                subText = res.getString(R.string.dmg157);
+                break;
+
+            case 29:
+                magicText = treasureArraySub[77];
+                subText = res.getString(R.string.dmg158);
+                break;
+
+            case 30:
+                magicText = treasureArraySub[34];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+
+            case 31:
+                magicText = treasureArraySub[21];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+            case 32:
+                magicText = treasureArraySub[45];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+            case 33:
+                magicText = treasureArraySub[22];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+            case 34:
+                magicText = treasureArraySub[82];
+                subText = res.getString(R.string.dmg158);
+                break;
+
+            case 35:
+                magicText = treasureArraySub[86];
+                subText = res.getString(R.string.dmg159);
+                break;
+
+            case 36:
+                magicText = treasureArraySub[90];
+                subText = res.getString(R.string.dmg159);
+                break;
+
+            case 37:
+                magicText = treasureArraySub[92];
+                subText = res.getString(R.string.dmg160);
+                break;
+
+            case 38:
+                magicText = treasureArraySub[93];
+                subText = res.getString(R.string.dmg161);
+                break;
+
+            case 39:
+                magicText = treasureArraySub[100];
+                subText = res.getString(R.string.dmg165);
+                break;
+
+            case 40:
+                magicText = treasureArraySub[102];
+                subText = res.getString(R.string.dmg166);
+                break;
+
+            case 41:
+                magicText = treasureArraySub[113];
+                subText = res.getString(R.string.dmg168);
+                break;
+
+            case 42:
+                magicText = treasureArraySub[120];
+                subText = res.getString(R.string.dmg170);
+                break;
+
+            case 43:
+                magicText = treasureArraySub[125];
+                subText = res.getString(R.string.dmg172);
+                break;
+
+            case 44:
+                magicText = treasureArraySub[126];
+                subText = res.getString(R.string.dmg172);
+                break;
+
+            case 45:
+                magicText = treasureArraySub[80];
+                subText = res.getString(R.string.dmg172);
+                break;
+
+            case 46:
+                magicText = treasureArraySub[137];
+                subText = res.getString(R.string.dmg174);
+                break;
+
+            case 47:
+                magicText = treasureArraySub[140];
+                subText = res.getString(R.string.dmg174);
+                break;
+
+            case 48:
+                magicText = treasureArraySub[141];
+                subText = res.getString(R.string.dmg175);
+                break;
+
+            case 49:
+                magicText = treasureArraySub[148];
+                subText = res.getString(R.string.dmg176);
+                break;
+
+            case 50:
+                magicText = treasureArraySub[153];
+                subText = res.getString(R.string.dmg176);
+                break;
+
+            case 51:
+                magicText = treasureArraySub[161];
+                subText = res.getString(R.string.dmg176);
+                break;
+
+            case 52:
+                magicText = treasureArraySub[168];
+                subText = res.getString(R.string.dmg176);
+                break;
+
+            case 53:
+                magicText = treasureArraySub[170];
+                subText = res.getString(R.string.dmg176);
+                break;
+
+            case 54:
+                magicText = treasureArraySub[172];
+                subText = res.getString(R.string.dmg176);
+                break;
+
+            case 55:
+                magicText = treasureArraySub[154];
+                subText = res.getString(R.string.dmg177);
+                break;
+
+            case 56:
+                magicText = treasureArraySub[31];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+            case 57:
+                magicText = treasureArraySub[24];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+            case 58:
+                magicText = treasureArraySub[174];
+                subText = res.getString(R.string.dmg179);
+                break;
+
+            case 59:
+                magicText = treasureArraySub[175];
+                subText = res.getString(R.string.dmg179);
+                break;
+
+            case 60:
+                magicText = treasureArraySub[176];
+                subText = res.getString(R.string.dmg180);
+                break;
+
+            case 61:
+                magicText = treasureArraySub[177];
+                subText = res.getString(R.string.dmg180);
+                break;
+
+            case 62:
+                magicText = treasureArraySub[188];
+                subText = res.getString(R.string.dmg182);
+                break;
+
+            case 63:
+                magicText = treasureArraySub[197];
+                subText = res.getString(R.string.dmg184);
+                break;
+
+            case 64:
+                magicText = treasureArraySub[236];
+                subText = res.getString(R.string.dmg189);
+                break;
+
+            case 65:
+                magicText = treasureArraySub[239];
+                subText = res.getString(R.string.dmg191);
+                break;
+
+            case 66:
+                magicText = treasureArraySub[240];
+                subText = res.getString(R.string.dmg191);
+                break;
+
+            case 67:
+                magicText = treasureArraySub[242];
+                subText = res.getString(R.string.dmg191);
+                break;
+
+            case 68:
+                magicText = treasureArraySub[246];
+                subText = res.getString(R.string.dmg191);
+                break;
+
+            case 69:
+                magicText = treasureArraySub[248];
+                subText = res.getString(R.string.dmg192);
+                break;
+
+            case 70:
+                magicText = treasureArraySub[2];
+                subText = res.getString(R.string.dmg192);
+                break;
+
+            case 71:
+                magicText = treasureArraySub[253];
+                subText = res.getString(R.string.dmg193);
+                break;
+
+            case 72:
+                magicText = treasureArraySub[258];
+                subText = res.getString(R.string.dmg193);
+                break;
+
+            case 73:
+                magicText = treasureArraySub[259];
+                subText = res.getString(R.string.dmg193);
+                break;
+
+            case 74:
+                magicText = treasureArraySub[268];
+                subText = res.getString(R.string.dmg197);
+                break;
+
+            case 75:
+                magicText = treasureArraySub[271];
+                subText = res.getString(R.string.dmg197);
+                break;
+
+            case 76:
+                magicText = treasureArraySub[274];
+                subText = res.getString(R.string.dmg197);
+                break;
+
+            case 77:
+                magicText = treasureArraySub[36];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+            case 78:
+                magicText = treasureArraySub[25];
+                subText = res.getString(R.string.dmg152);
+                break;
+
+            case 79:
+                magicText = treasureArraySub[282];
+                subText = res.getString(R.string.dmg200);
+                break;
+
+            case 80:
+                magicText = treasureArraySub[281];
+                subText = res.getString(R.string.dmg200);
+                break;
+
+            case 81:
+                magicText = treasureArraySub[299];
+                subText = res.getString(R.string.dmg201);
+                break;
+
+            case 82:
+                magicText = treasureArraySub[302];
+                subText = res.getString(R.string.dmg202);
+                break;
+
+            case 83:
+                magicText = treasureArraySub[305];
+                subText = res.getString(R.string.dmg203);
+                break;
+
+            case 84:
+                magicText = treasureArraySub[309];
+                subText = res.getString(R.string.dmg204);
+                break;
+
+            case 85:
+                magicText = treasureArraySub[311];
+                subText = res.getString(R.string.dmg205);
+                break;
+
+            case 86:
+                magicText = treasureArraySub[312];
+                subText = res.getString(R.string.dmg205);
+                break;
+
+            case 87:
+                magicText = treasureArraySub[314];
+                subText = res.getString(R.string.dmg205);
+                break;
+
+            case 88:
+                magicText = treasureArraySub[316];
+                subText = res.getString(R.string.dmg206);
+                break;
+
+            case 89:
+                magicText = treasureArraySub[319];
+                subText = res.getString(R.string.dmg207);
+                break;
+
+            case 90:
+                magicText = treasureArraySub[323];
+                subText = res.getString(R.string.dmg208);
+                break;
+
+            case 91:
+                magicText = treasureArraySub[330];
+                subText = res.getString(R.string.dmg209);
+                break;
+
+            case 92:
+                magicText = treasureArraySub[332];
+                subText = res.getString(R.string.dmg209);
+                break;
+
+            case 93:
+                magicText = treasureArraySub[333];
+                subText = res.getString(R.string.dmg210);
+                break;
+
+            case 94:
+                magicText = treasureArraySub[334];
+                subText = res.getString(R.string.dmg210);
+                break;
+
+            case 95:
+                magicText = treasureArraySub[335];
+                subText = res.getString(R.string.dmg210);
+                break;
+
+            case 96:
+                magicText = treasureArraySub[336];
+                subText = res.getString(R.string.dmg211);
+                break;
+
+            case 97:
+                magicText = treasureArraySub[339];
+                subText = res.getString(R.string.dmg211);
+                break;
+
+            case 98:
+                magicText = treasureArraySub[343];
+                subText = res.getString(R.string.dmg212);
+                break;
+
+            case 99:
+                magicText = treasureArraySub[346];
+                subText = res.getString(R.string.dmg212);
+                break;
+
+            case 100:
+                magicText = treasureArraySub[354];
+                subText = res.getString(R.string.dmg214);
+                break;
+
+
         }
 
         addToList(magicText, subText);
@@ -2256,7 +2694,7 @@ class TreasureRoller extends AsyncTask {
      */
     private void rollMagicH() {
         // Roll d100 to determine which magic item
-        Integer roll = r.nextInt(100 - 1);
+        Integer roll = r.nextInt(100 - 1) + 1;
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
 
 
