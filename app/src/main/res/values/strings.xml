@@ -1,3 +1,4 @@
+
 <resources>
     <string name="app_name">dnd-5e-treasure</string>
     <string name="cr_selection_label_text">CR:</string>
@@ -255,716 +256,717 @@
 
     //Magic Items - See page 144
     <string-array name="tr_selection_array_magic_sub">
-        <item>Armor, +2 chain mail</item>
         //0
-        <item>Armor, +2 chain shirt</item>
+        <item>Armor, +2 chain mail</item>
         //1
-        <item>Ring of spell storing</item>
+        <item>Armor, +2 chain shirt</item>
         //2
-        <item>Adamantine armor (breastplate)</item>
+        <item>Ring of spell storing</item>
         //3
-        <item>Adamantine armor (chain mail)</item>
+        <item>Adamantine armor (breastplate)</item>
         //4
-        <item>Adamantine armor (chain shirt)</item>
+        <item>Adamantine armor (chain mail)</item>
         //5
-        <item>Adamantine armor (half plate)</item>
+        <item>Adamantine armor (chain shirt)</item>
         //6
-        <item>Adamantine armor (plate)</item>
+        <item>Adamantine armor (half plate)</item>
         //7
-        <item>Adamantine armor (scale mail)</item>
+        <item>Adamantine armor (plate)</item>
         //8
-        <item>Adamantine armor (splint)</item>
+        <item>Adamantine armor (scale mail)</item>
         //9
-        <item>Alchemy jug</item>
+        <item>Adamantine armor (splint)</item>
         //10
-        <item>Ammunition, +1</item>
+        <item>Alchemy jug</item>
         //11
-        <item>Ammunition, +2</item>
+        <item>Ammunition, +1</item>
         //12
-        <item>Ammunition, +3</item>
+        <item>Ammunition, +2</item>
         //13
-        <item>Amulet of health</item>
+        <item>Ammunition, +3</item>
         //14
-        <item>Amulet of proof against detection and location</item>
+        <item>Amulet of health</item>
         //15
-        <item>Amulet of the planes</item>
+        <item>Amulet of proof against detection and location</item>
         //16
-        <item>Animated shield</item>
+        <item>Amulet of the planes</item>
         //17
-        <item>Apparatus of Kwalish</item>
+        <item>Animated shield</item>
         //18
-        <item>Armor of invulnerability</item>
+        <item>Apparatus of Kwalish</item>
         //19
-        <item>Armor of resistance (breastplate)</item>
+        <item>Armor of invulnerability</item>
         //20
-        <item>Armor of resistance (chain mail)</item>
+        <item>Armor of resistance (breastplate)</item>
         //21
-        <item>Armor of resistance (chain shirt)</item>
+        <item>Armor of resistance (chain mail)</item>
         //22
-        <item>Armor of resistance (half plate)</item>
+        <item>Armor of resistance (chain shirt)</item>
         //23
-        <item>Armor of resistance (leather)</item>
+        <item>Armor of resistance (half plate)</item>
         //24
-        <item>Armor of resistance (scale mail)</item>
+        <item>Armor of resistance (leather)</item>
         //25
-        <item>Armor of resistance (splint)</item>
+        <item>Armor of resistance (scale mail)</item>
         //26
-        <item>Armor of resistance (studded leather)</item>
+        <item>Armor of resistance (splint)</item>
         //27
-        <item>Armor of vulnerability</item>
+        <item>Armor of resistance (studded leather)</item>
         //28
-        <item>Armor, + 1 breastplate</item>
+        <item>Armor of vulnerability</item>
         //29
-        <item>Armor, + 1 half plate</item>
+        <item>Armor, + 1 breastplate</item>
         //30
-        <item>Armor, + 1 leather</item>
+        <item>Armor, + 1 half plate</item>
         //31
-        <item>Armor, + 1 splint</item>
+        <item>Armor, + 1 leather</item>
         //32
-        <item>Armor, + 1 studded leather</item>
+        <item>Armor, + 1 splint</item>
         //33
-        <item>Armor, +1 chain mail</item>
+        <item>Armor, + 1 studded leather</item>
         //34
-        <item>Armor, +1 plate</item>
+        <item>Armor, +1 chain mail</item>
         //35
-        <item>Armor, +1 scale mail</item>
+        <item>Armor, +1 plate</item>
         //36
-        <item>Armor, +2 breastplate</item>
+        <item>Armor, +1 scale mail</item>
         //37
-        <item>Armor, +2 leather</item>
+        <item>Armor, +2 breastplate</item>
         //38
-        <item>Armor, +2 scale mail</item>
+        <item>Armor, +2 leather</item>
         //39
-        <item>Armor, +2 splint</item>
+        <item>Armor, +2 scale mail</item>
         //40
-        <item>Armor, +2 studded leather</item>
+        <item>Armor, +2 splint</item>
         //41
-        <item>Armor, +3 chain mail</item>
+        <item>Armor, +2 studded leather</item>
         //42
-        <item>Armor, +3 chain shirt</item>
+        <item>Armor, +3 chain mail</item>
         //43
-        <item>Armor, +3 leather</item>
+        <item>Armor, +3 chain shirt</item>
         //44
-        <item>Armor,+ 1 chain shirt</item>
+        <item>Armor, +3 leather</item>
         //45
-        <item>Arrow of slaying</item>
+        <item>Armor,+ 1 chain shirt</item>
         //46
-        <item>Arrow-catching shield</item>
+        <item>Arrow of slaying</item>
         //47
-        <item>Bag of beans</item>
+        <item>Arrow-catching shield</item>
         //48
-        <item>Bag of devouring</item>
+        <item>Bag of beans</item>
         //49
-        <item>Bag of holding</item>
+        <item>Bag of devouring</item>
         //50
-        <item>Bag of tricks (gray)</item>
+        <item>Bag of holding</item>
         //51
-        <item>Bag of tricks (rust)</item>
+        <item>Bag of tricks (gray)</item>
         //52
-        <item>Bag of tricks (tan)</item>
+        <item>Bag of tricks (rust)</item>
         //53
-        <item>Bead of force</item>
+        <item>Bag of tricks (tan)</item>
         //54
-        <item>Belt of cloud giant strength</item>
+        <item>Bead of force</item>
         //55
-        <item>Belt of dwarvenkind</item>
+        <item>Belt of cloud giant strength</item>
         //56
-        <item>Belt of fire giant strength</item>
+        <item>Belt of dwarvenkind</item>
         //57
-        <item>Belt of frost (or stone) giant strength</item>
+        <item>Belt of fire giant strength</item>
         //58
-        <item>Belt of hill giant st rength</item>
+        <item>Belt of frost (or stone) giant strength</item>
         //59
-        <item>Belt of storm giant strength</item>
+        <item>Belt of hill giant st rength</item>
         //60
-        <item>Berserker axe</item>
+        <item>Belt of storm giant strength</item>
         //61
-        <item>Boots of elvenkind</item>
+        <item>Berserker axe</item>
         //62
-        <item>Boots of levitation</item>
+        <item>Boots of elvenkind</item>
         //63
-        <item>Boots of speed </item>
+        <item>Boots of levitation</item>
         //64
-        <item>Boots of striding and springing</item>
+        <item>Boots of speed </item>
         //65
-        <item>Boots of the winterlands</item>
+        <item>Boots of striding and springing</item>
         //66
-        <item>Bowl of commanding water elementals</item>
+        <item>Boots of the winterlands</item>
         //67
-        <item>Bracers of archery</item>
+        <item>Bowl of commanding water elementals</item>
         //68
-        <item>Bracers of defense</item>
+        <item>Bracers of archery</item>
         //69
-        <item>Brazier of commanding fire elementals</item>
+        <item>Bracers of defense</item>
         //70
-        <item>Brooch of shielding</item>
+        <item>Brazier of commanding fire elementals</item>
         //71
-        <item>Broom of flying</item>
+        <item>Brooch of shielding</item>
         //72
-        <item>Candle of invocation</item>
+        <item>Broom of flying</item>
         //73
-        <item>Cap of water breathing</item>
+        <item>Candle of invocation</item>
         //74
-        <item>Cape of the mountebank</item>
+        <item>Cap of water breathing</item>
         //75
-        <item>Carpet of flying</item>
+        <item>Cape of the mountebank</item>
         //76
-        <item>Censer of controlling air elementals</item>
+        <item>Carpet of flying</item>
         //77
-        <item>Chime of opening</item>
+        <item>Censer of controlling air elementals</item>
         //78
-        <item>Circlet of blasting</item>
+        <item>Chime of opening</item>
         //79
-        <item>Glamoured studded leather</item>
+        <item>Circlet of blasting</item>
         //80
-        <item>Cloak of arachnida</item>
+        <item>Glamoured studded leather</item>
         //81
-        <item>Cloak of displacement</item>
+        <item>Cloak of arachnida</item>
         //82
-        <item>Cloak of elvenkind</item>
+        <item>Cloak of displacement</item>
         //83
-        <item>Cloak of invisibility</item>
+        <item>Cloak of elvenkind</item>
         //84
-        <item>Cloak of protection</item>
+        <item>Cloak of invisibility</item>
         //85
-        <item>Cloak of the bat</item>
+        <item>Cloak of protection</item>
         //86
-        <item>Cloak of the manta ray</item>
+        <item>Cloak of the bat</item>
         //87
-        <item>Crystal ball (legendary version)</item>
+        <item>Cloak of the manta ray</item>
         //88
-        <item>Crystal ball (very rare version)</item>
+        <item>Crystal ball (legendary version)</item>
         //89
-        <item>Cube of force</item>
+        <item>Crystal ball (very rare version)</item>
         //90
-        <item>Cubic gate</item>
+        <item>Cube of force</item>
         //91
-        <item>Daern\'s instant fortress</item>
+        <item>Cubic gate</item>
         //92
-        <item>Dagger of venom</item>
+        <item>Daern\'s instant fortress</item>
         //93
-        <item>Dancing sword</item>
+        <item>Dagger of venom</item>
         //94
-        <item>Decanter of endless water</item>
+        <item>Dancing sword</item>
         //95
-        <item>Deck of illusions</item>
+        <item>Decanter of endless water</item>
         //96
-        <item>Deck of many things</item>
+        <item>Deck of illusions</item>
         //97
-        <item>Defender</item>
+        <item>Deck of many things</item>
         //98
-        <item>Demon armor</item>
+        <item>Defender</item>
         //99
-        <item>Dimensional shackles</item>
+        <item>Demon armor</item>
         //100
-        <item>Dragon scale mail</item>
+        <item>Dimensional shackles</item>
         //101
-        <item>Dragon slayer</item>
+        <item>Dragon scale mail</item>
         //102
-        <item>Driftglobe</item>
+        <item>Dragon slayer</item>
         //103
-        <item>Dust of disappearance</item>
+        <item>Driftglobe</item>
         //104
-        <item>Dust of dryness</item>
+        <item>Dust of disappearance</item>
         //105
-        <item>Dust of sneezing and choking</item>
+        <item>Dust of dryness</item>
         //106
-        <item>Dwarven plate</item>
+        <item>Dust of sneezing and choking</item>
         //107
-        <item>Dwarven thrower</item>
+        <item>Dwarven plate</item>
         //108
-        <item>Efreeti bottle</item>
+        <item>Dwarven thrower</item>
         //109
-        <item>Efreeti chain</item>
+        <item>Efreeti bottle</item>
         //110
-        <item>Elemental gem</item>
+        <item>Efreeti chain</item>
         //111
-        <item>Elixir of health</item>
+        <item>Elemental gem</item>
         //112
-        <item>Elven chain</item>
+        <item>Elixir of health</item>
         //113
-        <item>Eversmoking bottle</item>
+        <item>Elven chain</item>
         //114
-        <item>Eyes of charming</item>
+        <item>Eversmoking bottle</item>
         //115
-        <item>Eyes of minute seeing</item>
+        <item>Eyes of charming</item>
         //116
-        <item>Eyes of the eagle</item>
+        <item>Eyes of minute seeing</item>
         //117
-        <item>Figurine of wondrous power (obsidian steed)</item>
+        <item>Eyes of the eagle</item>
         //118
-        <item>Figurine of wondrous power (silver raven)</item>
+        <item>Figurine of wondrous power (obsidian steed)</item>
         //119
-        <item>Flame tongue</item>
+        <item>Figurine of wondrous power (silver raven)</item>
         //120
-        <item>Folding boat</item>
+        <item>Flame tongue</item>
         //121
-        <item>Frost brand</item>
+        <item>Folding boat</item>
         //122
-        <item>Gauntlets of ogre power</item>
+        <item>Frost brand</item>
         //123
-        <item>Gem of brightness</item>
+        <item>Gauntlets of ogre power</item>
         //124
-        <item>Gem of seeing</item>
+        <item>Gem of brightness</item>
         //125
-        <item>Giant slayer</item>
+        <item>Gem of seeing</item>
         //126
-        <item>Gloves of missile snaring</item>
+        <item>Giant slayer</item>
         //127
-        <item>Gloves of swimming and climbing</item>
+        <item>Gloves of missile snaring</item>
         //128
-        <item>Gloves of thievery</item>
+        <item>Gloves of swimming and climbing</item>
         //129
-        <item>Goggles of night</item>
+        <item>Gloves of thievery</item>
         //130
-        <item>Hammer of thunderbolts</item>
+        <item>Goggles of night</item>
         //131
-        <item>Hat of disguise</item>
+        <item>Hammer of thunderbolts</item>
         //132
-        <item>Headband of intellect</item>
+        <item>Hat of disguise</item>
         //133
-        <item>Helm of brilliance</item>
+        <item>Headband of intellect</item>
         //134
-        <item>Helm of comprehending languages</item>
+        <item>Helm of brilliance</item>
         //135
-        <item>Helm of telepathy</item>
+        <item>Helm of comprehending languages</item>
         //136
-        <item>Helm of teleportation</item>
+        <item>Helm of telepathy</item>
         //137
-        <item>Heward\'s handy haversack</item>
+        <item>Helm of teleportation</item>
         //138
-        <item>Holy avenger</item>
+        <item>Heward\'s handy haversack</item>
         //139
-        <item>Horn of blasting</item>
+        <item>Holy avenger</item>
         //140
-        <item>Horn of Valhalla (silver or brass)</item>
+        <item>Horn of blasting</item>
         //141
-        <item>Horn of Valhalla (bronze)</item>
+        <item>Horn of Valhalla (silver or brass)</item>
         //142
-        <item>Horn of Valhalla (iron)</item>
+        <item>Horn of Valhalla (bronze)</item>
         //143
-        <item>Horseshoes of a zephyr</item>
+        <item>Horn of Valhalla (iron)</item>
         //144
-        <item>Horseshoes of speed</item>
+        <item>Horseshoes of a zephyr</item>
         //145
-        <item>Immovable rod</item>
+        <item>Horseshoes of speed</item>
         //146
-        <item>Instrument of the bards (Anstruth harp)</item>
+        <item>Immovable rod</item>
         //147
-        <item>Instrument of the bards (Canaith mandolin)</item>
+        <item>Instrument of the bards (Anstruth harp)</item>
         //148
-        <item>Instrument of the bards (Doss lute)</item>
+        <item>Instrument of the bards (Canaith mandolin)</item>
         //149
-        <item>Instrument of the bards (Fochlucan bandore)</item>
+        <item>Instrument of the bards (Doss lute)</item>
         //150
-        <item>Instrument of the bards (Mac-Fuimidh cittern)</item>
+        <item>Instrument of the bards (Fochlucan bandore)</item>
         //151
-        <item>Instrument of the bards (OIIamh harp)</item>
+        <item>Instrument of the bards (Mac-Fuimidh cittern)</item>
         //152
-        <item>Instrument ofthe bards (Cii lyre)</item>
+        <item>Instrument of the bards (OIIamh harp)</item>
         //153
-        <item>Iron bands of Bilarro</item>
+        <item>Instrument ofthe bards (Cii lyre)</item>
         //154
-        <item>Iron flask</item>
+        <item>Iron bands of Bilarro</item>
         //155
-        <item>Javelin of lightning</item>
+        <item>Iron flask</item>
         //156
-        <item>Keoghtom\'s ointment</item>
+        <item>Javelin of lightning</item>
         //157
-        <item>Lantern of revealing</item>
+        <item>Keoghtom\'s ointment</item>
         //158
-        <item>loun stone (absorption)</item>
+        <item>Lantern of revealing</item>
         //159
-        <item>loun stone (agility)</item>
+        <item>loun stone (absorption)</item>
         //160
-        <item>loun stone (awareness)</item>
+        <item>loun stone (agility)</item>
         //161
-        <item>loun stone (fortitude)</item>
+        <item>loun stone (awareness)</item>
         //162
-        <item>loun stone (greater absorption)</item>
+        <item>loun stone (fortitude)</item>
         //163
-        <item>loun stone (insight)</item>
+        <item>loun stone (greater absorption)</item>
         //164
-        <item>loun stone (intellect)</item>
+        <item>loun stone (insight)</item>
         //165
-        <item>loun stone (leadership)</item>
+        <item>loun stone (intellect)</item>
         //166
-        <item>loun stone (mastery)</item>
+        <item>loun stone (leadership)</item>
         //167
-        <item>loun stone (protection)</item>
+        <item>loun stone (mastery)</item>
         //168
-        <item>loun stone (regeneration)</item>
+        <item>loun stone (protection)</item>
         //169
-        <item>loun stone (reserve)</item>
+        <item>loun stone (regeneration)</item>
         //170
-        <item>loun stone (strength)</item>
+        <item>loun stone (reserve)</item>
         //171
-        <item>loun stone (sustenance)</item>
+        <item>loun stone (strength)</item>
         //172
-        <item>Luck blade</item>
+        <item>loun stone (sustenance)</item>
         //173
-        <item>Mace of disruption</item>
+        <item>Luck blade</item>
         //174
-        <item>Mace of smiting</item>
+        <item>Mace of disruption</item>
         //175
-        <item>Mace of terror</item>
+        <item>Mace of smiting</item>
         //176
-        <item>Mantle of spell resistance</item>
+        <item>Mace of terror</item>
         //177
-        <item>Manual of bodily health</item>
+        <item>Mantle of spell resistance</item>
         //178
-        <item>Manual of gainful exercise</item>
+        <item>Manual of bodily health</item>
         //179
-        <item>Manual of golems</item>
+        <item>Manual of gainful exercise</item>
         //180
-        <item>Manual of quickness of action</item>
+        <item>Manual of golems</item>
         //181
-        <item>Mariner\'s armor</item>
+        <item>Manual of quickness of action</item>
         //182
-        <item>Medallion of thoughts</item>
+        <item>Mariner\'s armor</item>
         //183
-        <item>Mirror of life trapping</item>
+        <item>Medallion of thoughts</item>
         //184
-        <item>Mithral armor</item>
+        <item>Mirror of life trapping</item>
         //185
-        <item>Necklace of adaptation</item>
+        <item>Mithral armor</item>
         //186
-        <item>Necklace of fire balls</item>
+        <item>Necklace of adaptation</item>
         //187
-        <item>Necklace of prayer beads</item>
+        <item>Necklace of fire balls</item>
         //188
-        <item>Nine lives stealer</item>
+        <item>Necklace of prayer beads</item>
         //189
-        <item>Nolzur\'s marvelous pigments</item>
+        <item>Nine lives stealer</item>
         //190
-        <item>Oath bow</item>
+        <item>Nolzur\'s marvelous pigments</item>
         //191
-        <item>Oil of etherealnes</item>
+        <item>Oath bow</item>
         //192
-        <item>Oil of sharpness</item>
+        <item>Oil of etherealnes</item>
         //193
-        <item>Oil of slipperiness</item>
+        <item>Oil of sharpness</item>
         //194
-        <item>Pearl of power</item>
+        <item>Oil of slipperiness</item>
         //195
-        <item>Periapt of health</item>
+        <item>Pearl of power</item>
         //196
-        <item>Periapt of proof against poison</item>
+        <item>Periapt of health</item>
         //197
-        <item>Periapt of wound closure</item>
+        <item>Periapt of proof against poison</item>
         //198
-        <item>Philter of love</item>
+        <item>Periapt of wound closure</item>
         //199
-        <item>Pipes of haunting</item>
+        <item>Philter of love</item>
         //200
-        <item>Pipes of the sewers</item>
+        <item>Pipes of haunting</item>
         //201
-        <item>Plate armor of etherealness</item>
+        <item>Pipes of the sewers</item>
         //202
-        <item>Plate armor of resistance</item>
+        <item>Plate armor of etherealness</item>
         //203
-        <item>Portable hole</item>
+        <item>Plate armor of resistance</item>
         //204
-        <item>Potion of animal friendship</item>
+        <item>Portable hole</item>
         //205
-        <item>Potion of clairvoyance</item>
+        <item>Potion of animal friendship</item>
         //206
-        <item>Potion of climbing</item>
+        <item>Potion of clairvoyance</item>
         //207
-        <item>Potion of cloud giant strength</item>
+        <item>Potion of climbing</item>
         //208
-        <item>Potion of diminution</item>
+        <item>Potion of cloud giant strength</item>
         //209
-        <item>Potion of fire giant strength</item>
+        <item>Potion of diminution</item>
         //210
-        <item>Potion of fire breath</item>
+        <item>Potion of fire giant strength</item>
         //211
-        <item>Potion of flying</item>
+        <item>Potion of fire breath</item>
         //212
-        <item>Potion of frost giant strength</item>
+        <item>Potion of flying</item>
         //213
-        <item>Potion of gaseous form</item>
+        <item>Potion of frost giant strength</item>
         //214
-        <item>Potion of greater healing</item>
+        <item>Potion of gaseous form</item>
         //215
-        <item>Potion of growth</item>
+        <item>Potion of greater healing</item>
         //216
-        <item>Potion of healing</item>
+        <item>Potion of growth</item>
         //217
-        <item>Potion of heroism</item>
+        <item>Potion of healing</item>
         //218
-        <item>Potion of hill giant strength</item>
+        <item>Potion of heroism</item>
         //219
-        <item>Potion of invisibility</item>
+        <item>Potion of hill giant strength</item>
         //220
-        <item>Potion of invulnerability</item>
+        <item>Potion of invisibility</item>
         //221
-        <item>Potion of longevity</item>
+        <item>Potion of invulnerability</item>
         //222
-        <item>Potion of mind reading</item>
+        <item>Potion of longevity</item>
         //223
-        <item>Potion of poison</item>
+        <item>Potion of mind reading</item>
         //224
-        <item>Potion of resistance</item>
+        <item>Potion of poison</item>
         //225
-        <item>Potion of speed</item>
+        <item>Potion of resistance</item>
         //226
-        <item>Potion of stone giant strength</item>
+        <item>Potion of speed</item>
         //227
-        <item>Potion of storm giant strength</item>
+        <item>Potion of stone giant strength</item>
         //228
-        <item>Potion of superior healing</item>
+        <item>Potion of storm giant strength</item>
         //229
-        <item>Potion of supreme healing</item>
+        <item>Potion of superior healing</item>
         //230
-        <item>Potion of vitality</item>
+        <item>Potion of supreme healing</item>
         //231
-        <item>Potion of water breathing</item>
+        <item>Potion of vitality</item>
         //232
-        <item>Quaal\'s feather token</item>
+        <item>Potion of water breathing</item>
         //233
-        <item>Quiver of Ehlonna</item>
+        <item>Quaal\'s feather token</item>
         //234
-        <item>Ring of air elemental command</item>
+        <item>Quiver of Ehlonna</item>
         //235
-        <item>Ring of animal influence</item>
+        <item>Ring of air elemental command</item>
         //236
-        <item>Ring of djinni summoning</item>
+        <item>Ring of animal influence</item>
         //237
-        <item>Ring of earth elemental command</item>
+        <item>Ring of djinni summoning</item>
         //238
-        <item>Ring of evasion</item>
+        <item>Ring of earth elemental command</item>
         //239
-        <item>Ring of feather falling</item>
+        <item>Ring of evasion</item>
         //240
-        <item>Ring of fire elemental command</item>
+        <item>Ring of feather falling</item>
         //241
-        <item>Ring of free action</item>
+        <item>Ring of fire elemental command</item>
         //242
-        <item>Ring of invisibility</item>
+        <item>Ring of free action</item>
         //243
-        <item>Ring of jumping</item>
+        <item>Ring of invisibility</item>
         //244
-        <item>Ring of mind shielding</item>
+        <item>Ring of jumping</item>
         //245
-        <item>Ring of protection</item>
+        <item>Ring of mind shielding</item>
         //246
-        <item>Ring of regeneration</item>
+        <item>Ring of protection</item>
         //247
-        <item>Ring of resistance</item>
+        <item>Ring of regeneration</item>
         //248
-        <item>Ring of shooting stars</item>
+        <item>Ring of resistance</item>
         //249
-        <item>Ring of spell turning</item>
+        <item>Ring of shooting stars</item>
         //250
-        <item>Ring of swimming</item>
+        <item>Ring of spell turning</item>
         //251
-        <item>Ring of telekinesis</item>
+        <item>Ring of swimming</item>
         //252
-        <item>Ring of the ram</item>
+        <item>Ring of telekinesis</item>
         //253
-        <item>Ring of three wishes</item>
+        <item>Ring of the ram</item>
         //254
-        <item>Ring of warmth</item>
+        <item>Ring of three wishes</item>
         //255
-        <item>Ring of water elemental command</item>
+        <item>Ring of warmth</item>
         //256
-        <item>Ring of water walking</item>
+        <item>Ring of water elemental command</item>
         //257
-        <item>Ring of X-ray vision</item>
+        <item>Ring of water walking</item>
         //258
-        <item>Robe of eyes</item>
+        <item>Ring of X-ray vision</item>
         //259
-        <item>Robe of scintillating colors</item>
+        <item>Robe of eyes</item>
         //260
-        <item>Robe of stars</item>
+        <item>Robe of scintillating colors</item>
         //261
-        <item>Robe of the archmagi</item>
+        <item>Robe of stars</item>
         //262
-        <item>Robe of useful items</item>
+        <item>Robe of the archmagi</item>
         //263
-        <item>Rod of absorption</item>
+        <item>Robe of useful items</item>
         //264
-        <item>Rod of alertness</item>
+        <item>Rod of absorption</item>
         //265
-        <item>Rod of lordly might</item>
+        <item>Rod of alertness</item>
         //266
-        <item>Rod of resurrection</item>
+        <item>Rod of lordly might</item>
         //267
-        <item>Rod of rulership</item>
+        <item>Rod of resurrection</item>
         //268
-        <item>Rod of security</item>
+        <item>Rod of rulership</item>
         //269
-        <item>Rod of the pact keeper, + 1</item>
+        <item>Rod of security</item>
         //270
-        <item>Rod of the pact keeper, +2</item>
+        <item>Rod of the pact keeper, + 1</item>
         //271
-        <item>Rod of the pact keeper, +3</item>
+        <item>Rod of the pact keeper, +2</item>
         //272
-        <item>Rope of climbing</item>
+        <item>Rod of the pact keeper, +3</item>
         //273
-        <item>Rope of entanglement</item>
+        <item>Rope of climbing</item>
         //274
-        <item>Saddle of the cavalier</item>
+        <item>Rope of entanglement</item>
         //275
-        <item>Scarab of protection</item>
+        <item>Saddle of the cavalier</item>
         //276
-        <item>Scimitar of speed</item>
+        <item>Scarab of protection</item>
         //277
-        <item>Scroll of protection</item>
+        <item>Scimitar of speed</item>
         //278
-        <item>Sending stones</item>
+        <item>Scroll of protection</item>
         //279
-        <item>Sentinel shield</item>
+        <item>Sending stones</item>
         //280
-        <item>Shield of missile attraction</item>
+        <item>Sentinel shield</item>
         //281
-        <item>Shield, +2</item>
+        <item>Shield of missile attraction</item>
         //282
-        <item>Shield, +3</item>
+        <item>Shield, +2</item>
         //283
-        <item>Shield,+ 1</item>
+        <item>Shield, +3</item>
         //284
-        <item>Slippers of spider climbing</item>
+        <item>Shield,+ 1</item>
         //285
-        <item>Sovereign glue</item>
+        <item>Slippers of spider climbing</item>
         //286
-        <item>Spell scroll (1st level)</item>
+        <item>Sovereign glue</item>
         //287
-        <item>Spell scroll (2nd level)</item>
+        <item>Spell scroll (1st level)</item>
         //288
-        <item>Spell scroll (3rd level)</item>
+        <item>Spell scroll (2nd level)</item>
         //289
-        <item>Spell scroll (4th level)</item>
+        <item>Spell scroll (3rd level)</item>
         //290
-        <item>Spell scroll (5th level)</item>
+        <item>Spell scroll (4th level)</item>
         //291
-        <item>Spell scroll (6th level)</item>
+        <item>Spell scroll (5th level)</item>
         //292
-        <item>Spell scroll (7th level)</item>
+        <item>Spell scroll (6th level)</item>
         //293
-        <item>Spell scroll (8th level)</item>
+        <item>Spell scroll (7th level)</item>
         //294
-        <item>Spell scroll (9th level)</item>
+        <item>Spell scroll (8th level)</item>
         //295
-        <item>Spell Scroll (cantrip)</item>
+        <item>Spell scroll (9th level)</item>
         //296
-        <item>Spellguard shield</item>
+        <item>Spell Scroll (cantrip)</item>
         //297
-        <item>Sphere of annihilation</item>
+        <item>Spellguard shield</item>
         //298
-        <item>Staff of charming</item>
+        <item>Sphere of annihilation</item>
         //299
-        <item>Staff of fire</item>
+        <item>Staff of charming</item>
         //300
-        <item>Staff of frost</item>
+        <item>Staff of fire</item>
         //301
-        <item>Staff of healing</item>
+        <item>Staff of frost</item>
         //302
-        <item>Staff of power</item>
+        <item>Staff of healing</item>
         //303
-        <item>Staff of striking</item>
+        <item>Staff of power</item>
         //304
-        <item>Staff of swarming insects</item>
+        <item>Staff of striking</item>
         //305
-        <item>Staff of the adder</item>
+        <item>Staff of swarming insects</item>
         //306
-        <item>Staff of the magi</item>
+        <item>Staff of the adder</item>
         //307
-        <item>Staff of the python</item>
+        <item>Staff of the magi</item>
         //308
-        <item>Staff of the woodlands</item>
+        <item>Staff of the python</item>
         //309
-        <item>Staff of thunder and lightning</item>
+        <item>Staff of the woodlands</item>
         //310
-        <item>Staff of withering</item>
+        <item>Staff of thunder and lightning</item>
         //311
-        <item>Stone of controlling earth elementals</item>
+        <item>Staff of withering</item>
         //312
-        <item>Stone of good luck</item>
+        <item>Stone of controlling earth elementals</item>
         //313
-        <item>Sun blade</item>
+        <item>Stone of good luck</item>
         //314
-        <item>Sword of answering</item>
+        <item>Sun blade</item>
         //315
-        <item>Sword of life stealing</item>
+        <item>Sword of answering</item>
         //316
-        <item>Sword of sharpness</item>
+        <item>Sword of life stealing</item>
         //317
-        <item>Sword of vengeance</item>
+        <item>Sword of sharpness</item>
         //318
-        <item>Sword of wounding</item>
+        <item>Sword of vengeance</item>
         //319
-        <item>Talisman of pure good</item>
+        <item>Sword of wounding</item>
         //320
-        <item>Talisman of the sphere</item>
+        <item>Talisman of pure good</item>
         //321
-        <item>Talisman of ultimate evil</item>
+        <item>Talisman of the sphere</item>
         //322
-        <item>Tentacle rod</item>
+        <item>Talisman of ultimate evil</item>
         //323
-        <item>Tome of clear thought</item>
+        <item>Tentacle rod</item>
         //324
-        <item>Tome of leadership and influence</item>
+        <item>Tome of clear thought</item>
         //325
-        <item>Tome of the stilled tongue</item>
+        <item>Tome of leadership and influence</item>
         //326
-        <item>Tome of understanding</item>
+        <item>Tome of the stilled tongue</item>
         //327
-        <item>Trident of fish command</item>
+        <item>Tome of understanding</item>
         //328
-        <item>Universal solvent</item>
+        <item>Trident of fish command</item>
         //329
-        <item>Vicious weapon</item>
+        <item>Universal solvent</item>
         //330
-        <item>Vorpal sword</item>
+        <item>Vicious weapon</item>
         //331
-        <item>Wand of binding</item>
+        <item>Vorpal sword</item>
         //332
-        <item>Wand of enemy detection</item>
+        <item>Wand of binding</item>
         //333
-        <item>Wand of fear</item>
+        <item>Wand of enemy detection</item>
         //334
-        <item>Wand of fireballs</item>
+        <item>Wand of fear</item>
         //335
-        <item>Wand of lightning bolts</item>
+        <item>Wand of fireballs</item>
         //336
-        <item>Wand of magic detection</item>
+        <item>Wand of lightning bolts</item>
         //337
-        <item>Wand of magic missiles</item>
+        <item>Wand of magic detection</item>
         //338
-        <item>Wand of paralysis</item>
+        <item>Wand of magic missiles</item>
         //339
-        <item>Wand of polymorph</item>
+        <item>Wand of paralysis</item>
         //340
-        <item>Wand of secrets</item>
+        <item>Wand of polymorph</item>
         //341
-        <item>Wand of the war mage, + 1</item>
+        <item>Wand of secrets</item>
         //342
-        <item>Wand of the war mage, +2</item>
+        <item>Wand of the war mage, + 1</item>
         //343
-        <item>Wand of the war mage, +3</item>
+        <item>Wand of the war mage, +2</item>
         //344
-        <item>Wand of web</item>
+        <item>Wand of the war mage, +3</item>
         //345
-        <item>Wand of wonder</item>
+        <item>Wand of web</item>
         //346
-        <item>Weapon of warning</item>
+        <item>Wand of wonder</item>
         //347
-        <item>Weapon, +1</item>
+        <item>Weapon of warning</item>
         //348
-        <item>Weapon, +2</item>
+        <item>Weapon, +1</item>
         //349
-        <item>Weapon, +3</item>
+        <item>Weapon, +2</item>
         //350
-        <item>Well of many worlds</item>
+        <item>Weapon, +3</item>
         //351
-        <item>Wind fan</item>
+        <item>Well of many worlds</item>
         //352
-        <item>Winged boots</item>
+        <item>Wind fan</item>
         //353
-        <item>Wings of flying</item>
+        <item>Winged boots</item>
         //354
+        <item>Wings of flying</item>
+
     </string-array>
 
     //Array for figurine options on table G case 12-14
@@ -975,17 +977,23 @@
         <item>Ivory goats</item>
         <item>Marble elephant</item>
         <item>Onyx dog</item>
+        <item>Onyx dog</item>
         <item>Serpentine owl</item>
     </string-array>
 
     //Array for armor options on table I case 76
     <string-array name="tr_selection_array_armor">
         <item>Armor +2, half plate</item>
+        <item>Armor +2, half plate</item>
+        <item>Armor +2, plate</item>
         <item>Armor +2, plate</item>
         <item>Armor +3, studded leather</item>
-        <item>Armor +3, breastlplate</item>
+        <item>Armor +3, studded leather</item>
+        <item>Armor +3, breastplate</item>
+        <item>Armor +3, breastplate</item>
         <item>Armor +3, splint</item>
-        <item>Armor +3,half plate</item>
+        <item>Armor +3, splint</item>
+        <item>Armor +3, half plate</item>
         <item>Armor +3, plate</item>
     </string-array>
 
