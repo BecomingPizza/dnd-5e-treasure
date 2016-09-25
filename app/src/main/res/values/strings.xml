@@ -1,9 +1,9 @@
 
 <resources>
-    <string name="app_name">dnd-5e-treasure</string>
+    <string name="app_name">D&amp;D 5E Loot Roller</string>
     <string name="cr_selection_label_text">CR:</string>
     <string name="roll_button_text">Generate</string>
-    <string name="copy_button_text">Copy to Clipboard</string>
+    <string name="copy_button_text">Copy</string>
     <string-array name="cr_selection_array">
         <item>0 – 4</item>
         <item>5 – 10</item>
@@ -187,7 +187,7 @@
     </string-array>
 
     //Art 250GP
-    <string name="tr_art_250gp">Art(250GP)</string>
+    <string name="tr_art_250gp">Art (250GP)</string>
 
     //Art 250GP subtext
     <string-array name="tr_array_art250gp_sub">
@@ -204,7 +204,7 @@
     </string-array>
 
     //Art 750GP
-    <string name="tr_art_750gp">Art(750GP)</string>
+    <string name="tr_art_750gp">Art (750GP)</string>
 
     //Art 750GP subtext
     <string-array name="tr_array_art750gp_sub">
@@ -222,7 +222,7 @@
 
 
     //Art 2500GP
-    <string name="tr_art_2500gp">Art(2500GP)</string>
+    <string name="tr_art_2500gp">Art (2500GP)</string>
 
     //Art 2500GP subtext
     <string-array name="tr_array_art2500gp_sub">
@@ -240,7 +240,7 @@
 
 
     //Art 7500GP
-    <string name="tr_art_7500gp">Art(7500GP)</string>
+    <string name="tr_art_7500gp">Art (7500GP)</string>
 
     //Art 7500GP subtext
     <string-array name="tr_array_art7500gp_sub">

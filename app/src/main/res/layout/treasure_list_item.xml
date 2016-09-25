@@ -9,11 +9,14 @@
             <TextView
                 android:id="@+id/tli_mainText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/textBlack"/>
 
             <TextView
                 android:id="@+id/tli_subText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textSize="10sp"/>
 
         </LinearLayout>
