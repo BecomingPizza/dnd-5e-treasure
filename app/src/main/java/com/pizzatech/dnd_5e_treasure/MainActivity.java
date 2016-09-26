@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         Integer cr_selected = cr_spinner.getSelectedItemPosition();
 
 
-        TreasureRoller tr = new TreasureRoller(this, cr_selected, listyMcListFace, this);
+        TreasureRoller tr = new TreasureRoller(this, cr_selected, this);
         tr.execute();
     }
 

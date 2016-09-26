@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.AsyncTask;
-import android.widget.ListView;
 
 import java.util.Random;
 
@@ -15,29 +14,25 @@ import java.util.Random;
  */
 class TreasureRoller extends AsyncTask {
 
-    Integer table;
-    Context context;
-    ListView listyMcListFace;
-    Activity act;
+    private Integer table;
+    private Context context;
+    private Activity act;
 
-    Resources res;
+    private Resources res;
 
-    Random r = new Random();
+    private Random r = new Random();
 
-    String copperStr;
-    String silverStr;
-    String goldStr;
-    String platinumStr;
+    private String copperStr;
+    private String silverStr;
+    private String goldStr;
+    private String platinumStr;
 
-    String[] treasureArray;
-    String[] treasureArraySub;
-    String[] figurineArray;
-    String[] armorArray;
+    private String[] treasureArray;
+    private String[] treasureArraySub;
 
-    public TreasureRoller(Context context, Integer table, ListView list, Activity act) {
+    TreasureRoller(Context context, Integer table, Activity act) {
         this.table = table;
         this.context = context;
-        this.listyMcListFace = list;
         this.act = act;
 
         res = context.getResources();
@@ -86,14 +81,10 @@ class TreasureRoller extends AsyncTask {
         }
 
         //update the list in the main thread because reasons
-
         act.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-
-
                 MainActivity.treasureItemsListAdapter.notifyDataSetChanged();
-
             }
         });
 
@@ -2517,7 +2508,7 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1) + 1;
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        figurineArray = res.getStringArray(R.array.tr_selection_array_figurine);
+        String[] figurineArray = res.getStringArray(R.array.tr_selection_array_figurine);
 
         String magicText = "";
         String subText = "";
@@ -3393,7 +3384,7 @@ class TreasureRoller extends AsyncTask {
         // Roll d100 to determine which magic item
         Integer roll = r.nextInt(100 - 1) + 1;
         treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-        armorArray = res.getStringArray(R.array.tr_selection_array_armor);
+        String[] armorArray = res.getStringArray(R.array.tr_selection_array_armor);
 
         String magicText = "";
         String subText = "";

@@ -1,6 +1,7 @@
 package com.pizzatech.dnd_5e_treasure;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +15,13 @@ import java.util.ArrayList;
  *
  * YEAH CUSTOM ADAPTER BITCH
  */
-public class TreasureListItemAdapter extends ArrayAdapter<TreasureListItem> {
+class TreasureListItemAdapter extends ArrayAdapter<TreasureListItem> {
 
-    Context context;
-    int layoutResourceId;
-    public ArrayList<TreasureListItem> treasure = null;
+    private Context context;
+    private int layoutResourceId;
+    private ArrayList<TreasureListItem> treasure = null;
 
-    public TreasureListItemAdapter(Context context, int layoutResourceId, ArrayList<TreasureListItem> treasure) {
+    TreasureListItemAdapter(Context context, int layoutResourceId, ArrayList<TreasureListItem> treasure) {
         super(context, layoutResourceId,treasure);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
@@ -28,16 +29,17 @@ public class TreasureListItemAdapter extends ArrayAdapter<TreasureListItem> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    @NonNull
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         View v = convertView;
 
         if (v == null) {
             LayoutInflater vi;
-            vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.treasure_list_item, parent, false);
+            vi = LayoutInflater.from(context);
+            v = vi.inflate(layoutResourceId, parent, false);
         }
 
-        TreasureListItem t = getItem(position);
+        TreasureListItem t = treasure.get(position);
 
         if (t != null) {
             TextView tt1 = (TextView) v.findViewById(R.id.tli_mainText);
