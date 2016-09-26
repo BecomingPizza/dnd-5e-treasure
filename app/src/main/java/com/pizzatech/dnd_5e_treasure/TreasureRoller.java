@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.util.Random;
 
@@ -920,26 +921,32 @@ class TreasureRoller extends AsyncTask {
     private void rollMagic(Integer dice, Integer sides, String table) {
         Integer roll = 0;
         //Roll the dice to value of 'dice' times
-        for (int i = 0; i < dice; i++) {
-            //simulate dice roll to determine what it lands on
-            //sides determines the range of possible values
-            roll += (r.nextInt(sides - 1) + 1);
+        if (sides != 1) {
+            for (int i = 0; i < dice; i++) {
+                //simulate dice roll to determine what it lands on
+                //sides determines the range of possible values
+                roll += (r.nextInt(sides - 1) + 1);
+            }
+        } else {
+            roll = 1;
         }
 
         dbAccess.open();
         for (int j = 0; j < roll; j++) {
             Integer tRoll = r.nextInt(100 - 1) + 1;
+            String tTable = table;
 
             //Special cases for the weird armor n stuff
             if (table == "G" && 12 <= tRoll && tRoll <= 14) {
                 tRoll = r.nextInt(8 - 1) + 1;
-                table = "figurine";
+                tTable = "figurine";
             } else if (table == "I" && tRoll == 76) {
                 tRoll = r.nextInt(12 - 1) + 1;
-                table = "armor";
+                tTable = "armor";
             }
 
-            TreasureListItem t = dbAccess.getLoot("magic", table, tRoll); //TODO: put back to table as 2nd param once db is populated
+            Log.e("!!!!!", tTable + "   " + tRoll.toString());
+            TreasureListItem t = dbAccess.getLoot("magic", tTable, tRoll);
 
             MainActivity.treasureItems.add(t);
         }
