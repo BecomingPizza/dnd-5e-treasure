@@ -24,32 +24,4 @@
     <string name="tr_coin_gold">Gold</string>
     <string name="tr_coin_platinum">Platinum</string>
 
-    //Array for figurine options on table G case 12-14
-    <string-array name="tr_selection_array_figurine">
-        <item>Bronze griffon</item>
-        <item>Ebony fly</item>
-        <item>Golden lions</item>
-        <item>Ivory goats</item>
-        <item>Marble elephant</item>
-        <item>Onyx dog</item>
-        <item>Onyx dog</item>
-        <item>Serpentine owl</item>
-    </string-array>
-
-    //Array for armor options on table I case 76
-    <string-array name="tr_selection_array_armor">
-        <item>Armor +2, half plate</item>
-        <item>Armor +2, half plate</item>
-        <item>Armor +2, plate</item>
-        <item>Armor +2, plate</item>
-        <item>Armor +3, studded leather</item>
-        <item>Armor +3, studded leather</item>
-        <item>Armor +3, breastplate</item>
-        <item>Armor +3, breastplate</item>
-        <item>Armor +3, splint</item>
-        <item>Armor +3, splint</item>
-        <item>Armor +3, half plate</item>
-        <item>Armor +3, plate</item>
-    </string-array>
-
 </resources>
