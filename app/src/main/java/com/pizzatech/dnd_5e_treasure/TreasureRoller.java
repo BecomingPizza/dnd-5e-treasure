@@ -29,7 +29,6 @@ class TreasureRoller extends AsyncTask {
     private String goldStr;
     private String platinumStr;
 
-    private String[] treasureArray;
     private String[] treasureArraySub;
 
     TreasureRoller(Context context, Integer table, Activity act) {
@@ -121,104 +120,36 @@ class TreasureRoller extends AsyncTask {
             roll += (r.nextInt(sides - 1) + 1);
         }
 
+        dbAccess.open();
         for (int j = 0; j < roll; j++) {
+            // What dice am roll
+            // TODO: Make less shit
+            Integer tSides = 0;
             switch (value) {
                 case 10:
-                    rollGem10GP();
-                    break;
                 case 50:
-                    rollGem50GP();
+                    tSides = 12;
                     break;
                 case 100:
-                    rollGem100GP();
+                    tSides = 10;
                     break;
                 case 500:
-                    rollGem500GP();
+                    tSides = 6;
                     break;
                 case 1000:
-                    rollGem1000GP();
+                    tSides = 8;
                     break;
                 case 5000:
-                    rollGem5000GP();
+                    tSides = 4;
+                    break;
             }
+            Integer tRoll = r.nextInt(tSides - 1) + 1;
+
+            TreasureListItem t = dbAccess.getLoot("gem", value.toString(), tRoll);
+
+            MainActivity.treasureItems.add(t);
         }
-    }
-
-    private void rollGem10GP() {
-        // Roll d12 to determine which gem
-        Integer roll = r.nextInt(12 - 1) + 1;
-
-        treasureArray = res.getStringArray(R.array.tr_array_gem10gp);
-        treasureArraySub = res.getStringArray(R.array.tr_array_gem10gp_sub);
-
-        String gemText = treasureArray[roll];
-        String subText = treasureArraySub[roll];
-
-        dbAccess.open();
-        TreasureListItem t = dbAccess.getLoot("gem", "10", roll);
         dbAccess.close();
-
-        addToList(t.getMainText(), t.getSubText());
-    }
-
-    private void rollGem50GP() {
-        // Roll d12 to determine which gem
-        Integer roll = r.nextInt(12 - 1);
-
-        treasureArray = res.getStringArray(R.array.tr_array_gem50gp);
-        treasureArraySub = res.getStringArray(R.array.tr_array_gem50gp_sub);
-        String gemText = treasureArray[roll];
-        String subText = treasureArraySub[roll];
-
-        addToList(gemText, subText);
-    }
-
-    private void rollGem100GP() {
-        // Roll d10 to determine which gem
-        Integer roll = r.nextInt(10 - 1);
-
-        treasureArray = res.getStringArray(R.array.tr_array_gem100gp);
-        treasureArraySub = res.getStringArray(R.array.tr_array_gem100gp_sub);
-        String gemText = treasureArray[roll];
-        String subText = treasureArraySub[roll];
-
-        addToList(gemText, subText);
-    }
-
-    private void rollGem500GP() {
-        // Roll d6 to determine which gem
-        Integer roll = r.nextInt(6 - 1);
-
-        treasureArray = res.getStringArray(R.array.tr_array_gem500gp);
-        treasureArraySub = res.getStringArray(R.array.tr_array_gem500gp_sub);
-        String gemText = treasureArray[roll];
-        String subText = treasureArraySub[roll];
-
-        addToList(gemText, subText);
-    }
-
-    private void rollGem1000GP() {
-        // Roll d8 to determine which gem
-        Integer roll = r.nextInt(8 - 1);
-
-        treasureArray = res.getStringArray(R.array.tr_array_gem1000gp);
-        treasureArraySub = res.getStringArray(R.array.tr_array_gem1000gp_sub);
-        String gemText = treasureArray[roll];
-        String subText = treasureArraySub[roll];
-
-        addToList(gemText, subText);
-    }
-
-    private void rollGem5000GP() {
-        // Roll d4 to determine which gem
-        Integer roll = r.nextInt(4 - 1);
-
-        treasureArray = res.getStringArray(R.array.tr_array_gem5000gp);
-        treasureArraySub = res.getStringArray(R.array.tr_array_gem5000gp_sub);
-        String gemText = treasureArray[roll];
-        String subText = treasureArraySub[roll];
-
-        addToList(gemText, subText);
     }
 
     private void rollArt(Integer dice, Integer sides, Integer value) {
@@ -226,80 +157,30 @@ class TreasureRoller extends AsyncTask {
         for (int i = 0; i < dice; i++) {
             roll += (r.nextInt(sides - 1) + 1);
         }
+
+        dbAccess.open();
         for (int j = 0; j < roll; j++) {
+            // What dice am roll
+            // TODO: Make less shit
+            Integer tSides = 0;
             switch (value) {
                 case 25:
-                    rollArt25GP();
-                    break;
                 case 250:
-                    rollArt250GP();
-                    break;
                 case 750:
-                    rollArt750GP();
-                    break;
                 case 2500:
-                    rollArt2500GP();
+                    tSides = 10;
                     break;
                 case 7500:
-                    rollArt7500GP();
+                    tSides = 8;
                     break;
             }
+            Integer tRoll = r.nextInt(tSides - 1) + 1;
+
+            TreasureListItem t = dbAccess.getLoot("art", value.toString(), tRoll);
+
+            MainActivity.treasureItems.add(t);
         }
-    }
-
-    private void rollArt25GP() {
-        // Roll d10 to determine which art
-        Integer roll = r.nextInt(10 - 1);
-
-        treasureArraySub = res.getStringArray(R.array.tr_array_art25gp_sub);
-        String artText = context.getString(R.string.tr_art_25gp);
-        String subText = treasureArraySub[roll];
-
-        addToList(artText, subText);
-    }
-
-    private void rollArt250GP() {
-        // Roll d10 to determine which art
-        Integer roll = r.nextInt(10 - 1);
-
-        treasureArraySub = res.getStringArray(R.array.tr_array_art250gp_sub);
-        String artText = context.getString(R.string.tr_art_250gp);
-        String subText = treasureArraySub[roll];
-
-        addToList(artText, subText);
-    }
-
-    private void rollArt750GP() {
-        // Roll d10 to determine which art
-        Integer roll = r.nextInt(10 - 1);
-
-        treasureArraySub = res.getStringArray(R.array.tr_array_art750gp_sub);
-        String artText = context.getString(R.string.tr_art_750gp);
-        String subText = treasureArraySub[roll];
-
-        addToList(artText, subText);
-    }
-
-    private void rollArt2500GP() {
-        // Roll d10 to determine which art
-        Integer roll = r.nextInt(10 - 1);
-
-        treasureArraySub = res.getStringArray(R.array.tr_array_art2500gp_sub);
-        String artText = context.getString(R.string.tr_art_2500gp);
-        String subText = treasureArraySub[roll];
-
-        addToList(artText, subText);
-    }
-
-    private void rollArt7500GP() {
-        // Roll d8 to determine which art
-        Integer roll = r.nextInt(8 - 1);
-
-        treasureArraySub = res.getStringArray(R.array.tr_array_art7500gp_sub);
-        String artText = context.getString(R.string.tr_art_7500gp);
-        String subText = treasureArraySub[roll];
-
-        addToList(artText, subText);
+        dbAccess.close();
     }
 
     /**
@@ -587,7 +468,7 @@ class TreasureRoller extends AsyncTask {
                 break;
             case 79:
                 rollGems(3, 6, 100);
-               rollMagicD();
+                rollMagicD();
                 break;
             case 80:
                 rollGems(2, 4, 250);
@@ -1047,208 +928,27 @@ class TreasureRoller extends AsyncTask {
             //sides determines the range of possible values
             roll += (r.nextInt(sides - 1) + 1);
         }
+
+        dbAccess.open();
         for (int j = 0; j < roll; j++) {
-            /*determine which magic table to roll on
-            * perform this action 'roll' times resulting in a list of loot
-            * 'roll' in size
-            */
-            switch (table) {
-                case "A":
-                    rollMagicA();
-                    break;
-                case "B":
-                    rollMagicB();
-                    break;
-                case "C":
-                    rollMagicC();
-                    break;
-                case "D":
-                    rollMagicD();
-                    break;
-                case "E":
-                    rollMagicE();
-                    break;
-                case "F":
-                    rollMagicF();
-                    break;
-                case "G":
-                    rollMagicG();
-                    break;
-                case "H":
-                    rollMagicH();
-                    break;
-                case "I":
-                    rollMagicI();
-                    break;
+            Integer tRoll = r.nextInt(100 - 1) + 1;
+
+            //Special cases for the weird armor n stuff
+            if (table == "G" && 12 <= tRoll && tRoll <= 14) {
+                tRoll = r.nextInt(8 - 1) + 1;
+                table = "figurine";
+            } else if (table == "I" && tRoll == 76) {
+                tRoll = r.nextInt(12 - 1) + 1;
+                table = "armor";
             }
+
+            TreasureListItem t = dbAccess.getLoot("magic", "A", tRoll); //TODO: put back to table as 2nd param once db is populated
+
+            MainActivity.treasureItems.add(t);
         }
+        dbAccess.close();
 
 
-    }
-
-    /**
-     * Roll a D100 on table A to determine
-     * a Magic Item
-     */
-    private void rollMagicA() {
-        // Roll d100 to determine which magic item
-        Integer roll = r.nextInt(100 - 1) + 1;
-        treasureArraySub = res.getStringArray(R.array.tr_selection_array_magic_sub);
-
-        String magicText = "";
-        String subText = "";
-
-        switch (roll) {
-            //If roll is between 1 and 50 inclusive
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-            case 13:
-            case 14:
-            case 15:
-            case 16:
-            case 17:
-            case 18:
-            case 19:
-            case 20:
-            case 21:
-            case 22:
-            case 23:
-            case 24:
-            case 25:
-            case 26:
-            case 27:
-            case 28:
-            case 29:
-            case 30:
-            case 31:
-            case 32:
-            case 33:
-            case 34:
-            case 35:
-            case 36:
-            case 37:
-            case 38:
-            case 39:
-            case 40:
-            case 41:
-            case 42:
-            case 43:
-            case 44:
-            case 45:
-            case 46:
-            case 47:
-            case 48:
-            case 49:
-            case 50:
-
-                magicText = treasureArraySub[217];
-                subText = res.getString(R.string.dmg187);
-                break;
-
-            //If roll is between 51 and 60 inclusive
-            case 51:
-            case 52:
-            case 53:
-            case 54:
-            case 55:
-            case 56:
-            case 57:
-            case 58:
-            case 59:
-            case 60:
-
-                magicText = treasureArraySub[296];
-                subText = res.getString(R.string.dmg200);
-                break;
-
-            //If roll is between 61 and 70 inclusive
-            case 61:
-            case 62:
-            case 63:
-            case 64:
-            case 65:
-            case 66:
-            case 67:
-            case 68:
-            case 69:
-            case 70:
-
-                magicText = treasureArraySub[207];
-                subText = res.getString(R.string.dmg187);
-                break;
-
-            //If roll is between 71 and 90 inclusive
-            case 71:
-            case 72:
-            case 73:
-            case 74:
-            case 75:
-            case 76:
-            case 77:
-            case 78:
-            case 79:
-            case 80:
-            case 81:
-            case 82:
-            case 83:
-            case 84:
-            case 85:
-            case 86:
-            case 87:
-            case 88:
-            case 89:
-            case 90:
-
-                magicText = treasureArraySub[287];
-                subText = res.getString(R.string.dmg200);
-                break;
-
-            //If roll is between 91 and 94 inclusive
-            case 91:
-            case 92:
-            case 93:
-            case 94:
-
-                magicText = treasureArraySub[288];
-                subText = res.getString(R.string.dmg200);
-                break;
-
-            //If roll is between 95 and 98 inclusive
-            case 95:
-            case 96:
-            case 97:
-            case 98:
-
-                magicText = treasureArraySub[215];
-                subText = res.getString(R.string.dmg187);
-                break;
-
-            //If roll is 99
-            case 99:
-
-                magicText = treasureArraySub[50];
-                subText = res.getString(R.string.dmg152);
-                break;
-
-            //If roll is 100
-            case 100:
-                magicText = treasureArraySub[103];
-                subText = res.getString(R.string.dmg166);
-                break;
-
-        }
-
-        addToList(magicText, subText);
     }
 
     /**

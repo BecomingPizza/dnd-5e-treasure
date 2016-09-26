@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Created by Ashley on 26/09/2016.
- *
+ * <p>
  * YEAH DATABASE
  */
 
@@ -42,32 +42,17 @@ class DBAccess {
         }
     }
 
-    /**
-     * Test we can read stuff from db
-     */
-    void test() {
-        List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT ID FROM treasuregemsroll", null);
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            list.add(cursor.getString(0));
-            cursor.moveToNext();
-        }
-        cursor.close();
-        Log.e("YO", list.toString());
-    }
-
     TreasureListItem getLoot(String type, String subTable, Integer roll) {
 
         // Look up the results ID
-        String rQuery = "SELECT RESULT_ID FROM treasuregemsroll WHERE SUB_TABLE = '" + subTable + "' AND ROLL_UPPER >= " + roll + " AND ROLL_LOWER <= " + roll;
+        String rQuery = "SELECT RESULT_ID FROM treasureroll WHERE TYPE ='" + type + "' AND SUB_TYPE = '" + subTable + "' AND ROLL_UPPER >= " + roll + " AND ROLL_LOWER <= " + roll;
         Cursor rCursor = database.rawQuery(rQuery, null);
         rCursor.moveToFirst();
         Integer resultId = rCursor.getInt(0);
         rCursor.close();
 
         // Get the text for that result ID
-        String tQuery = "SELECT MAIN_TEXT, SUB_TEXT FROM treasuregemsresult WHERE ID = " + resultId;
+        String tQuery = "SELECT MAIN_TEXT, SUB_TEXT FROM treasureresult WHERE ID = " + resultId;
         Cursor tCursor = database.rawQuery(tQuery, null);
         tCursor.moveToFirst();
         TreasureListItem t = new TreasureListItem(tCursor.getString(0), tCursor.getString(1));

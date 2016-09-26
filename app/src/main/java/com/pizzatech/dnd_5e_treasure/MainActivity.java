@@ -48,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Databases r kewl
         dbAccess = DBAccess.getInstance(this);
-        dbAccess.open();
-        dbAccess.test();
-        dbAccess.close();
 
         //Hook up the list
         treasureItemsListAdapter = new TreasureListItemAdapter(this, R.layout.treasure_list_item, treasureItems);

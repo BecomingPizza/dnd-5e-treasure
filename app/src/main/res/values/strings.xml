@@ -24,69 +24,6 @@
     <string name="tr_coin_gold">Gold</string>
     <string name="tr_coin_platinum">Platinum</string>
 
-    //Gem (10GP)
-    <string-array name="tr_array_gem10gp">
-        <item>Gem (10GP) - Azurite</item>
-        <item>Gem (10GP) - Banded Agate</item>
-        <item>Gem (10GP) - Blue Quartz</item>
-        <item>Gem (10GP) - Eye Agate</item>
-        <item>Gem (10GP) - Hematite</item>
-        <item>Gem (10GP) - Lapis Lazuli</item>
-        <item>Gem (10GP) - Malachite</item>
-        <item>Gem (10GP) - Moss Agate</item>
-        <item>Gem (10GP) - Obsidian</item>
-        <item>Gem (10GP) - Rhodochrosite</item>
-        <item>Gem (10GP) - Tiger eye</item>
-        <item>Gem (10GP) - Turquoise</item>
-    </string-array>
-
-    //Gem (10GP) sub text
-    <string-array name="tr_array_gem10gp_sub">
-        <item>Opaque mottled deep blue</item>
-        <item>Translucent striped brown, blue, white, or red</item>
-        <item>Transparent pale blue</item>
-        <item>Translucent circles of gray, white, brown, blue, or green</item>
-        <item>Opaque gray-black</item>
-        <item>Opaque light and dark blue with yellow flecks</item>
-        <item>Opaque striated light and dark green</item>
-        <item>Translucent pink or yellow-white with mossy gray or green markings</item>
-        <item>Opaque black</item>
-        <item>Opaque light pink</item>
-        <item>Translucent brown with golden center</item>
-        <item>Opaque light blue-green</item>
-    </string-array>
-
-    //Gem (50GP)
-    <string-array name="tr_array_gem50gp">
-        <item>Gem (50GP) - Bloodstone</item>
-        <item>Gem (50GP) - Carnelian</item>
-        <item>Gem (50GP) - Chalcedony</item>
-        <item>Gem (50GP) - Chrysoprase</item>
-        <item>Gem (50GP) - Citrine</item>
-        <item>Gem (50GP) - Jasper</item>
-        <item>Gem (50GP) - Moonstone</item>
-        <item>Gem (50GP) - Onyx</item>
-        <item>Gem (50GP) - Quartz</item>
-        <item>Gem (50GP) - Sardonyx</item>
-        <item>Gem (50GP) - Star rose quartz</item>
-        <item>Gem (50GP) - Zircon</item>
-    </string-array>
-
-    //Gem (50GP) sub text
-    <string-array name="tr_array_gem50gp_sub">
-        <item>Opaque orange to red-brown</item>
-        <item>Opaque white</item>
-        <item>Translucent green</item>
-        <item>Transparent pale yellow-brown</item>
-        <item>Opaque blue, black, or brown</item>
-        <item>Translucent white with pale blue glow</item>
-        <item>Opaque bands of black and white, or pure black or white</item>
-        <item>Transparent white, smoky gray, or yellow</item>
-        <item>Opaque bands of red and white</item>
-        <item>Translucent rosy stone with white star-shaped center</item>
-        <item>Transparent pale blue-green</item>
-    </string-array>
-
     //Gem (100GP) text
     <string-array name="tr_array_gem100gp">
         <item>Gem (100GP) - Amber</item>
@@ -173,23 +110,6 @@
         <item>Transparent blue-white, canary, pink, brown, or blue</item>
         <item>Transparent fiery orange</item>
         <item>Transparent clear red to deep crimson</item>
-    </string-array>
-
-    //Art 25GP
-    <string name="tr_art_25gp">Art (25GP)</string>
-
-    //Art 25GP sub text
-    <string-array name="tr_array_art25gp_sub">
-        <item>Silver ewer</item>
-        <item>Carved bone statuette</item>
-        <item>Small Gold Bracelet</item>
-        <item>Cloth-of-gold vestments</item>
-        <item>Black velvet mask stitched with silver thread</item>
-        <item>Copper chalice with silver filigree</item>
-        <item>Pair of engraved bone dice</item>
-        <item>Small mirror set in a painted wooden frame</item>
-        <item>Embroidered silk handkerchief</item>
-        <item>Gold locket with a painted portrait inside</item>
     </string-array>
 
     //Art 250GP
