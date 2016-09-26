@@ -7,6 +7,8 @@ import android.os.AsyncTask;
 
 import java.util.Random;
 
+import static com.pizzatech.dnd_5e_treasure.MainActivity.dbAccess;
+
 /**
  * Created by Ashley on 17/09/2016.
  * <p>
@@ -144,7 +146,7 @@ class TreasureRoller extends AsyncTask {
 
     private void rollGem10GP() {
         // Roll d12 to determine which gem
-        Integer roll = r.nextInt(12 - 1);
+        Integer roll = r.nextInt(12 - 1) + 1;
 
         treasureArray = res.getStringArray(R.array.tr_array_gem10gp);
         treasureArraySub = res.getStringArray(R.array.tr_array_gem10gp_sub);
@@ -152,7 +154,11 @@ class TreasureRoller extends AsyncTask {
         String gemText = treasureArray[roll];
         String subText = treasureArraySub[roll];
 
-        addToList(gemText, subText);
+        dbAccess.open();
+        TreasureListItem t = dbAccess.getLoot("gem", "10", roll);
+        dbAccess.close();
+
+        addToList(t.getMainText(), t.getSubText());
     }
 
     private void rollGem50GP() {

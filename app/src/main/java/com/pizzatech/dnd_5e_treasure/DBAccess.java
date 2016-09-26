@@ -25,18 +25,18 @@ class DBAccess {
         this.openHelper = new DBHelper(context);
     }
 
-    public static DBAccess getInstance(Context context) {
+    static DBAccess getInstance(Context context) {
         if (instance == null) {
             instance = new DBAccess(context);
         }
         return instance;
     }
 
-    public void open() {
-        this.database = openHelper.getWritableDatabase();
+    void open() {
+        this.database = openHelper.getReadableDatabase();
     }
 
-    public void close() {
+    void close() {
         if (database != null) {
             this.database.close();
         }
@@ -45,7 +45,7 @@ class DBAccess {
     /**
      * Test we can read stuff from db
      */
-    public void test() {
+    void test() {
         List<String> list = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT ID FROM treasuregemsroll", null);
         cursor.moveToFirst();
@@ -55,5 +55,24 @@ class DBAccess {
         }
         cursor.close();
         Log.e("YO", list.toString());
+    }
+
+    TreasureListItem getLoot(String type, String subTable, Integer roll) {
+
+        // Look up the results ID
+        String rQuery = "SELECT RESULT_ID FROM treasuregemsroll WHERE SUB_TABLE = '" + subTable + "' AND ROLL_UPPER >= " + roll + " AND ROLL_LOWER <= " + roll;
+        Cursor rCursor = database.rawQuery(rQuery, null);
+        rCursor.moveToFirst();
+        Integer resultId = rCursor.getInt(0);
+        rCursor.close();
+
+        // Get the text for that result ID
+        String tQuery = "SELECT MAIN_TEXT, SUB_TEXT FROM treasuregemsresult WHERE ID = " + resultId;
+        Cursor tCursor = database.rawQuery(tQuery, null);
+        tCursor.moveToFirst();
+        TreasureListItem t = new TreasureListItem(tCursor.getString(0), tCursor.getString(1));
+        tCursor.close();
+
+        return t;
     }
 }

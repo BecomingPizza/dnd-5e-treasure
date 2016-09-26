@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listyMcListFace;
 
-    DBAccess dbAccess;
+    static DBAccess dbAccess;
 
 
     @Override
