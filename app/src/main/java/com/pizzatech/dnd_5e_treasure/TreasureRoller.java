@@ -372,7 +372,7 @@ class TreasureRoller extends AsyncTask {
             case 26:
             case 27:
             case 28:
-                rollGems(2, 4, 250);
+                rollArt(2, 4, 250);
                 break;
             case 29:
             case 30:
@@ -399,7 +399,7 @@ class TreasureRoller extends AsyncTask {
             case 42:
             case 43:
             case 44:
-                rollGems(2, 4, 250);
+                rollArt(2, 4, 250);
                 rollMagic(1, 6, "A");
                 break;
             case 45:
@@ -430,7 +430,7 @@ class TreasureRoller extends AsyncTask {
             case 61:
             case 62:
             case 63:
-                rollGems(2, 4, 250);
+                rollArt(2, 4, 250);
                 rollMagic(1, 4, "B");
                 break;
             case 64:
@@ -453,7 +453,7 @@ class TreasureRoller extends AsyncTask {
                 break;
             case 73:
             case 74:
-                rollGems(2, 4, 250);
+                rollArt(2, 4, 250);
                 rollMagic(1, 4, "C");
                 break;
             case 75:
@@ -471,7 +471,7 @@ class TreasureRoller extends AsyncTask {
                 rollMagicD();
                 break;
             case 80:
-                rollGems(2, 4, 250);
+                rollArt(2, 4, 250);
                 rollMagicD();
                 break;
             case 81:
@@ -497,7 +497,7 @@ class TreasureRoller extends AsyncTask {
             case 92:
             case 93:
             case 94:
-                rollGems(2, 4, 250);
+                rollArt(2, 4, 250);
                 rollMagic(1, 4, "F");
                 break;
             case 95:
@@ -507,7 +507,7 @@ class TreasureRoller extends AsyncTask {
                 break;
             case 97:
             case 98:
-                rollGems(2, 4, 250);
+                rollArt(2, 4, 250);
                 rollMagic(1, 4, "G");
                 break;
             case 99:
@@ -515,7 +515,7 @@ class TreasureRoller extends AsyncTask {
                 rollMagicH();
                 break;
             case 100:
-                rollGems(2, 4, 250);
+                rollArt(2, 4, 250);
                 rollMagicH();
                 break;
         }
