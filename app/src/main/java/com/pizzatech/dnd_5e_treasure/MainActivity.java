@@ -3,6 +3,8 @@ package com.pizzatech.dnd_5e_treasure;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.res.Resources;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listyMcListFace;
 
+    static DBAccess dbAccess;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.cr_selection_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cr_spinner.setAdapter(adapter);
+
+        //Databases r kewl
+        dbAccess = DBAccess.getInstance(this);
 
         //Hook up the list
         treasureItemsListAdapter = new TreasureListItemAdapter(this, R.layout.treasure_list_item, treasureItems);
