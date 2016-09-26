@@ -11,6 +11,10 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
         treasureItemsListAdapter = new TreasureListItemAdapter(this, R.layout.treasure_list_item, treasureItems);
         listyMcListFace = (ListView) findViewById(R.id.results_list);
         listyMcListFace.setAdapter(treasureItemsListAdapter);
+
+        //Ads
+        MobileAds.initialize(this, res.getString(R.string.banner_ad_unit_id));
+        AdView adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
 
     }
