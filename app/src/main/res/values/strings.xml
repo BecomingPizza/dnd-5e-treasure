@@ -24,4 +24,10 @@
     <string name="tr_coin_gold">Gold</string>
     <string name="tr_coin_platinum">Platinum</string>
 
+    <string-array name="left_drawer_items">
+        <item>Loot Roller</item>
+        <item>Something else</item>
+        <item>About</item>
+    </string-array>
+
 </resources>

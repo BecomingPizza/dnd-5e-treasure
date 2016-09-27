@@ -121,7 +121,6 @@ class TreasureRoller extends AsyncTask {
         dbAccess.open();
         for (int j = 0; j < roll; j++) {
             // What dice am roll
-            // TODO: Make less shit
             Integer tSides = 0;
             switch (value) {
                 case 10:
@@ -159,7 +158,6 @@ class TreasureRoller extends AsyncTask {
         dbAccess.open();
         for (int j = 0; j < roll; j++) {
             // What dice am roll
-            // TODO: Make less shit
             Integer tSides = 0;
             switch (value) {
                 case 25:
@@ -183,6 +181,7 @@ class TreasureRoller extends AsyncTask {
 
     /**
      * See Treasure Hoard: Challenge 0-4 page 137
+     * TODO: Shove all these into the db
      */
     private void rollTreasureTableA() {
         // Roll d100

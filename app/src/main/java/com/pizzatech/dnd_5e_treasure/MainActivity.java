@@ -1,21 +1,19 @@
 package com.pizzatech.dnd_5e_treasure;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.res.Resources;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 
@@ -27,43 +25,65 @@ public class MainActivity extends AppCompatActivity {
 
     Resources res;
 
-    ListView listyMcListFace;
-
     static DBAccess dbAccess;
+
+    private String[] leftDrawerItems;
+    private ListView leftDrawerList;
+    private DrawerLayout leftDrawerLayout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
 
         res = getResources();
 
-
-        //Populate teh spinnor
-        Spinner cr_spinner = (Spinner) findViewById(R.id.cr_selection_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.cr_selection_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        cr_spinner.setAdapter(adapter);
+        // Initialize drawer
+        leftDrawerItems = res.getStringArray(R.array.left_drawer_items);
+        leftDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        leftDrawerList = (ListView) findViewById(R.id.left_drawer);
+        leftDrawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, leftDrawerItems));
+        leftDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+        // Default to Loot fragment for now
+        selectItem(0);
 
         //Databases r kewl
         dbAccess = DBAccess.getInstance(this);
 
-        //Hook up the list
-        treasureItemsListAdapter = new TreasureListItemAdapter(this, R.layout.treasure_list_item, treasureItems);
-        listyMcListFace = (ListView) findViewById(R.id.results_list);
-        listyMcListFace.setAdapter(treasureItemsListAdapter);
-
-        //Ads
-        MobileAds.initialize(this, res.getString(R.string.banner_ad_unit_id));
-        AdView adView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-
-
     }
 
-   public void rollTreasure(View v) {
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            selectItem(position);
+        }
+    }
+
+    // Swap fragments.... maybe?
+    private void selectItem(int position) {
+        // TODO: Build other fragments for other stuff, also probably name them sensibly
+        // Create a new fragment
+        FragmentManager fragMan = getFragmentManager();
+        android.app.FragmentTransaction fragTran = fragMan.beginTransaction();
+
+        Fragment fragment = new TacticalFragment();
+        fragTran.add(R.id.content_frame, fragment);
+        fragTran.commit();
+
+
+        leftDrawerList.setItemChecked(position, true);
+        setTitle(leftDrawerItems[position]);
+        leftDrawerLayout.closeDrawer(leftDrawerList);
+    }
+
+    @Override
+    public void setTitle(CharSequence title){
+        getSupportActionBar().setTitle(title);
+    }
+
+
+    public void rollTreasure(View v) {
 
         //Grab CR
         Spinner cr_spinner = (Spinner) findViewById(R.id.cr_selection_spinner);
