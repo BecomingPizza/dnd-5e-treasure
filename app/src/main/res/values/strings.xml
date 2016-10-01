@@ -26,6 +26,7 @@
 
     <string-array name="left_drawer_items_strings">
         <item>Loot Roller</item>
+        <item>Encounter Planner</item>
         <item>About</item>
     </string-array>
 
