@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.util.Random;
 
@@ -936,10 +935,10 @@ class TreasureRoller extends AsyncTask {
             String tTable = table;
 
             //Special cases for the weird armor n stuff
-            if (table == "G" && 12 <= tRoll && tRoll <= 14) {
+            if (table.equals("G") && 12 <= tRoll && tRoll <= 14) {
                 tRoll = r.nextInt(8 - 1) + 1;
                 tTable = "figurine";
-            } else if (table == "I" && tRoll == 76) {
+            } else if (table.equals("I") && tRoll == 76) {
                 tRoll = r.nextInt(12 - 1) + 1;
                 tTable = "armor";
             }

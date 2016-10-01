@@ -5,7 +5,7 @@ package com.pizzatech.dnd_5e_treasure;
  *
  */
 
-public class DrawerItem {
+class DrawerItem {
     private int img;
     private String str;
 
