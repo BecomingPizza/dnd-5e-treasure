@@ -944,7 +944,6 @@ class TreasureRoller extends AsyncTask {
                 tTable = "armor";
             }
 
-            Log.e("!!!!!", tTable + "   " + tRoll.toString());
             TreasureListItem t = dbAccess.getLoot("magic", tTable, tRoll);
 
             MainActivity.treasureItems.add(t);

@@ -2,9 +2,12 @@ package com.pizzatech.dnd_5e_treasure;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +18,10 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<TreasureListItem> treasureItems = new ArrayList<>();
 
     static TreasureListItemAdapter treasureItemsListAdapter;
+
+    Fragment fragment;
 
     Resources res;
 
@@ -48,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
         // Default to Loot fragment for now
         selectItem(0);
 
+        // Ads
+        MobileAds.initialize(this, res.getString(R.string.banner_ad_unit_id));
+        AdView adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
         //Databases r kewl
         dbAccess = DBAccess.getInstance(this);
 
@@ -62,15 +77,20 @@ public class MainActivity extends AppCompatActivity {
 
     // Swap fragments.... maybe?
     private void selectItem(int position) {
-        // TODO: Build other fragments for other stuff, also probably name them sensibly
         // Create a new fragment
         FragmentManager fragMan = getFragmentManager();
         android.app.FragmentTransaction fragTran = fragMan.beginTransaction();
 
-        Fragment fragment = new TacticalFragment();
-        fragTran.add(R.id.content_frame, fragment);
-        fragTran.commit();
+        switch (position) {
+            case 0: //Loot
+                fragment = new LootFragment();
+                break;
+            case 1: //About
+                fragment = new AboutFragment();
+        }
 
+        fragTran.replace(R.id.content_frame, fragment);
+        fragTran.commit();
 
         leftDrawerList.setItemChecked(position, true);
         setTitle(leftDrawerItems[position]);
@@ -114,6 +134,23 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Y U DO DIS
             Toast.makeText(this, "Y U DO DIS", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
+    public void rateInGP (View v) {
+        Uri uri = Uri.parse("market://details?id=" + this.getPackageName());
+        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        // Need these to get back to the app on a back button push supposedly
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        try {
+            startActivity(goToMarket);
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/apps/details?id=" + this.getPackageName())));
         }
     }
 

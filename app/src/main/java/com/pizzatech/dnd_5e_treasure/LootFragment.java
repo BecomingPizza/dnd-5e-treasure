@@ -9,17 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-
 /**
  * Created by Ashley on 27/09/2016.
  *
  * Fragment for loot rolling
  */
 
-public class TacticalFragment extends Fragment {
+public class LootFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,12 +37,5 @@ public class TacticalFragment extends Fragment {
         MainActivity.treasureItemsListAdapter = new TreasureListItemAdapter(getActivity(), R.layout.treasure_list_item, MainActivity.treasureItems);
         ListView listyMcListFace = (ListView) view.findViewById(R.id.results_list);
         listyMcListFace.setAdapter(MainActivity.treasureItemsListAdapter);
-
-        // Ads
-        // TODO: This should probably sit outside of the fragment?
-        MobileAds.initialize(getActivity(), getActivity().getResources().getString(R.string.banner_ad_unit_id));
-        AdView adView = (AdView) view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
     }
 }

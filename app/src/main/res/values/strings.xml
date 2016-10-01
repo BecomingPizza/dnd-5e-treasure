@@ -26,8 +26,9 @@
 
     <string-array name="left_drawer_items">
         <item>Loot Roller</item>
-        <item>Something else</item>
         <item>About</item>
     </string-array>
 
+    <string name="about_text">I LIKE BEANS</string>
+    <string name="about_rate">Rate this app</string>
 </resources>
