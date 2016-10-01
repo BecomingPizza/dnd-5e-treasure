@@ -6,27 +6,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 /**
- * Created by Ashley on 13/09/2016.
+ * Created by Ashley on 01/10/2016.
  *
- * YEAH CUSTOM ADAPTER BITCH
  */
-class TreasureListItemAdapter extends ArrayAdapter<TreasureListItem> {
+
+class DrawerItemAdapter extends ArrayAdapter<DrawerItem>{
 
     private Context context;
     private int layoutResourceId;
-    private ArrayList<TreasureListItem> treasure = null;
+    private ArrayList<DrawerItem> dil = null;
 
-    TreasureListItemAdapter(Context context, int layoutResourceId, ArrayList<TreasureListItem> treasure) {
-        super(context, layoutResourceId, treasure);
+    DrawerItemAdapter(Context context, int layoutResourceId, ArrayList<DrawerItem> dil) {
+        super(context, layoutResourceId, dil);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
-        this.treasure = treasure;
+        this.dil = dil;
     }
+
 
     @Override
     @NonNull
@@ -39,18 +41,18 @@ class TreasureListItemAdapter extends ArrayAdapter<TreasureListItem> {
             v = vi.inflate(layoutResourceId, parent, false);
         }
 
-        TreasureListItem t = treasure.get(position);
+        DrawerItem di = dil.get(position);
 
-        if (t != null) {
-            TextView tt1 = (TextView) v.findViewById(R.id.tli_mainText);
-            TextView tt2 = (TextView) v.findViewById(R.id.tli_subText);
+        if (di != null) {
+            TextView tv = (TextView) v.findViewById(R.id.drawer_item_text);
+            ImageView iv = (ImageView) v.findViewById(R.id.drawer_item_img);
 
-            if (tt1 != null) {
-                tt1.setText(t.getMainText());
+            if (tv != null) {
+                tv.setText(di.getStr());
             }
 
-            if (tt2 != null) {
-                tt2.setText(t.getSubText());
+            if (iv != null) {
+                iv.setImageResource(di.getImg());
             }
         }
 

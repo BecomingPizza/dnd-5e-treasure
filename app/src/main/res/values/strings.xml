@@ -24,4 +24,14 @@
     <string name="tr_coin_gold">Gold</string>
     <string name="tr_coin_platinum">Platinum</string>
 
+    <string-array name="left_drawer_items_strings">
+        <item>Loot Roller</item>
+        <item>About</item>
+    </string-array>
+
+    <string name="about_text">Upcoming features > \n - Encounter Planner \n - PCs &amp; XP \n - Encounter Tracker \n\nFeel free to make suggestions as comments on the Play Store! \n</string>
+    <string name="about_rate">Rate this app</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
 </resources>

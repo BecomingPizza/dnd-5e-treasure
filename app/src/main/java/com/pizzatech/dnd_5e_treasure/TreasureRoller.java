@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.util.Random;
 
@@ -121,7 +120,6 @@ class TreasureRoller extends AsyncTask {
         dbAccess.open();
         for (int j = 0; j < roll; j++) {
             // What dice am roll
-            // TODO: Make less shit
             Integer tSides = 0;
             switch (value) {
                 case 10:
@@ -159,7 +157,6 @@ class TreasureRoller extends AsyncTask {
         dbAccess.open();
         for (int j = 0; j < roll; j++) {
             // What dice am roll
-            // TODO: Make less shit
             Integer tSides = 0;
             switch (value) {
                 case 25:
@@ -183,6 +180,7 @@ class TreasureRoller extends AsyncTask {
 
     /**
      * See Treasure Hoard: Challenge 0-4 page 137
+     * TODO: Shove all these into the db
      */
     private void rollTreasureTableA() {
         // Roll d100
@@ -937,15 +935,14 @@ class TreasureRoller extends AsyncTask {
             String tTable = table;
 
             //Special cases for the weird armor n stuff
-            if (table == "G" && 12 <= tRoll && tRoll <= 14) {
+            if (table.equals("G") && 12 <= tRoll && tRoll <= 14) {
                 tRoll = r.nextInt(8 - 1) + 1;
                 tTable = "figurine";
-            } else if (table == "I" && tRoll == 76) {
+            } else if (table.equals("I") && tRoll == 76) {
                 tRoll = r.nextInt(12 - 1) + 1;
                 tTable = "armor";
             }
 
-            Log.e("!!!!!", tTable + "   " + tRoll.toString());
             TreasureListItem t = dbAccess.getLoot("magic", tTable, tRoll);
 
             MainActivity.treasureItems.add(t);
