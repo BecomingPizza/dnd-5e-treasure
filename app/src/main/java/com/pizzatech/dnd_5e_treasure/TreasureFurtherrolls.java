@@ -5,7 +5,7 @@ package com.pizzatech.dnd_5e_treasure;
  *
  */
 
-public class TreasureFurtherRolls {
+class TreasureFurtherRolls {
     private Integer artDice;
     private Integer artSides;
     private Integer artValue;
