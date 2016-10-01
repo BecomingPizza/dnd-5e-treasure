@@ -15,5 +15,6 @@
         android:layout_height="wrap_content"
         android:text="@string/about_rate"
         android:id="@+id/rate_button"
-        android:onClick="rateInGP"/>
+        android:onClick="rateInGP"
+        android:layout_marginTop="5dp"/>
 </LinearLayout>
