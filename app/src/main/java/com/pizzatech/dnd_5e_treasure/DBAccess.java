@@ -4,7 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
+
+import java.util.ArrayList;
 
 /**
  * Created by Ashley on 26/09/2016.
@@ -30,7 +31,7 @@ class DBAccess {
     }
 
     void open() {
-        this.database = openHelper.getReadableDatabase();
+        this.database = openHelper.getWritableDatabase();
     }
 
     void close() {
@@ -76,10 +77,37 @@ class DBAccess {
                 cursor.getInt(13),
                 cursor.getInt(14),
                 cursor.getString(15)
-                );
+        );
 
         cursor.close();
 
         return t;
+    }
+
+    ArrayList<Encounter> getEncounters() {
+        ArrayList<Encounter> encounters = new ArrayList<>();
+
+        String query = "SELECT ID, NAME FROM encounters ORDER BY NAME ASC";
+        Cursor cursor = database.rawQuery(query, null);
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            Encounter e = new Encounter(cursor.getInt(0), cursor.getString(1));
+            encounters.add(e);
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+        return encounters;
+    }
+
+    void deleteEncounter(Integer id) {
+        database.delete("encounters", "ID = " + id, null);
+    }
+
+    void addEncounter(String name) {
+        String sql = "INSERT INTO encounters (NAME) VALUES ('" + name + "')";
+        database.execSQL(sql);
     }
 }
