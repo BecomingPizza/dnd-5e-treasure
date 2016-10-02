@@ -90,12 +90,13 @@ class DBAccess {
         String query = "SELECT ID, NAME FROM encounters ORDER BY NAME ASC";
         Cursor cursor = database.rawQuery(query, null);
 
-        cursor.moveToFirst();
-
-        while (!cursor.isAfterLast()) {
-            Encounter e = new Encounter(cursor.getInt(0), cursor.getString(1));
-            encounters.add(e);
-            cursor.moveToNext();
+        // This is in an if so we can be sure there are results and avoid certain doom
+        if (cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                Encounter e = new Encounter(cursor.getInt(0), cursor.getString(1));
+                encounters.add(e);
+                cursor.moveToNext();
+            }
         }
 
         cursor.close();

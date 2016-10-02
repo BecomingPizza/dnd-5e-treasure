@@ -35,9 +35,5 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
-    <string-array name="encounter_list_test_array">
-        <item>Beans</item>
-        <item>Potatoes</item>
-        <item>Thereon\'s Mum</item>
-    </string-array>
+    <string name="encounter_pc_change_button">Change</string>
 </resources>
