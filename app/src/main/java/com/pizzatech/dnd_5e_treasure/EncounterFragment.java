@@ -120,4 +120,12 @@ public class EncounterFragment extends Fragment {
 
         refreshList();
     }
+
+    static void enemyQuantityIncrease(Integer pos) {
+        // TODO: Write method
+    }
+
+    static void enemyQuantityDecrease(Integer pos) {
+        // TODO: Write method
+    }
 }

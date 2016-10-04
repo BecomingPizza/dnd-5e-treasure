@@ -55,11 +55,13 @@
             >
 
             <TextView
+                android:id="@+id/encounter_summary_text_line_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CR: 912389 XP: 1298392139" />
 
             <TextView
+                android:id="@+id/encounter_summary_text_line_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Based on 4 PCs average level 2" />
