@@ -111,4 +111,8 @@ class DBAccess {
         String sql = "INSERT INTO encounters (NAME) VALUES ('" + name + "')";
         database.execSQL(sql);
     }
+
+    ArrayList<EncounterEnemiesListItem> getEncounterEnemies(Integer encounter_id) {
+        // TODO: Write method
+    }
 }
