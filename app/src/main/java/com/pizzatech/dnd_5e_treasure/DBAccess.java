@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -43,14 +44,16 @@ class DBAccess {
     TreasureListItem getLoot(String type, String subTable, Integer roll) {
 
         // Look up the results ID
-        String rQuery = "SELECT RESULT_ID FROM treasureroll WHERE TYPE = '" + type + "' AND SUB_TYPE = '" + subTable + "' AND ROLL_UPPER >= " + roll + " AND ROLL_LOWER <= " + roll;
+        String rQuery = "SELECT RESULT_ID FROM treasureroll " +
+                "WHERE TYPE = '" + type + "' AND SUB_TYPE = '" + subTable + "' AND ROLL_UPPER >= " + roll + " AND ROLL_LOWER <= " + roll;
         Cursor rCursor = database.rawQuery(rQuery, null);
         rCursor.moveToFirst();
         Integer resultId = rCursor.getInt(0);
         rCursor.close();
 
         // Get the text for that result ID
-        String tQuery = "SELECT MAIN_TEXT, SUB_TEXT FROM treasureresult WHERE ID = " + resultId;
+        String tQuery = "SELECT MAIN_TEXT, SUB_TEXT FROM treasureresult " +
+                "WHERE ID = " + resultId;
         Cursor tCursor = database.rawQuery(tQuery, null);
         tCursor.moveToFirst();
         TreasureListItem t = new TreasureListItem(tCursor.getString(0), tCursor.getString(1));
@@ -60,7 +63,8 @@ class DBAccess {
     }
 
     TreasureFurtherRolls getRolls(String table, Integer roll) {
-        String query = "SELECT * FROM treasuretables WHERE TTABLE = '" + table + "' AND ROLL_UPPER >= " + roll + " AND ROLL_LOWER <= " + roll;
+        String query = "SELECT * FROM treasuretables " +
+                "WHERE TTABLE = '" + table + "' AND ROLL_UPPER >= " + roll + " AND ROLL_LOWER <= " + roll;
         Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
 
@@ -113,6 +117,25 @@ class DBAccess {
     }
 
     ArrayList<EncounterEnemiesListItem> getEncounterEnemies(Integer encounter_id) {
-        // TODO: Write method
+        // Look up specific enemies currently in the encounter
+        ArrayList<EncounterEnemiesListItem> enemiesList = new ArrayList<>();
+
+        String query = "SELECT e.ID, e.NAME, e.CR, e.REFERENCE, ee.QUANTITY " +
+                "FROM encounterenemies ee LEFT JOIN enemies e ON e.ID = ee.ENEMY_ID " +
+                "WHERE ee.ENCOUNTER_ID = " + encounter_id;
+        Cursor cursor = database.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                // TODO: Split these out and combine later?
+                String st = "CR " + cursor.getString(2) + " // " + cursor.getString(3);
+                EncounterEnemiesListItem e = new EncounterEnemiesListItem(cursor.getInt(0), cursor.getString(1), st, cursor.getInt(4));
+                enemiesList.add(e);
+                cursor.moveToNext();
+            }
+        }
+
+        cursor.close();
+        return enemiesList;
     }
 }

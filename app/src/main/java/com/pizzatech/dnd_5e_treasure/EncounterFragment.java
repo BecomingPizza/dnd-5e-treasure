@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,9 +85,6 @@ public class EncounterFragment extends Fragment {
         });
 
         // Hook up enemies list
-        encounterEnemiesListView = (ListView) v.findViewById(R.id.encounter_enemies_list);
-        encounterEnemiesListAdapter = new EncounterEnemiesListAdapter(getActivity(), R.layout.encounter_enemies_list_item, encounterEnemiesList);
-        encounterEnemiesListView.setAdapter(encounterEnemiesListAdapter);
     }
 
 
@@ -156,9 +154,13 @@ public class EncounterFragment extends Fragment {
 
     void loadEncounterEnemies(Integer encounter_id) {
         // Get enemies from db
+        dbAccess.open();
         encounterEnemiesList = dbAccess.getEncounterEnemies(encounter_id);
+        dbAccess.close();
 
         // Refresh the list
-        encounterEnemiesListAdapter.notifyDataSetChanged();
+        encounterEnemiesListView = (ListView) v.findViewById(R.id.encounter_enemies_list);
+        encounterEnemiesListAdapter = new EncounterEnemiesListAdapter(getActivity(), R.layout.encounter_enemies_list_item, encounterEnemiesList);
+        encounterEnemiesListView.setAdapter(encounterEnemiesListAdapter);
     }
 }
