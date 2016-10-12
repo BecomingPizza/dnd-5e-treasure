@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         // Default to Loot fragment
         selectItem(0);
 
-
         // Ads
         MobileAds.initialize(this, res.getString(R.string.banner_ad_unit_id));
         AdView adView = (AdView) findViewById(R.id.adView);

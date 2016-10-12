@@ -127,9 +127,7 @@ class DBAccess {
 
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
-                // TODO: Split these out and combine later?
-                String st = "CR " + cursor.getString(2) + " // " + cursor.getString(3);
-                EncounterEnemiesListItem e = new EncounterEnemiesListItem(cursor.getInt(0), cursor.getString(1), st, cursor.getInt(4));
+                EncounterEnemiesListItem e = new EncounterEnemiesListItem(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getInt(4));
                 enemiesList.add(e);
                 cursor.moveToNext();
             }
@@ -137,5 +135,16 @@ class DBAccess {
 
         cursor.close();
         return enemiesList;
+    }
+
+    void updateEnemyQuantity(Integer encounterId, Integer enemyId, Integer quantity) {
+        if (quantity == 0) {
+            // now 0 of that enemy so remove the line
+            database.delete("encounterenemies", "ENCOUNTER_ID = " + encounterId + " AND ENEMY_ID = " + enemyId, null);
+        } else {
+            // set to new quantity
+            String sql = "UPDATE encounterenemies SET QUANTITY = " + quantity + " WHERE ENCOUNTER_ID = " + encounterId + " AND ENEMY_ID = " + enemyId;
+            database.execSQL(sql);
+        }
     }
 }

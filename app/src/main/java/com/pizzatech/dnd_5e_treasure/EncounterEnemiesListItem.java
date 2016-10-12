@@ -9,14 +9,16 @@ package com.pizzatech.dnd_5e_treasure;
 class EncounterEnemiesListItem {
     private Integer enemyId;
     private String name;
-    private String subText;
+    private String cr;
+    private String ref;
     private Integer quantiity;
 
-    EncounterEnemiesListItem (Integer enemyId, String name, String subText, Integer quantity) {
+    EncounterEnemiesListItem (Integer enemyId, String name, String cr, String ref, Integer quantity) {
         super();
         this.enemyId = enemyId;
         this.name = name;
-        this.subText = subText;
+        this.cr = cr;
+        this.ref = ref;
         this.quantiity = quantity;
     }
 
@@ -25,10 +27,14 @@ class EncounterEnemiesListItem {
     }
 
     String getSubText() {
-        return subText;
+        return "CR " + cr + " " + ref;
     }
 
     Integer getQuantity() {
         return quantiity;
+    }
+
+    Integer getEnemyId() {
+        return enemyId;
     }
 }

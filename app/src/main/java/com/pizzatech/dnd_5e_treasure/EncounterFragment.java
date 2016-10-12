@@ -144,12 +144,19 @@ public class EncounterFragment extends Fragment {
         refreshList();
     }
 
-    static void enemyQuantityIncrease(Integer pos) {
-        // TODO: Write method
-    }
+    void changeEnemyQuantity(Integer pos, Integer quantityChange) {
+        EncounterEnemiesListItem e = encounterEnemiesList.get(pos);
+        Integer enemyId = e.getEnemyId();
+        Integer quantity = e.getQuantity();
+        Integer encounterId = encounterList.get(encounterSpinner.getSelectedItemPosition()).getId();
 
-    static void enemyQuantityDecrease(Integer pos) {
-        // TODO: Write method
+        quantity += quantityChange;
+
+        dbAccess.open();
+        dbAccess.updateEnemyQuantity(encounterId, enemyId, quantity);
+        dbAccess.close();
+
+        loadEncounterEnemies(encounterId);
     }
 
     void loadEncounterEnemies(Integer encounter_id) {
@@ -160,7 +167,7 @@ public class EncounterFragment extends Fragment {
 
         // Refresh the list
         encounterEnemiesListView = (ListView) v.findViewById(R.id.encounter_enemies_list);
-        encounterEnemiesListAdapter = new EncounterEnemiesListAdapter(getActivity(), R.layout.encounter_enemies_list_item, encounterEnemiesList);
+        encounterEnemiesListAdapter = new EncounterEnemiesListAdapter(getActivity(), R.layout.encounter_enemies_list_item, encounterEnemiesList, EncounterFragment.this);
         encounterEnemiesListView.setAdapter(encounterEnemiesListAdapter);
     }
 }

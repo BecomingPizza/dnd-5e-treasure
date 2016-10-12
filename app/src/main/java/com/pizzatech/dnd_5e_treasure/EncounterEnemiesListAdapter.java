@@ -21,12 +21,14 @@ class EncounterEnemiesListAdapter extends ArrayAdapter<EncounterEnemiesListItem>
     private Context context;
     private int layoutResourceId;
     private ArrayList<EncounterEnemiesListItem> enemies = null;
+    private EncounterFragment fragment;
 
-    EncounterEnemiesListAdapter(Context context, int layoutResourceId, ArrayList<EncounterEnemiesListItem> enemies) {
+    EncounterEnemiesListAdapter(Context context, int layoutResourceId, ArrayList<EncounterEnemiesListItem> enemies, EncounterFragment fragment) {
         super(context, layoutResourceId, enemies);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
         this.enemies = enemies;
+        this.fragment = fragment;
     }
 
     @Override
@@ -66,7 +68,7 @@ class EncounterEnemiesListAdapter extends ArrayAdapter<EncounterEnemiesListItem>
             ibplus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    EncounterFragment.enemyQuantityIncrease(position);
+                    fragment.changeEnemyQuantity(position, 1); // Increase by 1
                 }
             });
 
@@ -74,7 +76,7 @@ class EncounterEnemiesListAdapter extends ArrayAdapter<EncounterEnemiesListItem>
             ibminus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    EncounterFragment.enemyQuantityDecrease(position);
+                    fragment.changeEnemyQuantity(position, -1); // Decrease by 1
                 }
             });
         }
