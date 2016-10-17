@@ -84,18 +84,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:padding="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/encounter_enemies_header_enemy"
             android:textStyle="bold"/>
+
+
+        <ImageButton
+            android:id="@+id/encounter_enemies_list_new_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_action_add" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/encounter_enemies_header_quantity"
             android:textStyle="bold"
-            android:layout_marginLeft="150dp"/>
+            android:layout_marginLeft="100dp"/>
     </LinearLayout>
     <ListView
         android:id="@+id/encounter_enemies_list"

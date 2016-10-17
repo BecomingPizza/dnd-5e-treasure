@@ -3,6 +3,7 @@ package com.pizzatech.dnd_5e_treasure;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -74,7 +76,7 @@ public class EncounterFragment extends Fragment {
         encounterListPlusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addEncounter(v);
+                addEncounter();
             }
         });
         encounterListMinusButton.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +86,14 @@ public class EncounterFragment extends Fragment {
             }
         });
 
-        // Hook up enemies list
+        // Listener on add new enemy
+        ImageButton encounterEnemiesListNewButton = (ImageButton) view.findViewById(R.id.encounter_enemies_list_new_button);
+        encounterEnemiesListNewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNewEnemy();
+            }
+        });
     }
 
 
@@ -99,7 +108,7 @@ public class EncounterFragment extends Fragment {
         encounterSpinner.setAdapter(encounterListAdapter);
     }
 
-    public void addEncounter(View v) {
+    public void addEncounter() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Encounter Name:");
 
@@ -169,5 +178,37 @@ public class EncounterFragment extends Fragment {
         encounterEnemiesListView = (ListView) v.findViewById(R.id.encounter_enemies_list);
         encounterEnemiesListAdapter = new EncounterEnemiesListAdapter(getActivity(), R.layout.encounter_enemies_list_item, encounterEnemiesList, EncounterFragment.this);
         encounterEnemiesListView.setAdapter(encounterEnemiesListAdapter);
+
+        // TODO: Calculate CR & XP
+    }
+
+    void addNewEnemy() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Add an Enemy");
+
+        // Set the alert to use the encounter_enemy_add layout
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.encounter_enemy_add, null));
+
+        // TODO: Populate list of enemies from db
+
+        // Set up the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO: Logic
+                dialog.cancel();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO: Logic
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
     }
 }
