@@ -147,4 +147,29 @@ class DBAccess {
             database.execSQL(sql);
         }
     }
+
+    ArrayList<EnemiesListItem> getAllEnemies() {
+        ArrayList<EnemiesListItem> enemiesList = new ArrayList<>();
+
+        String sql = "SELECT ID, NAME, CR, REFERENCE FROM enemies";
+        Cursor cursor = database.rawQuery(sql, null);
+
+        if (cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                EnemiesListItem e = new EnemiesListItem(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
+                enemiesList.add(e);
+                cursor.moveToNext();
+            }
+        }
+
+        // TODO: Either this shouldn't show enemies already in the encounter, or it should just increase the quantity by 1 when you hit +
+
+        cursor.close();
+        return enemiesList;
+    }
+
+    void addNewEnemy(Integer encounterId, Integer enemyId) {
+        String sql = "INSERT INTO encounterenemies (ENCOUNTER_ID, ENEMY_ID, QUANTITY) VALUES (" + encounterId + ", " + enemyId + ", 1)";
+        database.execSQL(sql);
+    }
 }

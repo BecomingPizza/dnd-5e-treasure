@@ -6,20 +6,18 @@ package com.pizzatech.dnd_5e_treasure;
  * Holds list entries for enemies in an encounter
  */
 
-class EncounterEnemiesListItem {
+class EnemiesListItem {
     private Integer enemyId;
     private String name;
     private String cr;
     private String ref;
-    private Integer quantity;
 
-    EncounterEnemiesListItem (Integer enemyId, String name, String cr, String ref, Integer quantity) {
+    EnemiesListItem(Integer enemyId, String name, String cr, String ref) {
         super();
         this.enemyId = enemyId;
         this.name = name;
         this.cr = cr;
         this.ref = ref;
-        this.quantity = quantity;
     }
 
     String getName() {
@@ -30,11 +28,5 @@ class EncounterEnemiesListItem {
         return "CR " + cr + " " + ref;
     }
 
-    Integer getQuantity() {
-        return quantity;
-    }
-
-    Integer getEnemyId() {
-        return enemyId;
-    }
+    Integer getEnemyId() {return enemyId;}
 }

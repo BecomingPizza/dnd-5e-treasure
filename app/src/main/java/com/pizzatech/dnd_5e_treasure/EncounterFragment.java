@@ -37,6 +37,8 @@ public class EncounterFragment extends Fragment {
     EncounterEnemiesListAdapter encounterEnemiesListAdapter;
     ListView encounterEnemiesListView;
 
+    ArrayList<EnemiesListItem> enemiesList = new ArrayList<>();
+
     View v;
 
     private String add_encounter_text;
@@ -91,7 +93,7 @@ public class EncounterFragment extends Fragment {
         encounterEnemiesListNewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addNewEnemy();
+                addNewEnemyDialog();
             }
         });
     }
@@ -182,33 +184,47 @@ public class EncounterFragment extends Fragment {
         // TODO: Calculate CR & XP
     }
 
-    void addNewEnemy() {
+    void addNewEnemyDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Add an Enemy");
 
         // Set the alert to use the encounter_enemy_add layout
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        builder.setView(inflater.inflate(R.layout.encounter_enemy_add, null));
+        View v = inflater.inflate(R.layout.encounter_enemy_add, null);
+        builder.setView(v);
 
-        // TODO: Populate list of enemies from db
-
-        // Set up the buttons
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // TODO: Logic
-                dialog.cancel();
-            }
-        });
+        // Set up the button
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                // TODO: Logic
                 dialog.cancel();
             }
         });
 
-        builder.show();
+        AlertDialog alert = builder.create();
+
+        // Hook up list
+        ListView addEnemyAlertListView = (ListView) v.findViewById(R.id.add_enemy_alert_list);
+        dbAccess.open();
+        enemiesList = dbAccess.getAllEnemies();
+        dbAccess.close();
+        EnemiesListAdapter addEnemyListViewAdapter = new EnemiesListAdapter(getActivity(), R.layout.enemies_list_item, enemiesList, EncounterFragment.this, alert);
+        addEnemyAlertListView.setAdapter(addEnemyListViewAdapter);
+
+        alert.show();
+    }
+
+    void addNewEnemy(Integer pos) {
+        EnemiesListItem e = enemiesList.get(pos);
+        Integer enemyId = e.getEnemyId();
+        Integer encounterId = encounterList.get(encounterSpinner.getSelectedItemPosition()).getId();
+
+        dbAccess.open();
+        dbAccess.addNewEnemy(encounterId, enemyId);
+        dbAccess.close();
+
+        loadEncounterEnemies(encounterId);
+
     }
 }
