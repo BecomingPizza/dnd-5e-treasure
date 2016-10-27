@@ -148,10 +148,26 @@ class DBAccess {
         }
     }
 
-    ArrayList<EnemiesListItem> getAllEnemies() {
+    // Get All enemies except those on the list provided
+    ArrayList<EnemiesListItem> getAllEnemies(ArrayList<Integer> currentIds) {
         ArrayList<EnemiesListItem> enemiesList = new ArrayList<>();
 
         String sql = "SELECT ID, NAME, CR, REFERENCE FROM enemies";
+
+        // Build where clause to exclude IDs already in the encounter
+        Integer l = currentIds.size();
+        if (l > 0) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < l - 1; i++) {
+                sb.append(currentIds.get(i));
+                sb.append(", ");
+            }
+            sb.append(currentIds.get(l - 1));
+
+            sql += " WHERE ID NOT IN (" + sb.toString() + ")";
+
+        }
+
         Cursor cursor = database.rawQuery(sql, null);
 
         if (cursor.moveToFirst()) {
@@ -161,8 +177,6 @@ class DBAccess {
                 cursor.moveToNext();
             }
         }
-
-        // TODO: Either this shouldn't show enemies already in the encounter, or it should just increase the quantity by 1 when you hit +
 
         cursor.close();
         return enemiesList;
