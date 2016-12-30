@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -193,7 +194,81 @@ public class EncounterFragment extends Fragment {
         encounterEnemiesListAdapter = new EncounterEnemiesListAdapter(getActivity(), R.layout.encounter_enemies_list_item, encounterEnemiesList, EncounterFragment.this);
         encounterEnemiesListView.setAdapter(encounterEnemiesListAdapter);
 
-        // TODO: Calculate CR & XP
+        setEncounterSummary(encounter_id);
+
+    }
+
+    void setEncounterSummary(Integer encounter_id) {
+
+        // Grab Total CR & XP
+        int totalXP = 0;
+        int XP = 0;
+        int quantity = 0;
+        String highestCR = "0";
+        String CR = "0";
+
+        for (int i = 0; i <encounterEnemiesList.size(); i++) {
+            CR = encounterEnemiesList.get(i).getCr();
+            quantity = encounterEnemiesList.get(i).getQuantity();
+            // Convert to double for comparison
+            if (tacticalParse(CR) > tacticalParse(highestCR)) {
+                highestCR = CR;
+            }
+
+            // Lookup XP based on CR & add to total
+            switch(CR) {
+                case "0": XP = 0; break;
+                case "1/8": XP = 25; break;
+                case "1/4": XP = 50; break;
+                case "1/2": XP = 100; break;
+                case "1": XP = 200; break;
+                case "2": XP = 450; break;
+                case "3": XP = 700; break;
+                case "4": XP = 1100; break;
+                case "5": XP = 1800; break;
+                case "6": XP = 2300; break;
+                case "7": XP = 2900; break;
+                case "8": XP = 3900; break;
+                case "9": XP = 5000; break;
+                case "10": XP = 5900; break;
+                case "11": XP = 7200; break;
+                case "12": XP = 8400; break;
+                case "13": XP = 10000; break;
+                case "14": XP = 11500; break;
+                case "15": XP = 13000; break;
+                case "16": XP = 15000; break;
+                case "17": XP = 18000; break;
+                case "18": XP = 20000; break;
+                case "19": XP = 22000; break;
+                case "20": XP = 25000; break;
+                case "21": XP = 33000; break;
+                case "22": XP = 41000; break;
+                case "23": XP = 50000; break;
+                case "24": XP = 62000; break;
+                case "25": XP = 75000; break;
+                case "26": XP = 90000; break;
+                case "27": XP = 105000; break;
+                case "28": XP = 120000; break;
+                case "29": XP = 135000; break;
+                case "30": XP = 155000; break;
+            }
+            totalXP += (XP * quantity);
+        }
+
+        String encounterSummaryTextLine1 = "Max CR: " + highestCR + "  Total XP: " + totalXP;
+        TextView encounterSummaryTextView1 = (TextView) v.findViewById(R.id.encounter_summary_text_line_1);
+        encounterSummaryTextView1.setText(encounterSummaryTextLine1);
+
+        //TODO: Adjust XP & Difficulty w/ PC module
+    }
+
+    double tacticalParse(String ratio) {
+        if (ratio.contains("/")) {
+            String[] rat = ratio.split("/");
+            return Double.parseDouble(rat[0]) / Double.parseDouble(rat[1]);
+        } else {
+            return Double.parseDouble(ratio);
+        }
     }
 
     void addNewEnemyDialog() {

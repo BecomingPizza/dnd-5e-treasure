@@ -57,24 +57,24 @@
             <TextView
                 android:id="@+id/encounter_summary_text_line_1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CR: 912389 XP: 1298392139" />
+                android:layout_height="wrap_content" />
 
-            <TextView
+            <!-- For future release! -->
+            <!--<TextView
                 android:id="@+id/encounter_summary_text_line_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Based on 4 PCs average level 2" />
+                android:text="Based on 4 PCs average level 2" />  -->
         </LinearLayout>
 
-        <Button
+       <!-- <Button
             android:id="@+id/encounter_pc_change_button"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="0.6"
             android:text="@string/encounter_pc_change_button"
             android:minHeight="0dp"
-            android:minWidth="0dp"/>
+            android:minWidth="0dp"/> -->
 
     </LinearLayout>
     <View

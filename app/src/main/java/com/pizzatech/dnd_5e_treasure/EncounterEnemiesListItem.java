@@ -37,4 +37,6 @@ class EncounterEnemiesListItem {
     Integer getEnemyId() {
         return enemyId;
     }
+
+    String getCr() { return cr; }
 }
