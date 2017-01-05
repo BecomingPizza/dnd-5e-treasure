@@ -8,7 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp"
         android:weightSum="1">
 
         <Spinner
@@ -16,7 +15,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
-            android:dropDownWidth="wrap_content" />
+            android:dropDownWidth="wrap_content"
+            android:layout_margin="10dp"/>
 
         <ImageButton
             android:id="@+id/encounter_list_plus_button"
@@ -57,7 +57,8 @@
             <TextView
                 android:id="@+id/encounter_summary_text_line_1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"/>
 
             <!-- For future release! -->
             <!--<TextView
@@ -83,13 +84,13 @@
         android:background="#000000" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/encounter_enemies_header_enemy"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:padding="10dp"/>
 
 
         <ImageButton
