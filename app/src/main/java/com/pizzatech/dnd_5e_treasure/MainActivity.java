@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         // Default to Loot fragment
         selectItem(0);
 
-
         // Ads
         MobileAds.initialize(this, res.getString(R.string.banner_ad_unit_id));
         AdView adView = (AdView) findViewById(R.id.adView);
@@ -185,8 +184,12 @@ public class MainActivity extends AppCompatActivity {
             case 0: //Loot
                 fragment = new LootFragment();
                 break;
-            case 1: //About
+            case 1: //Encounter
+                fragment = new EncounterFragment();
+                break;
+            case 2: //About
                 fragment = new AboutFragment();
+                break;
         }
 
         fragTran.replace(R.id.content_frame, fragment);

@@ -3,6 +3,7 @@
 
     <integer-array name="left_drawer_items_imgs">
         <item>@drawable/ic_attach_money</item>
+        <item>@drawable/ic_action_emo_evil</item>
         <item>@drawable/ic_info_outline</item>
     </integer-array>
 </resources>
