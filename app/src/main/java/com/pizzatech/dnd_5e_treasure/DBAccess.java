@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 /**
  * Created by Ashley on 26/09/2016.
@@ -149,7 +150,7 @@ class DBAccess {
     }
 
     // Get All enemies except those on the list provided
-    ArrayList<EnemiesListItem> getAllEnemies(ArrayList<Integer> currentIds) {
+    ArrayList<EnemiesListItem> getEnemies(ArrayList<Integer> currentIds, String cr, String name) {
         ArrayList<EnemiesListItem> enemiesList = new ArrayList<>();
 
         String sql = "SELECT ID, NAME, CR, REFERENCE FROM enemies";
@@ -166,6 +167,26 @@ class DBAccess {
 
             sql += " WHERE ID NOT IN (" + sb.toString() + ")";
 
+        }
+
+        // Add condition for CR filter
+        if (cr != null && !cr.equals("All")) {
+            if (sql.contains("WHERE")) {
+                sql += "AND ";
+            } else {
+                sql += "WHERE ";
+            }
+            sql += "CR = '" + cr + "'";
+        }
+
+        // Add condition for name filter
+        if (name != null && !name.equals("")) {
+            if (sql.contains("WHERE")) {
+                sql += "AND ";
+            } else {
+                sql += "WHERE ";
+            }
+            sql += "NAME LIKE '%" + name + "%'";
         }
 
         Cursor cursor = database.rawQuery(sql, null);

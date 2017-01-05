@@ -4,11 +4,14 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -287,7 +290,7 @@ public class EncounterFragment extends Fragment {
 
             // Set the alert to use the encounter_enemy_add layout
             LayoutInflater inflater = getActivity().getLayoutInflater();
-            View v = inflater.inflate(R.layout.encounter_enemy_add, null);
+            final View v = inflater.inflate(R.layout.encounter_enemy_add, null);
             builder.setView(v);
 
             // Set up the button
@@ -304,20 +307,79 @@ public class EncounterFragment extends Fragment {
 
             // Get enemies not already in the encounter
 
-            ArrayList<Integer> currentIds = new ArrayList<>();
+            final ArrayList<Integer> currentIds = new ArrayList<>();
             for (int i = 0; i < encounterEnemiesList.size(); i++) {
                 currentIds.add(encounterEnemiesList.get(i).getEnemyId());
             }
 
             dbAccess.open();
-            enemiesList = dbAccess.getAllEnemies(currentIds);
+            enemiesList = dbAccess.getEnemies(currentIds, null, null);
             dbAccess.close();
-
 
             // Hook up list
             ListView addEnemyAlertListView = (ListView) v.findViewById(R.id.add_enemy_alert_list);
             EnemiesListAdapter addEnemyListViewAdapter = new EnemiesListAdapter(getActivity(), R.layout.enemies_list_item, enemiesList, EncounterFragment.this, alert);
             addEnemyAlertListView.setAdapter(addEnemyListViewAdapter);
+
+            // Hook up CR spinner
+            final Spinner enemy_cr_spinner = (Spinner) v.findViewById(R.id.enemy_cr_spinner);
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.enemy_cr_spinner_array, android.R.layout.simple_spinner_item);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            enemy_cr_spinner.setAdapter(adapter);
+
+
+            final EditText enemyNameFilterEditText = (EditText) v.findViewById(R.id.enemy_name_filter) ;
+
+            // Add listener to CR Spinner to trigger filtering
+            enemy_cr_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                    String nameFilter = enemyNameFilterEditText.getText().toString();
+                    String cr = enemy_cr_spinner.getSelectedItem().toString();
+
+                    dbAccess.open();
+                    enemiesList = dbAccess.getEnemies(currentIds, cr, nameFilter);
+                    dbAccess.close();
+
+                    ListView addEnemyAlertListView = (ListView) v.findViewById(R.id.add_enemy_alert_list);
+                    EnemiesListAdapter addEnemyListViewAdapter = new EnemiesListAdapter(getActivity(), R.layout.enemies_list_item, enemiesList, EncounterFragment.this, alert);
+                    addEnemyAlertListView.setAdapter(addEnemyListViewAdapter);
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
+            // Add listener to name filter to trigger filtering
+            enemyNameFilterEditText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                    String cr = enemy_cr_spinner.getSelectedItem().toString();
+                    String nameFilter = enemyNameFilterEditText.getText().toString();
+
+                    dbAccess.open();
+                    enemiesList = dbAccess.getEnemies(currentIds, cr, nameFilter);
+                    dbAccess.close();
+
+                    ListView addEnemyAlertListView = (ListView) v.findViewById(R.id.add_enemy_alert_list);
+                    EnemiesListAdapter addEnemyListViewAdapter = new EnemiesListAdapter(getActivity(), R.layout.enemies_list_item, enemiesList, EncounterFragment.this, alert);
+                    addEnemyAlertListView.setAdapter(addEnemyListViewAdapter);
+                }
+            });
 
         }
 
