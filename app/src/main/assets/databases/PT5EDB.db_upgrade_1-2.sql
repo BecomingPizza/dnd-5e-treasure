@@ -1,10 +1,9 @@
-/* version 2 adds tables n data for encounters!
-/* Tables
-CREATE TABLE "encounters" ( `ID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, `NAME` TEXT )
-CREATE TABLE "enemies" ( `ID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, `NAME` TEXT, `CR` TEXT, `REFERENCE` TEXT )
-CREATE TABLE `encounterenemies` ( `ID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, `ENCOUNTER_ID` INTEGER, `ENEMY_ID` INTEGER, `QUANTITY` INTEGER )
-
-/* Data
+-- version 2 adds tables n data for encounters!
+-- Tables
+CREATE TABLE "encounters" ( `ID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, `NAME` TEXT );
+CREATE TABLE "enemies" ( `ID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, `NAME` TEXT, `CR` TEXT, `REFERENCE` TEXT );
+CREATE TABLE "encounterenemies" ( `ID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, `ENCOUNTER_ID` INTEGER, `ENEMY_ID` INTEGER, `QUANTITY` INTEGER );
+-- Data
 insert into 'enemies' ('name','cr','reference') values ('Frog', '0', 'MM 322');
 insert into 'enemies' ('name','cr','reference') values ('Sea Horse', '0', 'MM 337');
 insert into 'enemies' ('name','cr','reference') values ('Awakened Shrub', '0', 'MM 317');
