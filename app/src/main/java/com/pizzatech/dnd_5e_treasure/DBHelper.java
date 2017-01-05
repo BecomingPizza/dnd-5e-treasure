@@ -13,7 +13,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 class DBHelper extends SQLiteAssetHelper {
 
     private static final String DATABASE_NAME = "PT5EDB.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
