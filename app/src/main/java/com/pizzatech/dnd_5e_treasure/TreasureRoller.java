@@ -46,7 +46,7 @@ class TreasureRoller extends AsyncTask {
     protected Integer doInBackground(Object[] params) {
 
         //Clear list
-        MainActivity.treasureItems.clear();
+        LootFragment.treasureItems.clear();
 
         // Get our d100 roll to start
         Integer roll = r.nextInt(100 - 1) + 1;
@@ -95,7 +95,7 @@ class TreasureRoller extends AsyncTask {
         act.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                MainActivity.treasureItemsListAdapter.notifyDataSetChanged();
+                LootFragment.treasureItemsListAdapter.notifyDataSetChanged();
             }
         });
 
@@ -120,7 +120,7 @@ class TreasureRoller extends AsyncTask {
         TreasureListItem t = new TreasureListItem(mainText, subText);
 
         // Put some shit in the list
-        MainActivity.treasureItems.add(t);
+        LootFragment.treasureItems.add(t);
     }
 
     static void rollGems(Integer dice, Integer sides, Integer value) {
@@ -156,7 +156,7 @@ class TreasureRoller extends AsyncTask {
 
             TreasureListItem t = dbAccess.getLoot("gem", value.toString(), tRoll);
 
-            MainActivity.treasureItems.add(t);
+            LootFragment.treasureItems.add(t);
         }
         dbAccess.close();
     }
@@ -186,7 +186,7 @@ class TreasureRoller extends AsyncTask {
 
             TreasureListItem t = dbAccess.getLoot("art", value.toString(), tRoll);
 
-            MainActivity.treasureItems.add(t);
+            LootFragment.treasureItems.add(t);
         }
         dbAccess.close();
     }
@@ -228,7 +228,7 @@ class TreasureRoller extends AsyncTask {
 
             TreasureListItem t = dbAccess.getLoot("magic", tTable, tRoll);
 
-            MainActivity.treasureItems.add(t);
+            LootFragment.treasureItems.add(t);
         }
         dbAccess.close();
 
