@@ -4,8 +4,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.ActivityNotFoundException;
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -18,8 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -180,13 +176,16 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragTran = fragMan.beginTransaction();
 
         switch (position) {
-            case 0: //Loot
-                fragment = new LootFragment();
+            case 0: //Treasure Hoard
+                fragment = new TreasureHoardFragment();
                 break;
-            case 1: //Encounter
+            case 1: //Individual Loot
+                fragment = new IndividualLootFragment();
+                break;
+            case 2: //Encounter
                 fragment = new EncounterFragment();
                 break;
-            case 2: //About
+            case 3: //About
                 fragment = new AboutFragment();
                 break;
         }

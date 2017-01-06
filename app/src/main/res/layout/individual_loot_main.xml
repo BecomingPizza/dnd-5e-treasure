@@ -11,32 +11,37 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/indv_loot_desc_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="No enemies set"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"/>
 
-            <TextView
-                android:id="@+id/cr_selection_label"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cr_selection_label_text" />
+                android:orientation="horizontal">
 
-            <Spinner
-                android:id="@+id/cr_selection_spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:dropDownWidth="wrap_content" />
+                <Button
+                    android:id="@+id/indv_loot_set_button"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_button_text" />
 
+                <Button
+                    android:id="@+id/indv_loot_roll_button"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/roll_button_text"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp" />
             <Button
-                android:id="@+id/roll_button"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/roll_button_text" />
-
-            <Button
-                android:id="@+id/copy_button"
+                android:id="@+id/indv_loot_copy_button"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,7 +55,7 @@
             android:background="#000000" />
 
         <ListView
-            android:id="@+id/results_list"
+            android:id="@+id/indv_loot_results_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

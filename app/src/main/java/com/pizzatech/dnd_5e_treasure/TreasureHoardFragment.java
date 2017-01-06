@@ -19,10 +19,10 @@ import java.util.ArrayList;
 /**
  * Created by Ashley on 27/09/2016.
  *
- * Fragment for loot rolling
+ * Fragment for Treasure Hoard rolling
  */
 
-public class LootFragment extends Fragment {
+public class TreasureHoardFragment extends Fragment {
 
     public static ArrayList<TreasureListItem> treasureItems = new ArrayList<>();
     static TreasureListItemAdapter treasureItemsListAdapter;
@@ -41,11 +41,11 @@ public class LootFragment extends Fragment {
 
         v = view;
 
-        // Populate teh spinnor
+        // Populate the CR spinner
         Spinner cr_spinner = (Spinner) v.findViewById(R.id.cr_selection_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.cr_selection_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        cr_spinner.setAdapter(adapter);
+        ArrayAdapter<CharSequence> cradapter = ArrayAdapter.createFromResource(getActivity(), R.array.cr_selection_array, android.R.layout.simple_spinner_item);
+        cradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cr_spinner.setAdapter(cradapter);
 
         // Hook up the list
         treasureItemsListAdapter = new TreasureListItemAdapter(getActivity(), R.layout.treasure_list_item, treasureItems);
@@ -82,8 +82,6 @@ public class LootFragment extends Fragment {
         TreasureRoller tr = new TreasureRoller(v.getContext(), cr_selected, getActivity());
         tr.execute();
     }
-
-
 
     void copyToClipboard() {
         //Check we actually have something to copy

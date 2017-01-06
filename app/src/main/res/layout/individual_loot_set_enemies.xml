@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cr_0_4_quantity_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CR 0-4 Enemies:" />
+
+        <EditText
+            android:id="@+id/cr_0_4_quantity_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:minEms="2"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cr_5_10_quantity_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CR 5-10 Enemies:" />
+
+        <EditText
+            android:id="@+id/cr_5_10_quantity_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:minEms="2" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cr_11_16_quantity_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CR 11-16 Enemies:" />
+
+        <EditText
+            android:id="@+id/cr_11_16_quantity_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:minEms="2" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cr_17_quantity_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CR 17+ Enemies:" />
+
+        <EditText
+            android:id="@+id/cr_17_quantity_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:minEms="2"/>
+
+</LinearLayout>
+    </LinearLayout>

@@ -9,6 +9,7 @@
     <string name="cr_selection_label_text">CR:</string>
     <string name="roll_button_text">Generate</string>
     <string name="copy_button_text">Copy</string>
+    <string name="set_button_text">Set Enemies</string>
     <string-array name="cr_selection_array">
         <item>0 – 4</item>
         <item>5 – 10</item>
@@ -24,7 +25,8 @@
     <string name="tr_coin_platinum">Platinum</string>
 
     <string-array name="left_drawer_items_strings">
-        <item>Loot Roller</item>
+        <item>Treasure Hoard Roller</item>
+        <item>Individual Loot Roller</item>
         <item>Encounter Planner</item>
         <item>About</item>
     </string-array>
