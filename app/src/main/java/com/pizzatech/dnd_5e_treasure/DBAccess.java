@@ -149,7 +149,11 @@ class DBAccess {
         }
     }
 
-    // Get All enemies except those on the list provided
+    /* Get enemies matching provided conditions
+     * currentIds - IDs to exclude in the search
+     * cr - CR to look for
+     * name - NAME to search for
+     */
     ArrayList<EnemiesListItem> getEnemies(ArrayList<Integer> currentIds, String cr, String name) {
         ArrayList<EnemiesListItem> enemiesList = new ArrayList<>();
 
@@ -172,9 +176,9 @@ class DBAccess {
         // Add condition for CR filter
         if (cr != null && !cr.equals("All")) {
             if (sql.contains("WHERE")) {
-                sql += "AND ";
+                sql += " AND ";
             } else {
-                sql += "WHERE ";
+                sql += " WHERE ";
             }
             sql += "CR = '" + cr + "'";
         }
@@ -182,9 +186,9 @@ class DBAccess {
         // Add condition for name filter
         if (name != null && !name.equals("")) {
             if (sql.contains("WHERE")) {
-                sql += "AND ";
+                sql += " AND ";
             } else {
-                sql += "WHERE ";
+                sql += " WHERE ";
             }
             sql += "NAME LIKE '%" + name + "%'";
         }
