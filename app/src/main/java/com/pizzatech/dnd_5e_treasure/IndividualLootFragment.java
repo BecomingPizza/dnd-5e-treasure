@@ -2,6 +2,8 @@ package com.pizzatech.dnd_5e_treasure;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,9 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 import java.util.Random;
 
 /**
@@ -30,6 +35,8 @@ public class IndividualLootFragment extends Fragment {
     Integer cr17PlusQuantity = 0;
 
     ArrayList<IndvLootResult> indvLootResults = new ArrayList<>();
+    IndvLootResultListAdapter indvLootResultListAdapter;
+    ListView listyMcListFace;
 
     private Random r = new Random();
 
@@ -44,6 +51,11 @@ public class IndividualLootFragment extends Fragment {
         // Do setup stuff
 
         v = view;
+
+        // Hook up the list
+        indvLootResultListAdapter = new IndvLootResultListAdapter(getActivity(), R.layout.individual_loot_list_item, indvLootResults);
+        listyMcListFace = (ListView) view.findViewById(R.id.indv_loot_results_list);
+        listyMcListFace.setAdapter(indvLootResultListAdapter);
 
         // Set enemies listener
         Button setEnemiesBtn = (Button) v.findViewById(R.id.indv_loot_set_button);
@@ -100,16 +112,37 @@ public class IndividualLootFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // Save Quantities to variables
-                cr0To4Quantity = Integer.parseInt(cr0To4QuantityEditText.getText().toString());
-                cr5To10Quantity = Integer.parseInt(cr5To10QuantityEditText.getText().toString());
-                cr11To16Quantity = Integer.parseInt(cr11To16QuantityEditText.getText().toString());
-                cr17PlusQuantity = Integer.parseInt(cr17PlusQuantityEditText.getText().toString());
+                if (!cr0To4QuantityEditText.getText().toString().equals("")) {
+                    cr0To4Quantity = Integer.parseInt(cr0To4QuantityEditText.getText().toString());
+                } else {
+                    cr0To4Quantity = 0;
+                }
+
+                if (!cr5To10QuantityEditText.getText().toString().equals("")) {
+                    cr5To10Quantity = Integer.parseInt(cr5To10QuantityEditText.getText().toString());
+                } else {
+                    cr0To4Quantity = 0;
+                }
+
+                if (!cr11To16QuantityEditText.getText().toString().equals("")) {
+                    cr11To16Quantity = Integer.parseInt(cr11To16QuantityEditText.getText().toString());
+                } else {
+                    cr11To16Quantity = 0;
+                }
+
+                if (!cr17PlusQuantityEditText.getText().toString().equals("")) {
+                    cr17PlusQuantity = Integer.parseInt(cr17PlusQuantityEditText.getText().toString());
+                } else {
+                    cr17PlusQuantity = 0;
+                }
 
                 // Set the text at the top of the main screen that states this
                 setDesc();
 
                 // Set up an array of generic enemies to roll some loot for
                 setIndvLootArray();
+
+                hideList();
             }
         });
 
@@ -187,10 +220,19 @@ public class IndividualLootFragment extends Fragment {
 
         int table;
 
-        Integer roll = r.nextInt(100 - 1) + 1;
 
         for (int i  = 0; i < indvLootResults.size(); i++) {
             table = indvLootResults.get(i).getTable();
+
+
+            Integer roll = r.nextInt(100 - 1) + 1;
+
+            // Reset to 0!
+            indvLootResults.get(i).setCopperQuantity(0);
+            indvLootResults.get(i).setSilverQuantity(0);
+            indvLootResults.get(i).setElectrumQuantity(0);
+            indvLootResults.get(i).setGoldQuantity(0);
+            indvLootResults.get(i).setPlatinumQuantity(0);
 
             switch (table) {
                 case 0:
@@ -252,6 +294,22 @@ public class IndividualLootFragment extends Fragment {
                     break;
             }
         }
+
+        refreshList();
+        showList();
+
+    }
+
+    private void refreshList() {
+        indvLootResultListAdapter.notifyDataSetChanged();
+    }
+
+    private void showList() {
+        listyMcListFace.setVisibility(View.VISIBLE);
+    }
+
+    private void hideList() {
+        listyMcListFace.setVisibility(View.INVISIBLE);
     }
 
     private Integer rollCoins(Integer dice, Integer multiplier) {
@@ -268,6 +326,25 @@ public class IndividualLootFragment extends Fragment {
 
 
     void copyToClipboard() {
-
+        //Check we actually have something to copy
+        if (indvLootResults.size() != 0 && listyMcListFace.getVisibility() == View.VISIBLE) {
+            //Turn treasureItems into a lovely string
+            String stringyMcStringFace = "";
+            for (int i = 0; i < indvLootResults.size(); i++) {
+                stringyMcStringFace += (indvLootResults.get(i).getEnemyName() + "\n");
+                //Don't add null subtext
+                if (indvLootResults.get(i).getCoinage() != null) {
+                    stringyMcStringFace += (indvLootResults.get(i).getCoinage() + '\n');
+                }
+            }
+            //clipboardy stuff
+            ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(MainActivity.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("loot", stringyMcStringFace);
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(v.getContext(), "List copied", Toast.LENGTH_SHORT).show();
+        } else {
+            // Y U DO DIS
+            Toast.makeText(v.getContext(), "Y U DO DIS", Toast.LENGTH_SHORT).show();
+        }
     }
 }
