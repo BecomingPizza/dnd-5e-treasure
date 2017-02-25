@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Ashley on 06/01/2017.
@@ -29,6 +30,8 @@ public class IndividualLootFragment extends Fragment {
     Integer cr17PlusQuantity = 0;
 
     ArrayList<IndvLootResult> indvLootResults = new ArrayList<>();
+
+    private Random r = new Random();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -181,7 +184,88 @@ public class IndividualLootFragment extends Fragment {
 
     void rollIndividualLoot() {
         // TODO: Roll some loot, adapter some lists etc
+
+        int table;
+
+        Integer roll = r.nextInt(100 - 1) + 1;
+
+        for (int i  = 0; i < indvLootResults.size(); i++) {
+            table = indvLootResults.get(i).getTable();
+
+            switch (table) {
+                case 0:
+                    if (roll >= 1 && roll <= 30) {
+                        indvLootResults.get(i).setCopperQuantity(rollCoins(5, 1));
+                    } else if (roll >= 31 && roll <= 60) {
+                        indvLootResults.get(i).setSilverQuantity(rollCoins(4, 1));
+                    } else if (roll >= 61 && roll <= 70) {
+                        indvLootResults.get(i).setElectrumQuantity(rollCoins(3, 1));
+                    } else if (roll >= 71 && roll <= 95) {
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(3, 1));
+                    } else if (roll >= 96 && roll <= 100) {
+                        indvLootResults.get(i).setPlatinumQuantity(rollCoins(1, 1));
+                    }
+                    break;
+                case 1:
+                    if (roll >= 1 && roll <= 30) {
+                        indvLootResults.get(i).setCopperQuantity(rollCoins(4, 100));
+                        indvLootResults.get(i).setElectrumQuantity(rollCoins(1, 10));
+                    } else if (roll >= 31 && roll <= 60) {
+                        indvLootResults.get(i).setSilverQuantity(rollCoins(6, 10));
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(2, 10));
+                    } else if (roll >= 61 && roll <= 70) {
+                        indvLootResults.get(i).setElectrumQuantity(rollCoins(3, 10));
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(2, 10));
+                    } else if (roll >= 71 && roll <= 95) {
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(4, 10));
+                    } else if (roll >= 96 && roll <= 100) {
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(2, 10));
+                        indvLootResults.get(i).setPlatinumQuantity(rollCoins(3, 1));
+                    }
+                    break;
+                case 2:
+                    if (roll >= 1 && roll <= 20) {
+                        indvLootResults.get(i).setSilverQuantity(rollCoins(4, 100));
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(1, 100));
+                    } else if (roll >= 21 && roll <= 35) {
+                        indvLootResults.get(i).setElectrumQuantity(rollCoins(1, 100));
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(1, 100));
+                    } else if (roll >= 36 && roll <= 75) {
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(2, 100));
+                        indvLootResults.get(i).setPlatinumQuantity(rollCoins(1, 10));
+                    } else if (roll >= 76 && roll <= 100) {
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(2, 100));
+                        indvLootResults.get(i).setPlatinumQuantity(rollCoins(2, 10));
+                    }
+                    break;
+                case 3:
+                    if (roll >= 1 && roll <= 15) {
+                        indvLootResults.get(i).setElectrumQuantity(rollCoins(2, 1000));
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(8, 100));
+                    } else if (roll >= 16 && roll <= 55) {
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(1, 1000));
+                        indvLootResults.get(i).setPlatinumQuantity(rollCoins(1, 100));
+                    } else if (roll >= 56 && roll <= 100) {
+                        indvLootResults.get(i).setGoldQuantity(rollCoins(1, 1000));
+                        indvLootResults.get(i).setPlatinumQuantity(rollCoins(2, 100));
+                    }
+                    break;
+            }
+        }
     }
+
+    private Integer rollCoins(Integer dice, Integer multiplier) {
+        // Roll a d6 the specified number of times and sum the total (coins are always d6 rolls!)
+        Integer roll = 0;
+        for (int i = 0; i < dice; i++) {
+            roll += (r.nextInt(6 - 1) + 1);
+        }
+        // Sum x multiplier
+        Integer coins = roll * multiplier;
+
+        return coins;
+    }
+
 
     void copyToClipboard() {
 
