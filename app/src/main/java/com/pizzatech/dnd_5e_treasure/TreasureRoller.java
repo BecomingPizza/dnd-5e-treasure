@@ -12,9 +12,9 @@ import static com.pizzatech.dnd_5e_treasure.MainActivity.dbAccess;
 /**
  * Created by Ashley on 17/09/2016.
  * <p>
- * Moving lots of shiz to an asynctask to maybe boost performance ¯\_(ツ)_/¯
+ *  ¯\_(ツ)_/¯
  */
-class TreasureRoller extends AsyncTask {
+class TreasureRoller {
 
     private Integer table;
     private Context context;
@@ -42,11 +42,10 @@ class TreasureRoller extends AsyncTask {
 
     }
 
-    @Override
-    protected Integer doInBackground(Object[] params) {
+    void rollStuff() {
 
         //Clear list
-        MainActivity.treasureItems.clear();
+        TreasureHoardFragment.treasureItems.clear();
 
         // Get our d100 roll to start
         Integer roll = r.nextInt(100 - 1) + 1;
@@ -91,15 +90,6 @@ class TreasureRoller extends AsyncTask {
         dbAccess.close();
         furtherRolls.rolyPoly();
 
-        //update the list in the main thread because reasons
-        act.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                MainActivity.treasureItemsListAdapter.notifyDataSetChanged();
-            }
-        });
-
-        return table;
     }
 
     private void rollCoins(Integer dice, Integer multiplier, String coinType) {
@@ -120,7 +110,7 @@ class TreasureRoller extends AsyncTask {
         TreasureListItem t = new TreasureListItem(mainText, subText);
 
         // Put some shit in the list
-        MainActivity.treasureItems.add(t);
+        TreasureHoardFragment.treasureItems.add(t);
     }
 
     static void rollGems(Integer dice, Integer sides, Integer value) {
@@ -156,7 +146,7 @@ class TreasureRoller extends AsyncTask {
 
             TreasureListItem t = dbAccess.getLoot("gem", value.toString(), tRoll);
 
-            MainActivity.treasureItems.add(t);
+            TreasureHoardFragment.treasureItems.add(t);
         }
         dbAccess.close();
     }
@@ -186,7 +176,7 @@ class TreasureRoller extends AsyncTask {
 
             TreasureListItem t = dbAccess.getLoot("art", value.toString(), tRoll);
 
-            MainActivity.treasureItems.add(t);
+            TreasureHoardFragment.treasureItems.add(t);
         }
         dbAccess.close();
     }
@@ -228,7 +218,7 @@ class TreasureRoller extends AsyncTask {
 
             TreasureListItem t = dbAccess.getLoot("magic", tTable, tRoll);
 
-            MainActivity.treasureItems.add(t);
+            TreasureHoardFragment.treasureItems.add(t);
         }
         dbAccess.close();
 

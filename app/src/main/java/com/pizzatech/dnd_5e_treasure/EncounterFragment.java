@@ -2,6 +2,8 @@ package com.pizzatech.dnd_5e_treasure;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -40,6 +43,8 @@ public class EncounterFragment extends Fragment {
     ListView encounterEnemiesListView;
 
     ArrayList<EnemiesListItem> enemiesList = new ArrayList<>();
+
+    String highestCR = "0";
 
     View v;
 
@@ -96,6 +101,15 @@ public class EncounterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 addNewEnemyDialog();
+            }
+        });
+
+        // Listener on roll loot
+        Button encounterRollLootButton = (Button) view.findViewById(R.id.encounter_roll_loot_button);
+        encounterRollLootButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rollLootDialog();
             }
         });
     }
@@ -209,7 +223,6 @@ public class EncounterFragment extends Fragment {
         int totalXP = 0;
         int XP = 0;
         int quantity = 0;
-        String highestCR = "0";
         String CR = "0";
 
         for (int i = 0; i <encounterEnemiesList.size(); i++) {
@@ -274,6 +287,86 @@ public class EncounterFragment extends Fragment {
         } else {
             return Double.parseDouble(ratio);
         }
+    }
+
+    void rollLootDialog() {
+        // Check we have some enemies otherwise we can't do shit!
+        if (encounterEnemiesList.isEmpty()) {
+            Toast.makeText(v.getContext(), "Add some enemies first", Toast.LENGTH_SHORT).show();
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle("Which method?");
+            builder.setPositiveButton("Individual", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    openIndividualLoot();
+                }
+            });
+            builder.setNegativeButton("Hoard", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    openTreasureHoard();
+                }
+            });
+
+            final AlertDialog alert = builder.create();
+            alert.show();
+        }
+    }
+
+    void openIndividualLoot() {
+
+        // Do you want to build an arraylist...
+        ArrayList<IndvLootResult> stuff = new ArrayList<>();
+
+        EncounterEnemiesListItem e;
+        Integer cr;
+        Integer table = -1;
+
+        for (int i = 0; i < encounterEnemiesList.size(); i++) {
+            e = encounterEnemiesList.get(i);
+            cr = Integer.parseInt(e.getCr());
+            if (cr >= 0 && cr <= 4) {
+                table = 0;
+            } else if (cr >= 5 && cr <= 10) {
+                table = 1;
+            } else if (cr >= 11 && cr <= 16) {
+                table = 2;
+            } else if (cr >= 17) {
+                table = 3;
+            }
+            stuff.add(new IndvLootResult(e.getName(), table, 0, 0, 0, 0, 0));
+        }
+
+
+        FragmentManager fragMan = getFragmentManager();
+        FragmentTransaction fragTran = fragMan.beginTransaction();
+
+        Fragment fragment = new IndividualLootFragment();
+        Bundle bundaru = new Bundle();
+        bundaru.putParcelableArrayList("array", stuff);
+        fragment.setArguments(bundaru);
+
+        fragTran.replace(R.id.content_frame, fragment);
+        fragTran.commit();
+
+        getActivity().setTitle("Individual Loot Roller");
+    }
+
+    void openTreasureHoard() {
+
+        FragmentManager fragMan = getFragmentManager();
+        FragmentTransaction fragTran = fragMan.beginTransaction();
+
+        Fragment fragment = new TreasureHoardFragment();
+        Bundle bundaru = new Bundle();
+        bundaru.putInt("CR", Integer.parseInt(highestCR));
+        fragment.setArguments(bundaru);
+
+        fragTran.replace(R.id.content_frame, fragment);
+        fragTran.commit();
+
+        getActivity().setTitle("Treasure Hoard Roller");
     }
 
     void addNewEnemyDialog() {

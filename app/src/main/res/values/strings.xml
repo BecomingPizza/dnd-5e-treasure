@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">D&amp;D 5E Loot Roller</string>
+    <string name="app_name">D&amp;D 5E Toolkit</string>
 
     // TEST AD ID - swap over before release
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
@@ -9,6 +9,7 @@
     <string name="cr_selection_label_text">CR:</string>
     <string name="roll_button_text">Generate</string>
     <string name="copy_button_text">Copy</string>
+    <string name="set_button_text">Set Enemies</string>
     <string-array name="cr_selection_array">
         <item>0 – 4</item>
         <item>5 – 10</item>
@@ -24,12 +25,13 @@
     <string name="tr_coin_platinum">Platinum</string>
 
     <string-array name="left_drawer_items_strings">
-        <item>Loot Roller</item>
+        <item>Treasure Hoard Roller</item>
+        <item>Individual Loot Roller</item>
         <item>Encounter Planner</item>
         <item>About</item>
     </string-array>
 
-    <string name="about_text">Upcoming features (in the order I plan to do them) > \n - Individual Loot Roller \n - PCs &amp; XP \n - Encounter Tracker \n\nFeel free to make suggestions as comments on the Play Store! \n</string>
+    <string name="about_text">Upcoming features (in the order I plan to do them) > \n - PCs &amp; XP \n - Encounter Tracker \n\nFeel free to make suggestions as comments on the Play Store! \n</string>
     <string name="about_rate">Rate this app</string>
 
     <string name="drawer_open">Open</string>
