@@ -6,6 +6,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,6 +53,33 @@ public class IndividualLootFragment extends Fragment {
 
         v = view;
 
+        // Check for bundaru
+        Bundle bundaru = getArguments();
+        if (bundaru != null && bundaru.containsKey("array")) {
+            indvLootResults.clear();
+            indvLootResults = bundaru.getParcelableArrayList("array");
+
+            for (int i = 0; i < indvLootResults.size(); i++) {
+                switch (indvLootResults.get(i).getTable()) {
+                    case 0:
+                        cr0To4Quantity++;
+                        break;
+                    case 1:
+                        cr5To10Quantity++;
+                        break;
+                    case 2:
+                        cr11To16Quantity++;
+                        break;
+                    case 3:
+                        cr17PlusQuantity++;
+                        break;
+                }
+            }
+
+            setDesc();
+            rollIndividualLoot();
+        }
+
         // Hook up the list
         indvLootResultListAdapter = new IndvLootResultListAdapter(getActivity(), R.layout.individual_loot_list_item, indvLootResults);
         listyMcListFace = (ListView) view.findViewById(R.id.indv_loot_results_list);
@@ -72,6 +100,8 @@ public class IndividualLootFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 rollIndividualLoot();
+                refreshList();
+                showList();
             }
         });
 
@@ -83,6 +113,7 @@ public class IndividualLootFragment extends Fragment {
                 copyToClipboard();
             }
         });
+
 
     }
 
@@ -216,7 +247,6 @@ public class IndividualLootFragment extends Fragment {
     }
 
     void rollIndividualLoot() {
-        // TODO: Roll some loot, adapter some lists etc
 
         int table;
 
@@ -294,9 +324,6 @@ public class IndividualLootFragment extends Fragment {
                     break;
             }
         }
-
-        refreshList();
-        showList();
 
     }
 

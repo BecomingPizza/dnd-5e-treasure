@@ -12,9 +12,9 @@ import static com.pizzatech.dnd_5e_treasure.MainActivity.dbAccess;
 /**
  * Created by Ashley on 17/09/2016.
  * <p>
- * Moving lots of shiz to an asynctask to maybe boost performance ¯\_(ツ)_/¯
+ *  ¯\_(ツ)_/¯
  */
-class TreasureRoller extends AsyncTask {
+class TreasureRoller {
 
     private Integer table;
     private Context context;
@@ -42,8 +42,7 @@ class TreasureRoller extends AsyncTask {
 
     }
 
-    @Override
-    protected Integer doInBackground(Object[] params) {
+    void rollStuff() {
 
         //Clear list
         TreasureHoardFragment.treasureItems.clear();
@@ -91,15 +90,6 @@ class TreasureRoller extends AsyncTask {
         dbAccess.close();
         furtherRolls.rolyPoly();
 
-        //update the list in the main thread because reasons
-        act.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                TreasureHoardFragment.treasureItemsListAdapter.notifyDataSetChanged();
-            }
-        });
-
-        return table;
     }
 
     private void rollCoins(Integer dice, Integer multiplier, String coinType) {

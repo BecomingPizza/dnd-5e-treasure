@@ -1,12 +1,15 @@
 package com.pizzatech.dnd_5e_treasure;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Ashley on 06/01/2017.
  *
  * Hold all the shiz for individual loot for 1 monster
  */
 
-public class IndvLootResult {
+public class IndvLootResult implements Parcelable {
     private String enemyName;
     private Integer table;
     private Integer copperQuantity;
@@ -91,5 +94,47 @@ public class IndvLootResult {
 
 
         return text;
+    }
+
+    // Stuff to make parcelable
+
+    public IndvLootResult(Parcel in) {
+        super();
+        readFromParcel(in);
+    }
+
+    public static final Parcelable.Creator<IndvLootResult> CREATOR = new Parcelable.Creator<IndvLootResult>() {
+        public IndvLootResult createFromParcel(Parcel in) {
+            return new IndvLootResult(in);
+        }
+
+        public IndvLootResult[] newArray(int size) {
+
+            return new IndvLootResult[size];
+        }
+
+    };
+
+    public void readFromParcel(Parcel in) {
+        enemyName = in.readString();
+        table = in.readInt();
+        copperQuantity = in.readInt();
+        silverQuantity = in.readInt();
+        electrumQuantity = in.readInt();
+        goldQuantity = in.readInt();
+        platinumQuantity = in.readInt();
+    }
+    public int describeContents() {
+        return 0;
+    }
+
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(enemyName);
+        dest.writeInt(table);
+        dest.writeInt(copperQuantity);
+        dest.writeInt(silverQuantity);
+        dest.writeInt(electrumQuantity);
+        dest.writeInt(goldQuantity);
+        dest.writeInt(platinumQuantity);
     }
 }

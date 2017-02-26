@@ -70,6 +70,22 @@ public class TreasureHoardFragment extends Fragment {
             }
         });
 
+
+        Bundle bundaru = getArguments();
+        if (bundaru != null && bundaru.containsKey("CR")) {
+        Integer cr = bundaru.getInt("CR");
+
+            if (cr >=0 && cr <= 4) {
+                cr_spinner.setSelection(0);
+            } else if (cr >=5 && cr <=10) {
+                cr_spinner.setSelection(1);
+            } else if (cr >=11 && cr <=16) {
+                cr_spinner.setSelection(2);
+            } else if (cr >= 17) {
+                cr_spinner.setSelection(3);
+            }
+            rollTreasure();
+        }
     }
 
     void rollTreasure() {
@@ -80,7 +96,8 @@ public class TreasureHoardFragment extends Fragment {
 
 
         TreasureRoller tr = new TreasureRoller(v.getContext(), cr_selected, getActivity());
-        tr.execute();
+        tr.rollStuff();
+        treasureItemsListAdapter.notifyDataSetChanged();
     }
 
     void copyToClipboard() {
