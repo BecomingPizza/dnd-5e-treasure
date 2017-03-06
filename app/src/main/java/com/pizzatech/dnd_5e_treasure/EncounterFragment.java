@@ -320,12 +320,12 @@ public class EncounterFragment extends Fragment {
         ArrayList<IndvLootResult> stuff = new ArrayList<>();
 
         EncounterEnemiesListItem e;
-        Integer cr;
+        double cr;
         Integer table = -1;
 
         for (int i = 0; i < encounterEnemiesList.size(); i++) {
             e = encounterEnemiesList.get(i);
-            cr = Integer.parseInt(e.getCr());
+            cr = tacticalParse(e.getCr());
             if (cr >= 0 && cr <= 4) {
                 table = 0;
             } else if (cr >= 5 && cr <= 10) {
