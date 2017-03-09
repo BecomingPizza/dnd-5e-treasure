@@ -2,9 +2,9 @@
     <string name="app_name">D&amp;D 5E Toolkit</string>
 
     // TEST AD ID - swap over before release
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     // LIVE AD ID - do not enable for testing!
-    <!-- <string name="banner_ad_unit_id">ca-app-pub-8764405956249464/6467265436</string> -->
+    <!--<string name="banner_ad_unit_id">ca-app-pub-8764405956249464/6467265436</string>-->
 
     <string name="cr_selection_label_text">CR:</string>
     <string name="roll_button_text">Generate</string>

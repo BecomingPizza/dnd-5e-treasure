@@ -73,7 +73,7 @@ public class TreasureHoardFragment extends Fragment {
 
         Bundle bundaru = getArguments();
         if (bundaru != null && bundaru.containsKey("CR")) {
-        Integer cr = bundaru.getInt("CR");
+        Double cr = bundaru.getDouble("CR");
 
             if (cr >=0 && cr <= 4) {
                 cr_spinner.setSelection(0);
