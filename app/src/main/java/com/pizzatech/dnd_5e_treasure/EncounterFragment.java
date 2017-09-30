@@ -175,16 +175,18 @@ public class EncounterFragment extends Fragment {
     }
 
     public void removeEncounter() {
-        Integer pos = encounterSpinner.getSelectedItemPosition();
-        Encounter e = encounterList.get(pos);
+        if (encounterList.size() > 0) {
+            Integer pos = encounterSpinner.getSelectedItemPosition();
+            Encounter e = encounterList.get(pos);
 
-        // Delete from db by ID
-        dbAccess.open();
-        dbAccess.deleteEncounter(e.getId());
-        dbAccess.close();
+            // Delete from db by ID
+            dbAccess.open();
+            dbAccess.deleteEncounter(e.getId());
+            dbAccess.close();
 
-        refreshList(null);
-        loadEncounterEnemies(null);
+            refreshList(null);
+            loadEncounterEnemies(null);
+        }
     }
 
     void changeEnemyQuantity(Integer pos, Integer quantityChange) {

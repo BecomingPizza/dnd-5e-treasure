@@ -69,6 +69,9 @@ class DBAccess {
         Cursor cursor = database.rawQuery(query, null);
         cursor.moveToFirst();
 
+        Log.e("Table", table);
+        Log.e("Roll", roll.toString());
+
         TreasureFurtherRolls t = new TreasureFurtherRolls(
                 cursor.getInt(4),
                 cursor.getInt(5),
