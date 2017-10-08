@@ -185,7 +185,10 @@ public class MainActivity extends AppCompatActivity {
             case 2: //Encounter
                 fragment = new EncounterFragment();
                 break;
-            case 3: //About
+            case 3: //Party
+                fragment = new PartyFragment();
+                break;
+            case 4: //About
                 fragment = new AboutFragment();
                 break;
         }

@@ -3,6 +3,7 @@
         <item>@drawable/ic_monetization_on</item>
         <item>@drawable/ic_attach_money</item>
         <item>@drawable/ic_action_emo_evil</item>
+        <item>@drawable/ic_people_outline</item>
         <item>@drawable/ic_info_outline</item>
     </integer-array>
 </resources>

@@ -20,7 +20,7 @@ android {
 //        }
 //    }
     compileSdkVersion 24
-    buildToolsVersion '26.0.0'
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.pizzatech.dnd_5e_treasure"
         minSdkVersion 14
