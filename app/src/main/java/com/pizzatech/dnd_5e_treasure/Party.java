@@ -11,12 +11,26 @@ import java.util.ArrayList;
 
 public class Party {
     private Integer partyId;
+    private String name;
     private ArrayList<PlayerCharacter> characters;
 
-    Party(Integer partyId, ArrayList<PlayerCharacter> characters) {
+    Party(Integer partyId, String name, ArrayList<PlayerCharacter> playerCharacterIds) {
         super();
         this.partyId = partyId;
+        this.name = name;
         this.characters = characters;
+    }
+
+    public Integer getPartyId() {
+        return partyId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<PlayerCharacter> getPlayerCharacters() {
+        return characters;
     }
 
 }

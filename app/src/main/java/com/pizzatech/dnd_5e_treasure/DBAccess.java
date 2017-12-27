@@ -4,8 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.annotation.IntegerRes;
 import android.util.Log;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
@@ -109,6 +111,44 @@ class DBAccess {
 
         cursor.close();
         return encounters;
+    }
+
+    ArrayList<Party> getParties() {
+        ArrayList<Party> partyList = new ArrayList<>();
+
+        String query = "SELECT * FROM parties";
+        Cursor cursor = database.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                ArrayList<PlayerCharacter> pcsList = new ArrayList<>();
+                String pcs = cursor.getString(2);
+                // If there are pcs, split the list up (held as #/#/#/#) then get them!
+                if (pcs != null && !pcs.equals("")) {
+                    String[] pcids = pcs.split("/");
+                    for (String s : pcids) {
+                        pcsList.add(getPlayerCharacter(s));
+                    }
+                }
+                Party p = new Party(cursor.getInt(0), cursor.getString(1), pcsList);
+                partyList.add(p);
+                cursor.moveToNext();
+            }
+        }
+
+        cursor.close();
+        return partyList;
+    }
+
+    private PlayerCharacter getPlayerCharacter(String pcid) {
+
+        String query = "SELECT * FROM playercharacters WHERE id = " + pcid;
+        Cursor cursor2 = database.rawQuery(query, null);
+
+        // Should always return a result!
+        cursor2.moveToFirst();
+
+        return new PlayerCharacter(cursor2.getInt(0), cursor2.getString(1), cursor2.getString(2), cursor2.getInt(3), cursor2.getInt(4), cursor2.getInt(5));
     }
 
     void deleteEncounter(Integer id) {

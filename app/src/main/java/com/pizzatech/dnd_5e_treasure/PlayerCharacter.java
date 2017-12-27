@@ -11,16 +11,26 @@ public class PlayerCharacter {
     private Integer characterId;
     private String characterName;
     private String playerName;
-    private Integer xp;
+    private Integer xpCurrent;
+    private Integer xpToNextLevel;
     private Integer level;
 
-    PlayerCharacter (Integer characterId, String characterName, String playerName, Integer xp, Integer level) {
+    PlayerCharacter (Integer characterId, String characterName, String playerName, Integer xpCurrent, Integer xpToNextLevel, Integer level) {
         super();
         this.characterId = characterId;
         this.characterName = characterName;
         this.playerName = playerName;
-        this.xp = xp;
+        this.xpCurrent = xpCurrent;
+        this.xpToNextLevel = xpToNextLevel;
         this.level = level;
+    }
+
+    public String getMainText() {
+        return characterName + " (" + playerName + ")";
+    }
+
+    public String getSubText() {
+        return "Level: " + level + " (" + xpCurrent + "/" + xpToNextLevel + ")";
     }
 
 }
